@@ -1,0 +1,41 @@
+.hideLeft{   
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.showElementLeft{
+    transition: 1s ease all;
+    opacity: 1;
+    transform: translateX(0);
+}
+.hideRight{   
+    opacity: 0;
+    transform: translateX(100%);
+}
+.showElementRight{
+    transition: 1s ease all;
+    opacity: 1;
+    transform: translateX(0);
+}
+.hideTop{
+    opacity: 0;
+    transform: translateY(-50%);
+}
+.showElementTop{
+    transition: all .5s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+.hideHeight{
+    transform: translateY(-100%);
+}
+.showElementHeight{
+    animation: heightDown .5s ease-in-out forwards;
+}
+@keyframes heightDown{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

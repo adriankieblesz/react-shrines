@@ -1,0 +1,159 @@
+
+
+.shrine-section{   
+    scroll-snap-align: start;
+    overflow: hidden;
+    .sensoji-head{
+        
+        width: 100%;
+        height: 100vh;
+
+        .sensoji-img{
+            
+            width: 100%;
+            height: 0;
+            background-image: url("../images/Senso_ji_Temple/3.jpg");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+
+            .sensoji-dim{
+                background-color: rgba(0,0,0,.4);
+                width: 100%;
+                height: 0;
+                position: relative;  
+
+                .sensoji-title{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    h1{
+                        color: white;
+                        pointer-events: none;
+                        opacity: 0;
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    .sensoji-article
+    {           
+        text-align: center; 
+        img{
+            max-width: 100%;
+        }
+    }   
+}
+.sensoji-margin{
+    position: relative;
+    // margin-top:200px;
+}
+
+// #mapo{
+//     transition: all 3s ease-in;
+
+// }
+// .sensoji-map{
+//     .map-header{
+//         transition: all .5s;
+//         position: relative;
+//         top: -100px;
+//     }
+//     .map-img{
+//         transition: all .5s;
+//         position: relative;
+//         right: -100px;
+//     }
+//     .map-grid{
+//         .map-first:nth-child(1){
+//             transition: all .5s;
+//             position: relative;
+//             left: -200px;
+//         }
+
+//         .map-second{
+//             @for $i from 1 through 5 {
+//                 &:nth-child(#{$i}){
+//                     transition: all .5s;
+//                     position: relative;
+//                     top: -50px;
+//                 }
+//             }
+//         }
+//     }
+// }
+// .show-sensoji-map{
+
+//     .map-header{
+//         transition: all .5s;
+//         top: 0;
+//     }
+//     .map-img{
+//         right: 0px;
+//         transition: all .5s;
+//     }
+//     .map-grid{
+//         .map-first:nth-child(1){
+//             transition: all .5s;
+//         }
+
+//         .map-second{
+//             @for $i from 1 through 5 {
+//                 &:nth-child(#{$i}){
+//                     top: 0px;
+//                     transition: all .5s;
+//                 }
+//             }
+//         }
+//     }
+// }
+@media (orientation: landscape) and (max-width:1024px){
+    .shrine-section{
+        p{
+            font-size: 1rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.imgDown{
+    animation: addHeight .5s forwards ease;
+}
+.dimDown{
+    animation: addHeight .5s .5s forwards ease;
+}
+.showEngTitle{
+    animation: showTitle .5s 1s forwards ease;
+}
+.showJapTitle{
+    animation: showTitle .5 1.5s forwards ease;
+}
+@keyframes showTitle {
+    to{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+@keyframes addHeight{
+    to{
+        height: 100%;
+    }
+}
+@keyframes mapElementLeft{
+    to{
+        left: 0;
+    }
+}
+@keyframes mapElementTop{
+    to{
+        top: 0;
+    }
+}
+@keyframes mapElementRight{
+    to{
+        right: 0;
+    }
+}

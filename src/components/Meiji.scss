@@ -1,0 +1,27 @@
+.meiji-article{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url('../images/Meiji_Shrine/3v2c.jpg');
+    margin: 0 auto;
+    text-align: center;   
+}
+.meiji-article-map{
+    color: rgb(255, 255, 255);
+    background-image: url('../images/Meiji_Shrine/8c.jpg');
+
+    .map-grid{
+        .map-second{
+            background-color: rgba(255,255,255,.8);
+            color: black;
+        }
+    }
+}
+@media (max-width: 768px){
+    // .meiji-article{
+    //     padding-right: 0;
+    //     padding-left: 0;
+    // }
+}

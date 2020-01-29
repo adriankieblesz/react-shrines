@@ -1,0 +1,165 @@
+.map-header{
+    display: inline-block;
+    transition: all .5s;
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.map-img{
+    vertical-align: text-bottom;
+    margin-left: 15px;
+    transition: all .3s .5s;
+    position: relative;
+    right: -100px;
+    opacity: 0;
+    pointer-events: none;
+}
+.map-grid{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "map communication";
+    max-width: 1600px;
+    margin: 0 auto;
+    grid-column-gap: 30px;   
+    
+    .map-item {
+        width: 100%;
+        
+        .map{
+            width: 100%;
+            height: 100%;    
+            display: block;        
+        }
+    }
+    .map-first{
+        grid-area: map;
+        &:nth-child(1){
+            transition: all .5s .8s;
+            position: relative;
+            left: -200px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    .map-second{
+        grid-area: communication;
+        
+        p{
+            transition: font-size .5s ease;
+            font-size: 1.3rem;
+            text-align: justify;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        h4{
+            font-size: 1.3rem;
+        }
+        img{
+            width: 20px;
+            height: 20px;
+        }
+        @for $i from 1 through 5 {
+            span:nth-child(#{$i}){
+                display: block;
+                transition: all .4s ;
+                transition-delay: 1 + $i * .2s;
+                opacity: 0;
+                pointer-events: none;
+                position: relative;
+                top: -50px;
+            }
+        }
+    }
+}
+
+.show-map{
+    .map-header{
+        top: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+    .map-img{
+        right: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+    .map-grid{
+        .map-first:nth-child(1){
+            left: 0;
+            opacity: 1;
+            pointer-events: all;
+        }
+        .map-second{
+            @for $i from 1 through 5 {
+                span:nth-child(#{$i}){
+                    opacity: 1;
+                    pointer-events: all;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1366px){
+    .map-header{
+        font-size: 1.7rem;
+    }
+    .map-grid{
+        
+        .map-second{
+            p{
+                font-size: 1rem;
+            }
+            h4{
+                font-size: 1rem;
+            }
+            img{
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }   
+}
+
+@media (max-width: 768px){
+    .map-img{
+
+        width: 35px;
+        height: 35px;
+    }
+    .map-grid{
+        grid-template-columns: 1fr;
+        grid-template-areas: "map"
+                             "communication";
+        justify-content: center;
+
+        .map-first{
+            .map{
+                height: 300px;
+            }
+        }
+        .map-second{
+            p:nth-child(1){
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+    }
+}
