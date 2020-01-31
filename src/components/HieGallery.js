@@ -32,7 +32,11 @@ class HieGallery extends Component {
     handleSlideLeftImage = () => {
         let current = this.state.currentElement - 1;
         if (current < 1) {
-            current = 1
+            current = this.state.images.length;
+            this.setState(() => ({
+                currentElement: current,
+                url: require(`../images/Hie_Shrine/${current}c.jpg`)
+            }))
         }
         else {
             this.setState(() => ({
@@ -44,7 +48,11 @@ class HieGallery extends Component {
     handleSlideRightImage = () => {
         let current = this.state.currentElement + 1;
         if (current > this.state.images.length) {
-            current = this.state.images.length;
+            current = 1;
+            this.setState(() => ({
+                currentElement: current,
+                url: require(`../images/Hie_Shrine/${current}c.jpg`)
+            }))
         }
         else {
             this.setState(() => ({
