@@ -24,11 +24,12 @@ $i: 1;
                     grid-area: $area;
                     margin: 0;
                     opacity: 0;
-                    transition: opacity 1s ease;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
+                    transition: opacity 1s ease;                      
+                        img{
+                            width: 100%;                          
+                            height: 100%;   
+                                             
+                        }
                 }
         $i: $i + 1;
     }
