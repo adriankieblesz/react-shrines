@@ -38,6 +38,7 @@
                 transition: all .5;
                 right: -100%;
 
+
                 .meiji-eng-title{
                     font-size: 4rem;
                     margin-bottom: 0;
@@ -62,7 +63,19 @@
         
     }    
 }
-
+@media(max-width:1024px){
+    .meiji-head{       
+        .meiji-head-grid{
+            grid-template-columns: 1fr;
+            .meiji-grid-item{
+                .meiji-title{
+                    top: 0;
+                    transform: translate(0,0);
+                }
+            }
+        }
+    }
+}
 @keyframes swipeLeft{
     from{
         left: -100%;

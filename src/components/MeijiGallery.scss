@@ -4,7 +4,8 @@
 
     .meiji-gallery-top{
         width: 100%;
-        min-height: 70vh;
+        // min-height: 70vh;
+        height: 70vh;
         background-color: rgb(45, 45, 58);
         display: grid;
         justify-items: center;
@@ -12,7 +13,8 @@
 
         .meiji-top-picture{
             max-width: 40%;
-            height: auto;
+            // height: auto;
+            height: 80%;
             border: 10px solid white;
             position: relative;
             .top-img{

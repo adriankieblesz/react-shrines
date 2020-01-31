@@ -17,22 +17,32 @@ class Sensoji extends Component {
             { number: [5, 8], classname: "shrine-grid", description: ["Be prepared to be welcome by Niō - wrathful muscular guardians of the Buddha. You can meet them in many Buddhist temples so they of course cannot be absent in Senso-ji.", "And finally you will get to the temple itself. What's inside it's your job to check out!"] }
         ],
         isActive: false,
+        distance: 0
     }
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
-        this.height = this.refs.sensojiHead.clientHeight;
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll)
-    }
+
     handleScroll = () => {
         let scrollY = window.scrollY || window.pageYOffset
         let position = this.refs.sensojiHead.getBoundingClientRect().top + scrollY;
-        if (position - 10 <= scrollY) {
+        if (position - this.state.distance <= scrollY) {
             this.setState(() => ({
                 isActive: true
             }))
         }
+    }
+    handleResize = () => {
+        if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
+        else this.setState(() => ({ distance: 10 }))
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('resize', this.handleResize);
+        this.height = this.refs.sensojiHead.clientHeight;
+        if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
+        else this.setState(() => ({ distance: 10 }))
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener('resize', this.handleResize);
     }
     render() {
         const grids = this.state.sensojiInfo.map(info => <SensojiItem

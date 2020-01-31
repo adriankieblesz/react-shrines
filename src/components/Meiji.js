@@ -11,7 +11,7 @@ class Meiji extends Component {
         showHead: false
     }
     handleScroll = () => {
-        window.scrollY > this.refs.meiji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
+        window.scrollY > this.refs.meiji.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHead: true
         }))
     }

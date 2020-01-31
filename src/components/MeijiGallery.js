@@ -24,7 +24,12 @@ class MeijiGallery extends Component {
         this.transparent = "trans"
         let current = this.state.current - 1;
         if (current < 1) {
-            current = 1
+            current = 18
+            this.setState(() => ({
+                current: current,
+                currentUrl: require(`../images/Meiji_Shrine/${current}c.jpg`),
+                topImageClassName: "trans"
+            }))
         }
         else {
             this.setState(() => ({
@@ -38,7 +43,12 @@ class MeijiGallery extends Component {
         this.transparent = "trans"
         let current = this.state.current + 1;
         if (current > 18) {
-            current = 18;
+            current = 1;
+            this.setState(() => ({
+                current: current,
+                currentUrl: require(`../images/Meiji_Shrine/${current}c.jpg`),
+                topImageClassName: "trans"
+            }))
         }
         else {
             this.setState(() => ({

@@ -56,7 +56,12 @@ class SensojiGallery extends Component {
     handleSlideLeftImage = () => {
         let current = this.state.currentElement - 1;
         if (current < 1) {
-            current = 1
+            // current = 1
+            current = this.state.photos.length;
+            this.setState(() => ({
+                currentElement: current,
+                url: require(`../images/Senso_ji_Temple/${current}.jpg`)
+            }))
         }
         else {
             this.setState(() => ({
@@ -68,7 +73,12 @@ class SensojiGallery extends Component {
     handleSlideRightImage = () => {
         let current = this.state.currentElement + 1;
         if (current > this.state.photos.length) {
-            current = this.state.photos.length;
+            // current = this.state.photos.length;
+            current = 1
+            this.setState(() => ({
+                currentElement: current,
+                url: require(`../images/Senso_ji_Temple/${current}.jpg`)
+            }))
         }
         else {
             this.setState(() => ({
