@@ -14,7 +14,7 @@ class Hie extends Component {
         refss: 0
     }
     handleScroll = () => {
-        window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 10 && this.setState(() => ({
+        window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHeader: true
         }))
 

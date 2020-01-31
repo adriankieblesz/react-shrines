@@ -43,7 +43,6 @@
     
 .show-hie-header{
     
-
     .hie-title{
         background-color: rgba(0,0,0,.6);
         border: 15px solid white;
@@ -57,4 +56,34 @@
         }
     }   
 }
+
+@media(max-width:1024px){
+    .hie-header{
+        width: 100%;
+        height: 100vh;
+        background-image: url('../images/Hie_Shrine/3c.jpg');
+        background-size: 250% 150%;
+        background-repeat: no-repeat;
+        background-position: center;
+                
+        .hie-title{
+
+            padding: 0 70px;
+
+            .hie-title-eng{
+                font-size: 2rem;
+            }
+            .hie-title-jap{
+                font-size: 2rem;
+            }
+        }
+        
     
+    }
+    .show-hie-header{   
+        .hie-title{
+
+            border: 5px solid white;  
+        }
+    }
+}
