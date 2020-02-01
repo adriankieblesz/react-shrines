@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./Toyokawa.scss";
 import ToyokawaHead from './ToyokawaHead';
 import P from './P';
+import ToyokawaGallery from './ToyokawaGallery';
 class Toyokawa extends Component {
     state = {
         showHeader: false,
@@ -51,7 +52,7 @@ class Toyokawa extends Component {
                         Nonetheless, Toyokawa Inari Shrine is one of those places that are worth being visited. Amazing
                         vibe of this place and unique style will contribute to bring wonderful memories and pictures from here.
                     </P>
-                    <br /><br /><br /><br /><br /><br /><br />
+                    <ToyokawaGallery />
                 </article>
             </section>
         );

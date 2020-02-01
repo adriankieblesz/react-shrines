@@ -1,0 +1,16 @@
+.toyokawa-gallery{
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    .toyokawa-gallery-wrapper{
+        display: flex;
+        position: relative;
+        left: 0;
+        img{
+            flex: 1;
+            width: 400px;
+            height: 300px;
+            margin: 10px;
+        }
+    }
+}
