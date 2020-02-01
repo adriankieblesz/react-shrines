@@ -126,7 +126,7 @@ class NavigationBar extends Component {
                             <a href="#hie" onClick={this.handleClickLink}>Hie</a>
                         </li>
                         <li className={`${this.state.animate ? 'showButtons' : ''}`}>
-                            <a href="#" onClick={this.handleClickLink}>Zojoji</a>
+                            <a href="#toyokawa" onClick={this.handleClickLink}>Toyokawa</a>
                         </li>
                         {/* <li>
                             <a href="#">Toyokawa Inari</a>

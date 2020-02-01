@@ -104,6 +104,7 @@ class SensojiGallery extends Component {
         />)
         return (
             <div className={`sensoji-gallery ${isHidden}`}>
+                <h3>Gallery</h3>
                 <div ref="senGalCol" className={`sensoji-gallery-container ${this.state.isDown ? "" : "man"}`}
                     onMouseDown={this.handleMouseDown}
                     onMouseLeave={this.handleMouseLeave}

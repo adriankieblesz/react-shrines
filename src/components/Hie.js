@@ -22,6 +22,11 @@ class Hie extends Component {
             scroll: -((window.scrollY * .3) - (this.state.refss * .3)),
             refss: this.refs.hie.getBoundingClientRect().top + window.scrollY
         }))
+        if (window.scrollY > this.refs.hieHead.getBoundingClientRect().bottom + window.scrollY) {
+            this.setState(() => ({
+                scroll: 0
+            }))
+        }
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
@@ -32,7 +37,7 @@ class Hie extends Component {
     render() {
         return (
             <section id="hie" ref="hie" style={{ backgroundColor: "black" }}>
-                <HieHead classname={`${this.state.showHeader ? "hie-header show-hie-header" : "hie-header"}`} backgroundposition={this.state.scroll} />
+                <div ref="hieHead"><HieHead classname={`${this.state.showHeader ? "hie-header show-hie-header" : "hie-header"}`} backgroundposition={this.state.scroll} /></div>
                 <article className="hie-article" >
 
                     <ScrollShowElement classnameshow={"hie-show-first"} classnamehide={"hie-hide-first"} ratio={1}>

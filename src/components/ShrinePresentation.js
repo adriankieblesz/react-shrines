@@ -29,7 +29,7 @@ class ShrinePresentation extends Component {
                 <a href="#hie" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
-                <a href="#sensoji" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
+                <a href="#toyokawa" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
                 <NavigationBar />

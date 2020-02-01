@@ -4,6 +4,7 @@ import Sensoji from './Sensoji';
 import Meiji from './Meiji';
 import Gotokuji from './Gotokuji';
 import Hie from "./Hie";
+import Toyokawa from './Toyokawa';
 
 class ShrineDescription extends Component {
     state = {}
@@ -12,9 +13,10 @@ class ShrineDescription extends Component {
         return (
             <React.Fragment>
                 <Sensoji />
-                <Meiji />
-                <Gotokuji />
                 <Hie />
+                <Gotokuji />
+                <Meiji />
+                <Toyokawa />
             </React.Fragment>
         );
     }
