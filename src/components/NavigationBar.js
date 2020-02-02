@@ -83,16 +83,23 @@ class NavigationBar extends Component {
         this.setState((prevState) => ({
             iconClicked: !prevState.iconClicked
         }))
-        if (this.state.iconClicked) {
+        // if (this.state.iconClicked) {
+        //     this.setState(() => ({
+        //         className: "close"
+        //     }))
+        // }
+        // else {
+        //     this.setState(() => ({
+        //         className: ""
+        //     }))
+        // }
+        this.state.iconClicked ?
             this.setState(() => ({
                 className: "close"
-            }))
-        }
-        else {
+            })) :
             this.setState(() => ({
                 className: ""
             }))
-        }
     }
     componentDidMount() {
         window.addEventListener('resize', this.handleResize)
@@ -128,12 +135,6 @@ class NavigationBar extends Component {
                         <li className={`${this.state.animate ? 'showButtons' : ''}`}>
                             <a href="#toyokawa" onClick={this.handleClickLink}>Toyokawa</a>
                         </li>
-                        {/* <li>
-                            <a href="#">Toyokawa Inari</a>
-                        </li>
-                        <li>
-                            <a href="#">Nezu</a>
-                        </li> */}
                     </ul>
                 </nav>
                 {this.state.showButton ? <NavButton

@@ -66,12 +66,12 @@ class Toyokawa extends Component {
                         }
                         tstation={
                             <P>
-                                You can get to <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line and disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk about 400 meters to get to the shrine.
+                                You can get to <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line which will directly take you to <strong>Akasaka-Mitsuke Station</strong> and then you will have to walk about 500 meters to shrine. The road is very easy.
                             </P>
                         }
                         sstation={
                             <P>
-                                Simillary as with Tokyo Station, try to find <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 400 meters to shrine.
+                                The same story as with Tokyo Station, find <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 500 meters to destination.
                             </P>
                         }
                     />

@@ -17,7 +17,8 @@ class Sensoji extends Component {
             { number: [5, 8], classname: "shrine-grid", description: ["Be prepared to be welcome by Niō - wrathful muscular guardians of the Buddha. You can meet them in many Buddhist temples so they of course cannot be absent in Senso-ji.", "And finally you will get to the temple itself. What's inside it's your job to check out!"] }
         ],
         isActive: false,
-        distance: 0
+        distance: 0,
+        backgroundPosition: null
     }
 
     handleScroll = () => {
@@ -28,6 +29,7 @@ class Sensoji extends Component {
                 isActive: true
             }))
         }
+        this.setState(() => ({ backgroundPosition: window.scrollY * -.2 }))
     }
     handleResize = () => {
         if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
@@ -54,7 +56,7 @@ class Sensoji extends Component {
             secondSource={require(`../images/Senso_ji_Temple/${info.number[1]}.jpg`)}
         />)
         return (
-            <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef">
+            <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef" style={{ backgroundPositionY: this.state.backgroundPosition }}>
                 <div ref={"sensojiHead"} className="sensoji-head">
                     <div className={`sensoji-img ${this.state.isActive ? "imgDown" : ""}`} >
                         <div className={`sensoji-dim ${this.state.isActive ? "dimDown" : ""}`}>
