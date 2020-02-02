@@ -69,6 +69,10 @@
     -webkit-animation: slideRight .3s ease forwards;
     animation: slideRight .3s ease forwards;
 }
+.slideLeftModal{
+    -webkit-animation: slideLeft .3s ease forwards;
+    animation: slideLeft .3s ease forwards;
+}
 .showModalImage{
     -webkit-animation: showModalImg .3s .2s ease forwards;
     animation: showModalImg .3s .2s ease forwards;
@@ -89,15 +93,43 @@
 }
 
 @-webkit-keyframes slideRight{
+    from{
+        left: -100%;
+        pointer-events: none;
+    }
     to{       
         left: 0%;
         pointer-events: all;
     }
 }
 @keyframes slideRight{
+    from{
+        left: -100%;
+        pointer-events: none;
+    }
     to{
         left: 0%;
         pointer-events: all;
+    }
+}
+@-webkit-keyframes slideLeft{
+    from{
+        left: 0%;
+        pointer-events: all;
+    }
+    to{       
+        left: -100%;
+        pointer-events: none;
+    }
+}
+@keyframes slideLeft{
+    from{
+        left: 0%;
+        pointer-events: all;
+    }
+    to{
+        left: -100%;
+        pointer-events: none;
     }
 }
 @-webkit-keyframes showModalImg{

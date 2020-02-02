@@ -7,7 +7,8 @@ class HieGallery extends Component {
         openModal: false,
         url: "",
         currentElement: null,
-        showGallery: false
+        showGallery: false,
+        slideclass: "slideLeftModal"
     }
     loadImages = () => {
         let images = [];
@@ -21,13 +22,17 @@ class HieGallery extends Component {
         this.setState(() => ({
             openModal: true,
             url: link,
-            currentElement: element
+            currentElement: element,
+            slideclass: "slideRightModal"
         }))
     }
     handleModalClose = () => {
-        this.setState(() => ({
-            openModal: false
-        }))
+        this.setState(() => ({ slideclass: "slideLeftModal" }))
+        setTimeout(
+            function () {
+                this.setState(() => ({ openModal: false }))
+            }.bind(this)
+            , 300);
     }
     handleSlideLeftImage = () => {
         let current = this.state.currentElement - 1;
@@ -101,6 +106,7 @@ class HieGallery extends Component {
                     open={this.state.openModal}
                     slideLeft={this.handleSlideLeftImage}
                     slideRight={this.handleSlideRightImage}
+                    slideclass={this.state.slideclass}
                 />}
             </div>
         );

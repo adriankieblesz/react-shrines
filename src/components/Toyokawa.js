@@ -3,6 +3,8 @@ import "./Toyokawa.scss";
 import ToyokawaHead from './ToyokawaHead';
 import P from './P';
 import ToyokawaGallery from './ToyokawaGallery';
+import Map from './Map';
+import Iframe from './Iframe';
 class Toyokawa extends Component {
     state = {
         showHeader: false,
@@ -53,6 +55,26 @@ class Toyokawa extends Component {
                         vibe of this place and unique style will contribute to bring wonderful memories and pictures from here.
                     </P>
                     <ToyokawaGallery />
+                    <Map ref={"map"}
+                        iframe={
+                            <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.024221616309!2d139.73066131525857!3d35.67640558019544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c7e121ee92b%3A0x5761574668b96c9!2sToyokawa%20Inari%20Tokyo%20Betsuin!5e0!3m2!1spl!2spl!4v1580643642437!5m2!1spl!2spl"} />
+                        }
+                        description={
+                            <P>
+                                Toyokawa Inari Temple is placed in cosy and pretty silent area in Minato district.
+                            </P>
+                        }
+                        tstation={
+                            <P>
+                                You can get to <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line and disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk about 400 meters to get to the shrine.
+                            </P>
+                        }
+                        sstation={
+                            <P>
+                                Simillary as with Tokyo Station, try to find <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 400 meters to shrine.
+                            </P>
+                        }
+                    />
                 </article>
             </section>
         );

@@ -38,7 +38,11 @@
         }
     }
 }
-
+#toyokawa{
+    .show-map{
+       text-align: center;
+    }
+}
 .toyokawa-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

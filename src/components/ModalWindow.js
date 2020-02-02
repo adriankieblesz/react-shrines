@@ -3,7 +3,8 @@ import GalleryButton from './GalleryButton';
 import './ModalWindow.scss';
 const ModalWindow = (props) => {
     return (
-        <div className={props.open ? "modalWindow slideRightModal" : "modalWindow"} >
+        // <div className={props.open ? `modalWindow slideRightModal` : `modalWindow ${props.slideleftclass}`} >
+        <div className={`modalWindow ${props.slideclass}`} >
             <img className={props.open ? "modalImg showModalImage" : "modalImg"} src={props.modalSource} alt="shrine" />
             <div onClick={props.closeclick} className="closeBtn" >
                 <span className="closeSpan"></span>
