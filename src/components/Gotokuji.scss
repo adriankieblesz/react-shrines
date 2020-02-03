@@ -141,12 +141,19 @@
 @media(max-width:768px){
     .gotokuji-article{
         background-size: 100% 100%;
-
+        .title-container{
+            position: relative;
+            width: 100%;
+        }
         .gotokuji-container{
             color: rgb(0, 0, 0);
             float: none;
             width: 100%;
-            background-color: rgba(255,255,255,.5);
+            background-color: rgba(255,255,255,.6);
+            padding-bottom: 50px;
+            p:last-child{
+                margin-bottom: 0;
+            }
         }
     }
 }

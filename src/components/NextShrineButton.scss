@@ -1,7 +1,7 @@
 .next-shrine-button{
     position: fixed;
     bottom: 50px;
-    right: -15%;
+    right: -105%;
     // background-color: rgba(0, 0, 0, 0.65);
     background-color: rgba(30, 4, 32, 0.65);
     // color: rgb(224, 224, 40);
@@ -11,6 +11,9 @@
     transition: .4s ease-in all;
     border-radius: 5px;  
     z-index: 20;
+    &:hover a{
+        color: rgb(224, 224, 40);
+    }
         a{
             display: block;
             padding: 10px;
@@ -23,6 +26,8 @@
                 width: 25px;
                 height: 25px;
                 vertical-align: top;
+                position: relative;
+                animation: moveUpDown 1s infinite;
             }
         }
         
@@ -31,4 +36,15 @@
     opacity: 1;
     bottom: 50px;
     right: 2%;
+}
+@keyframes moveUpDown{
+    0%{
+        top: 0;
+    }
+    75%{
+        top: -15%;
+    }
+    100%{
+        top: 0;
+    }
 }
