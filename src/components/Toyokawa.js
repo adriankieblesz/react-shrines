@@ -95,10 +95,15 @@ class Toyokawa extends Component {
                         }
                     />
                 </article>
-                {this.state.showNextBtn && <NextShrineButton
+                {/* {this.state.showNextBtn && <NextShrineButton
                     text={"Go to Meiji Shrine"}
                     source={"#meiji"}
-                />}
+                />} */}
+                <NextShrineButton
+                    text={"Go to Meiji Shrine"}
+                    source={"#meiji"}
+                    show={this.state.showNextBtn}
+                />
             </section>
         );
     }

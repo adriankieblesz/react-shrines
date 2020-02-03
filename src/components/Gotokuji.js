@@ -22,7 +22,7 @@ class Gotokuji extends Component {
                 showNextBtn: true
             }))
         }
-        if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
+        if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY + this.refs.gotokuji.clientHeight - 500 || window.scrollY < this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
             this.setState(() => ({
                 showNextBtn: false
             }))
@@ -144,10 +144,15 @@ class Gotokuji extends Component {
                         }
                     />
                 </article>
-                {this.state.showNextBtn && <NextShrineButton
+                {/* {this.state.showNextBtn && <NextShrineButton
                     text={"Go to Toyokawa Shrine"}
                     source={"#toyokawa"}
-                />}
+                />} */}
+                <NextShrineButton
+                    text={"Go to Toyokawa Shrine"}
+                    source={"#toyokawa"}
+                    show={this.state.showNextBtn}
+                />
             </section>
         );
     }

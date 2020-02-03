@@ -19,7 +19,8 @@ class Sensoji extends Component {
         isActive: false,
         distance: 0,
         backgroundPosition: null,
-        showNextBtn: false
+        showNextBtn: false,
+        btnClassName: ""
     }
 
     handleScroll = () => {
@@ -32,16 +33,22 @@ class Sensoji extends Component {
         }
         this.setState(() => ({ backgroundPosition: window.scrollY * -.2 }))
 
-        if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.2)) {
+        if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.25)) {
             this.setState(() => ({
                 showNextBtn: true
             }))
         }
-        if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.2)) {
+        // if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.25)) {
+        //     this.setState(() => ({
+        //         showNextBtn: false
+        //     }))
+        // }
+        if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().top + window.scrollY + this.refs.sensojiRef.clientHeight - 500 || window.scrollY < this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.25)) {
             this.setState(() => ({
                 showNextBtn: false
             }))
         }
+
     }
     handleResize = () => {
         if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
@@ -108,10 +115,16 @@ class Sensoji extends Component {
                         }
                     />
                 </article>
-                {this.state.showNextBtn && <NextShrineButton
+                {/* {this.state.showNextBtn && <NextShrineButton
                     text={"Go to Hie Shrine"}
                     source={"#hie"}
-                />}
+                    show={this.state.showNextBtn}
+                />} */}
+                <NextShrineButton
+                    text={"Go to Hie Shrine"}
+                    source={"#hie"}
+                    show={this.state.showNextBtn}
+                />
             </section>
         );
     }

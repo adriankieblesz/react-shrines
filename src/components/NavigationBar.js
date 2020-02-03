@@ -124,16 +124,16 @@ class NavigationBar extends Component {
                             <a href="#sensoji" onClick={this.handleClickLink}>Sensō-ji</a>
                         </li>
                         <li className={`${this.state.animate ? 'showButtons' : ''}`}>
-                            <a href="#meiji" onClick={this.handleClickLink}>Meiji-jingu</a>
+                            <a href="#hie" onClick={this.handleClickLink}>Hie</a>
                         </li>
                         <li className={`${this.state.animate ? 'showButtons' : ''}`}>
                             <a href="#gotokuji" onClick={this.handleClickLink}>Gotokuji</a>
                         </li>
                         <li className={`${this.state.animate ? 'showButtons' : ''}`}>
-                            <a href="#hie" onClick={this.handleClickLink}>Hie</a>
+                            <a href="#toyokawa" onClick={this.handleClickLink}>Toyokawa</a>
                         </li>
                         <li className={`${this.state.animate ? 'showButtons' : ''}`}>
-                            <a href="#toyokawa" onClick={this.handleClickLink}>Toyokawa</a>
+                            <a href="#meiji" onClick={this.handleClickLink}>Meiji-jingu</a>
                         </li>
                     </ul>
                 </nav>

@@ -20,16 +20,16 @@ class ShrinePresentation extends Component {
                 <a href="#sensoji" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
-                <a href="#meiji" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
+                <a href="#hie" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
                 <a href="#gotokuji" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
-                <a href="#hie" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
+                <a href="#toyokawa" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
-                <a href="#toyokawa" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
+                <a href="#meiji" className={this.state.displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>
                     <div className={this.state.displayBackgrounds ? "blur changeBlurOpacity" : "blur"}></div>
                 </a>
                 <NavigationBar />

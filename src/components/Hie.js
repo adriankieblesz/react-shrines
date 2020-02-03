@@ -33,7 +33,7 @@ class Hie extends Component {
                 showNextBtn: true
             }))
         }
-        if (window.scrollY > this.refs.hie.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.hie.getBoundingClientRect().bottom + window.scrollY - (this.refs.hie.clientHeight * 0.2)) {
+        if (window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY + this.refs.hie.clientHeight - 500 || window.scrollY < this.refs.hie.getBoundingClientRect().bottom + window.scrollY - (this.refs.hie.clientHeight * 0.2)) {
             this.setState(() => ({
                 showNextBtn: false
             }))
@@ -132,10 +132,15 @@ class Hie extends Component {
                         }
                     />
                 </article>
-                {this.state.showNextBtn && <NextShrineButton
+                {/* {this.state.showNextBtn && <NextShrineButton
                     text={"Go to Gotokuji Shrine"}
                     source={"#gotokuji"}
-                />}
+                />} */}
+                <NextShrineButton
+                    text={"Go to Gotokuji Shrine"}
+                    source={"#gotokuji"}
+                    show={this.state.showNextBtn}
+                />
             </section >
         );
     }
