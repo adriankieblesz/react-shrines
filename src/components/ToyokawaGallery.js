@@ -7,7 +7,8 @@ class ToyokawaGallery extends Component {
         openModal: false,
         url: "",
         currentElement: null,
-        slideclass: "slideLeftModal"
+        slideclass: "slideLeftModal",
+        show: false
     }
     loadImages = () => {
         let images = [];
@@ -71,14 +72,20 @@ class ToyokawaGallery extends Component {
             }))
         }
     }
+    handleScroll = () => {
+        window.scrollY > this.refs.toyokawaGallery.getBoundingClientRect().top + window.scrollY - (this.refs.toyokawaGallery.clientHeight * .5) && this.setState(() => ({
+            show: true
+        }))
+    }
     componentDidMount() {
         let images = this.loadImages();
         this.setState({ images });
+        window.addEventListener('scroll', this.handleScroll);
     }
     render() {
         let images = this.state.images.map(element => element);
         return (
-            <div className="toyokawa-gallery">
+            <div className={this.state.show ? "toyokawa-gallery show-toyokawa-gallery" : "toyokawa-gallery"} ref={"toyokawaGallery"}>
                 <div className="toyokawa-gallery-wrapper">
                     {images}
                 </div>

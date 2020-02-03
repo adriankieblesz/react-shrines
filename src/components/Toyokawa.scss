@@ -39,10 +39,56 @@
     }
 }
 #toyokawa{
-    .show-map{
-       text-align: center;
+    .toyokawa-hide-element{
+        p{
+            transition: opacity .5s ease;
+            opacity: 0;
+        }
+        .toyokawa-grid{
+            img{
+                position: relative;
+                
+                opacity: 0;
+                &:nth-child(1){
+                    transition: all .6s ease-in-out;
+                    left: -200%;
+                }
+                &:nth-child(2){
+                    transition: all .6s .5s ease-in-out;
+                    left: -250%;
+                }
+            }
+            
+        }
     }
+       
+    .toyokawa-show-element{
+        p{
+            transition: opacity .5s ease;
+            opacity: 1;
+        }  
+        .toyokawa-grid{
+            img{
+                position: relative;
+                opacity: 1;
+
+                &:nth-child(1){
+                    transition: all .6s ease-in-out;
+                    left: 0;
+                }
+                &:nth-child(2){
+                    transition: all .6s .5s ease-in-out;
+                    left: 0;
+                }
+            }
+            
+        }
+    }
+    .show-map{
+        text-align: center;
+     }
 }
+
 .toyokawa-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

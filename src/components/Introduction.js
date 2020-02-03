@@ -28,7 +28,7 @@ class Introduction extends Component {
                         Absolutely must see are temples/shrines placed all around entire Tokyo
                         and also entire Japan. But sometimes we ask "where should we go first?" or
                         "we don't have enought time to visit each temple, which one should we
-                        choose?". Below are presented seven incredibely georgous and well known
+                        choose?". Below are presented five incredibely georgous and well known
                         temples in Tokyo with exact location and tips how to get there.
                     </p>
 

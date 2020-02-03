@@ -15,7 +15,9 @@
     scroll-snap-align: start;
     .intro-article{
         margin-top: 0;
-
+        background-color: rgba(0,0,0,.5);
+        padding-top: 15px;
+        padding-bottom: 15px;
         .intro-p{
             color: rgb(255, 255, 255);
             margin: 0;
