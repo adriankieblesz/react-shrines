@@ -70,7 +70,6 @@ class HieGallery extends Component {
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - (this.refs.hie.clientHeight / 2) && this.setState(() => ({
             showGallery: true
         }))
-        console.log(this.refs.hie.getBoundingClientRect().top);
     }
     componentDidMount() {
         let imgs = this.loadImages();
@@ -83,10 +82,9 @@ class HieGallery extends Component {
     //     window.removeEventListener('scroll', this.handleScroll);
     // }
     render() {
-        console.log(window.scrollY);
-
         const { images, showGallery: show } = this.state;
         const galleryItems = images.map(image => (<div
+            key={images.indexOf(image)}
             className="hie-gallery-item"
             onClick={() => this.handleModalOpen(require(`../images/Hie_Shrine/${(images.indexOf(image) + 1)}c.jpg`), (images.indexOf(image) + 1))}>
             {image}

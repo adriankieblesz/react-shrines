@@ -6,16 +6,27 @@ import GotokujiGallery from './GotokujiGallery';
 import Map from './Map';
 import Iframe from './Iframe';
 import ScrollShowElement from './ScrollShowElement';
+import NextShrineButton from './NextShrineButton';
 class Gotokuji extends Component {
     state = {
         classname: "",
-        backgroundPosition: 1
+        backgroundPosition: 1,
+        showNextBtn: false
     }
     handleScroll = () => {
-
         window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
             classname: "gotokuji-article-active"
         }))
+        if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
+            this.setState(() => ({
+                showNextBtn: true
+            }))
+        }
+        if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
+            this.setState(() => ({
+                showNextBtn: false
+            }))
+        }
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
@@ -133,7 +144,10 @@ class Gotokuji extends Component {
                         }
                     />
                 </article>
-
+                {this.state.showNextBtn && <NextShrineButton
+                    text={"Go to Toyokawa Shrine"}
+                    source={"#toyokawa"}
+                />}
             </section>
         );
     }

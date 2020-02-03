@@ -15,8 +15,8 @@ class ShrineDescription extends Component {
                 <Sensoji />
                 <Hie />
                 <Gotokuji />
-                <Meiji />
                 <Toyokawa />
+                <Meiji />
             </React.Fragment>
         );
     }

@@ -18,7 +18,8 @@ class Sensoji extends Component {
         ],
         isActive: false,
         distance: 0,
-        backgroundPosition: null
+        backgroundPosition: null,
+        showNextBtn: false
     }
 
     handleScroll = () => {
@@ -30,6 +31,17 @@ class Sensoji extends Component {
             }))
         }
         this.setState(() => ({ backgroundPosition: window.scrollY * -.2 }))
+
+        if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.2)) {
+            this.setState(() => ({
+                showNextBtn: true
+            }))
+        }
+        if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.2)) {
+            this.setState(() => ({
+                showNextBtn: false
+            }))
+        }
     }
     handleResize = () => {
         if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
@@ -48,6 +60,7 @@ class Sensoji extends Component {
     }
     render() {
         const grids = this.state.sensojiInfo.map(info => <SensojiItem
+            key={this.state.sensojiInfo.indexOf(info)}
             classname={info.classname}
             source={require(`../images/Senso_ji_Temple/${info.number[0]}.jpg`)}
             alt={"Senso-Ji"}
@@ -95,10 +108,10 @@ class Sensoji extends Component {
                         }
                     />
                 </article>
-                {/* <NextShrineButton
-                    text={"Go to Meiji Shrine"}
-                    source={"#meiji"}
-                /> */}
+                {this.state.showNextBtn && <NextShrineButton
+                    text={"Go to Hie Shrine"}
+                    source={"#hie"}
+                />}
             </section>
         );
     }

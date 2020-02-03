@@ -14,6 +14,7 @@ class GotokujiGallery extends Component {
     }
     render() {
         let galleryItems = this.state.pictureNumbers.map(number => (<GotokujiGalleryItem
+            key={this.state.pictureNumbers.indexOf(number)}
             classname={`gotokuji-gallery-item-${this.state.pictureNumbers.indexOf(number) + 1}`}
             source={require(`../images/Gotokuji_Temple/${number}c.jpg`)}
         />));

@@ -14,6 +14,7 @@ class ToyokawaGallery extends Component {
         let images = [];
         for (let i = 0; i < 10; i++) {
             images.push(<img
+                key={i + 1}
                 src={require(`../images/Toyokawa_Inari_Temple/${i + 1}c.jpg`)} alt="toyokawa"
                 onClick={() => this.handleModalOpen(require(`../images/Toyokawa_Inari_Temple/${i + 1}c.jpg`), (i + 1))
                 }

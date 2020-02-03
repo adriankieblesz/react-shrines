@@ -6,14 +6,27 @@ import ToyokawaGallery from './ToyokawaGallery';
 import Map from './Map';
 import Iframe from './Iframe';
 import ScrollShowElement from './ScrollShowElement';
+import NextShrineButton from './NextShrineButton';
+
 class Toyokawa extends Component {
     state = {
         showHeader: false,
+        showNextBtn: false
     }
     handleScroll = () => {
         window.scrollY > this.refs.toyokawa.getBoundingClientRect().top + window.scrollY - 10 && this.setState(() => ({
             showHeader: true
         }))
+        if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
+            this.setState(() => ({
+                showNextBtn: true
+            }))
+        }
+        if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
+            this.setState(() => ({
+                showNextBtn: false
+            }))
+        }
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
@@ -82,6 +95,10 @@ class Toyokawa extends Component {
                         }
                     />
                 </article>
+                {this.state.showNextBtn && <NextShrineButton
+                    text={"Go to Meiji Shrine"}
+                    source={"#meiji"}
+                />}
             </section>
         );
     }

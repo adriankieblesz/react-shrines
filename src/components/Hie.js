@@ -6,12 +6,13 @@ import HieGallery from './HieGallery';
 import Map from './Map';
 import Iframe from './Iframe';
 import ScrollShowElement from './ScrollShowElement';
-import HieSpaceComponent from './HieSpaceComponent';
+import NextShrineButton from './NextShrineButton';
 class Hie extends Component {
     state = {
         showHeader: false,
         scroll: 0,
-        refss: 0
+        refss: 0,
+        showNextBtn: false
     }
     handleScroll = () => {
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
@@ -25,6 +26,16 @@ class Hie extends Component {
         if (window.scrollY > this.refs.hieHead.getBoundingClientRect().bottom + window.scrollY) {
             this.setState(() => ({
                 scroll: 0
+            }))
+        }
+        if (window.scrollY > this.refs.hie.getBoundingClientRect().bottom + window.scrollY - (this.refs.hie.clientHeight * 0.2)) {
+            this.setState(() => ({
+                showNextBtn: true
+            }))
+        }
+        if (window.scrollY > this.refs.hie.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.hie.getBoundingClientRect().bottom + window.scrollY - (this.refs.hie.clientHeight * 0.2)) {
+            this.setState(() => ({
+                showNextBtn: false
             }))
         }
     }
@@ -121,6 +132,10 @@ class Hie extends Component {
                         }
                     />
                 </article>
+                {this.state.showNextBtn && <NextShrineButton
+                    text={"Go to Gotokuji Shrine"}
+                    source={"#gotokuji"}
+                />}
             </section >
         );
     }
