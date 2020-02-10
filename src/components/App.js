@@ -4,6 +4,7 @@ import './App.scss';
 import Introduction from './Introduction.js';
 import ShrineDescription from './ShrineDescription.js';
 import ShrinePresentation from './ShrinePresentation.js';
+import SecondHead from './SecondHead';
 
 
 class App extends Component {
@@ -17,7 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Head />
+        {/* <Head /> */}
+        <SecondHead />
         <Introduction />
         <ShrinePresentation />
         <ShrineDescription />
