@@ -104,7 +104,9 @@ class SensojiGallery extends Component {
         const isHidden = this.state.show ? 'showGallery' : '';
         const elements = this.state.photos.map(element => <GalleryItem
             key={element}
-            src={require(`../images/Senso_ji_Temple/${element}.jpg`)}
+            src={require(`../images/Senso_ji_Temple/${element}_300.jpg`)}
+            srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
+
             click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
         />)
         return (
