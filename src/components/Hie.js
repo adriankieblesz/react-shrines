@@ -75,7 +75,14 @@ class Hie extends Component {
                                 and any other related to Shinto beliefs can have Tori Gates. Nonetheless, Hie shrine is
                                 one of those places where Tori Gates create wonderful and magic vibes.
                         </P>
-                            <img src={require(`../images/Hie_Shrine/12c.jpg`)} alt="" />
+                            <img
+                                src={require(`../images/Hie_Shrine/12c_800.jpg`)}
+                                alt=""
+                                srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} 1600w, 
+                                         ${require(`../images/Hie_Shrine/12c_800.jpg`)} 800w,
+                                         ${require(`../images/Hie_Shrine/12c_400.jpg`)} 400w
+                                         `}
+                            />
                         </div>
                     </ScrollShowElement>
 
@@ -90,7 +97,14 @@ class Hie extends Component {
                                 previous ones. And you will not escape from going up long and steep stairs. Anyway, it is worth
                                 to try go up and down through both entrances and take buch of pictures there.
                         </P>
-                            <img src={require(`../images/Hie_Shrine/8c.jpg`)} alt="" />
+                            <img
+                                src={require(`../images/Hie_Shrine/8c_800.jpg`)}
+                                alt=""
+                                srcSet={`${require(`../images/Hie_Shrine/8c.jpg`)} 1600w, 
+                                         ${require(`../images/Hie_Shrine/8c_800.jpg`)} 800w,
+                                         ${require(`../images/Hie_Shrine/8c_400.jpg`)} 400w
+                                         `}
+                            />
                         </div>
                     </ScrollShowElement>
                     <div className="hie-space">
@@ -104,7 +118,14 @@ class Hie extends Component {
                                 easly see skyscrapers on the background. I think pictures like that show interesting connection
                                 between traditional and modern Japan.
                         </P>
-                            <img src={require(`../images/Hie_Shrine/5c.jpg`)} alt="" />
+                            <img
+                                src={require(`../images/Hie_Shrine/5c_800.jpg`)}
+                                alt=""
+                                srcSet={`${require(`../images/Hie_Shrine/5c.jpg`)} 1600w, 
+                                         ${require(`../images/Hie_Shrine/5c_800.jpg`)} 800w,
+                                         ${require(`../images/Hie_Shrine/5c_400.jpg`)} 400w
+                                         `}
+                            />
                         </div>
                     </ScrollShowElement>
 

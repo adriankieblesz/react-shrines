@@ -13,7 +13,12 @@ class HieGallery extends Component {
     loadImages = () => {
         let images = [];
         for (let i = 0; i < 13; i++) {
-            images.push(<img src={require(`../images/Hie_Shrine/${i + 1}c.jpg`)} alt="hie-item" />)
+            images.push(<img
+                src={require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)}
+                alt="hie-item"
+                srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
+                         ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
+            />)
         }
 
         return images;
