@@ -17,7 +17,8 @@ class GotokujiGallery extends Component {
             key={this.state.pictureNumbers.indexOf(number)}
             classname={`gotokuji-gallery-item-${this.state.pictureNumbers.indexOf(number) + 1}`}
             source={require(`../images/Gotokuji_Temple/${number}c_500.jpg`)}
-            srcSet={`${require(`../images/Gotokuji_Temple/${number}c.jpg`)} 1600w,
+            srcSet={`
+                     ${require(`../images/Gotokuji_Temple/${number}c.jpg`)} 1600w,
                      ${require(`../images/Gotokuji_Temple/${number}c_500.jpg`)} 500w
                      `}
         />));
