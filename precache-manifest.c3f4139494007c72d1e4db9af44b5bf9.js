@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/11c_500.5795f5a5.jpg"
   },
   {
-    "revision": "b04237ddb357c63775b5",
+    "revision": "65c3f2d68db763d54009",
     "url": "/react-shrines/static/css/main.7897a447.chunk.css"
   },
   {
@@ -316,8 +316,8 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/10c_500.e21e2fd5.jpg"
   },
   {
-    "revision": "b04237ddb357c63775b5",
-    "url": "/react-shrines/static/js/main.a34d5260.chunk.js"
+    "revision": "65c3f2d68db763d54009",
+    "url": "/react-shrines/static/js/main.7f61ca54.chunk.js"
   },
   {
     "revision": "1c8bffbbc59eab76706b42de4c599f03",
@@ -468,52 +468,52 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/7c.ae5139cd.jpg"
   },
   {
-    "revision": "2527408c438ca4abbb8462358f880b6b",
-    "url": "/react-shrines/static/media/23c_1000.2527408c.jpg"
+    "revision": "ce0bc59a72e40bc0c2144196422a7727",
+    "url": "/react-shrines/static/media/23c_850.ce0bc59a.jpg"
   },
   {
-    "revision": "e1f1a573ff57c91f6615e97dfc9792e8",
-    "url": "/react-shrines/static/media/13c_1000.e1f1a573.jpg"
+    "revision": "1ed27f8da9cbed2ecd9bf816e8a5ec1b",
+    "url": "/react-shrines/static/media/13c_850.1ed27f8d.jpg"
   },
   {
-    "revision": "17f302e40a8de148828840bf980aef3b",
-    "url": "/react-shrines/static/media/22c_1000.17f302e4.jpg"
+    "revision": "3e96d052c86015179612099eb0c8f21b",
+    "url": "/react-shrines/static/media/22c_850.3e96d052.jpg"
   },
   {
-    "revision": "65cb4dc3796a573bd18b66f7e92f20b9",
-    "url": "/react-shrines/static/media/2c_1000.65cb4dc3.jpg"
+    "revision": "5028d343177e6e25dedd3013ac5cef80",
+    "url": "/react-shrines/static/media/2c_850.5028d343.jpg"
   },
   {
-    "revision": "8db1e8dcb1a463ea33044f3bfdb4d0e8",
-    "url": "/react-shrines/static/media/7c_1000.8db1e8dc.jpg"
+    "revision": "78808013869d0b0e0be9c9ec7f77b8aa",
+    "url": "/react-shrines/static/media/7c_850.78808013.jpg"
   },
   {
-    "revision": "18ddf3e4dbe0018da1299f5d4a1f7971",
-    "url": "/react-shrines/static/media/1c_1000.18ddf3e4.jpg"
+    "revision": "35ad4d2b579a3c35ce0438adc65a7f56",
+    "url": "/react-shrines/static/media/1c_850.35ad4d2b.jpg"
   },
   {
-    "revision": "e40b39b3a4ff82f8571471398441e4e0",
-    "url": "/react-shrines/static/media/15c_1000.e40b39b3.jpg"
+    "revision": "860adac9184427b59517d9164def6dc9",
+    "url": "/react-shrines/static/media/15c_850.860adac9.jpg"
   },
   {
-    "revision": "2bb66ba32ccb95ef07195f3f35f195b9",
-    "url": "/react-shrines/static/media/12c_1000.2bb66ba3.jpg"
+    "revision": "c38c08c9507102947c8a90fa93aa3ed5",
+    "url": "/react-shrines/static/media/12c_850.c38c08c9.jpg"
   },
   {
-    "revision": "5729554f08f83611524999bb5cce491b",
-    "url": "/react-shrines/static/media/19c_1000.5729554f.jpg"
+    "revision": "c6a4f35f600025df323d36dbca3fd5c4",
+    "url": "/react-shrines/static/media/19c_850.c6a4f35f.jpg"
   },
   {
-    "revision": "0848eb86601c333fb62c6c5af0909d4f",
-    "url": "/react-shrines/static/media/17c_1000.0848eb86.jpg"
+    "revision": "b862af3dd422bede8165074870cbd145",
+    "url": "/react-shrines/static/media/17c_850.b862af3d.jpg"
   },
   {
-    "revision": "2f02568304a4f2edb0ec33de3d09f121",
-    "url": "/react-shrines/static/media/18c_1000.2f025683.jpg"
+    "revision": "dea6db1e88401a52c368f9bd76f0128e",
+    "url": "/react-shrines/static/media/18c_850.dea6db1e.jpg"
   },
   {
-    "revision": "3fc0035d7d5cd73dc37ce5eb42a93e99",
-    "url": "/react-shrines/static/media/21c_1000.3fc0035d.jpg"
+    "revision": "206b5a92c62d467ab47ff73230d96feb",
+    "url": "/react-shrines/static/media/21c_850.206b5a92.jpg"
   },
   {
     "revision": "b5d3026a9e6c7b5d6f62c6caf433892b",
@@ -628,7 +628,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/9c.784b364c.jpg"
   },
   {
-    "revision": "38eb4f49fe42e3b9aeaf93b4c4986057",
+    "revision": "75bf54883603b787946bc9dc8f571b83",
     "url": "/react-shrines/index.html"
   }
 ];
