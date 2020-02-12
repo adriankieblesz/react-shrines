@@ -52,9 +52,8 @@ class Gotokuji extends Component {
                                 lived between XVII and XVIII century. He dedicated this shrine to his mother Otama
                                 also known as Keishōin.
                             <img
-                                    src={require('../images/Gotokuji_Temple/23c_850.jpg')}
+                                    src={require('../images/Gotokuji_Temple/23c_1000.jpg')}
                                     alt=""
-
                                 />
                             </P>
                         </ScrollShowElement>
@@ -63,7 +62,7 @@ class Gotokuji extends Component {
                                 This place is also known for Maneki-neko. Those cute cat figures are strictly related to
                                 Chinese and Japanese tradition. In XXI century Japan they symbolise prosperity and take away unhappiness.
                             <img
-                                    src={require('../images/Gotokuji_Temple/13c.jpg')}
+                                    src={require('../images/Gotokuji_Temple/13c_1000.jpg')}
                                     alt=""
 
                                 />
@@ -72,47 +71,47 @@ class Gotokuji extends Component {
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 If you reach to the shrine you will have oppurtunity to purchase one with reception that stays around the temple area.
-                            <img src={require('../images/Gotokuji_Temple/22c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/22c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Except main hall that you've seen on the first photo there is a lot of spots to view. For example,
                                 Three-Story Pagoda, which looks amazing and even better in autumn.
-                            <img src={require('../images/Gotokuji_Temple/2c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/2c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 A dog statue sitting on a big black incense burner
-                            <img src={require('../images/Gotokuji_Temple/7c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/7c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 A bell tower next to the one of entrance gates.
-                            <img src={require('../images/Gotokuji_Temple/1c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/1c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Maneki-neko hall. Usually closed inside but wonderful design.
-                            <img src={require('../images/Gotokuji_Temple/15c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/15c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Maneki-neko stalls, which is great place for taking pictures.
-                            <img src={require('../images/Gotokuji_Temple/12c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/12c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 You can also get to the Japanese buddish cementary.
-                            <img src={require('../images/Gotokuji_Temple/19c.jpg')} alt="" />
-                                <img src={require('../images/Gotokuji_Temple/17c.jpg')} alt="" />
-                                <img src={require('../images/Gotokuji_Temple/18c.jpg')} alt="" />
-                                <img src={require('../images/Gotokuji_Temple/21c.jpg')} alt="" />
+                            <img src={require('../images/Gotokuji_Temple/19c_1000.jpg')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/17c_1000.jpg')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/18c_1000.jpg')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/21c_1000.jpg')} alt="" />
                             </P>
                         </ScrollShowElement>
 
