@@ -8,16 +8,24 @@ class MeijiGallery extends Component {
         currentUrl: "",
         bottomImageClassName: "",
         topImageClassName: "",
+        images: []
     }
 
     returnImages = () => {
-        this.images = [];
-        for (let i = 0; i < 18; i++) {
-            this.images.push(<img key={i + 1} className={`meiji-bottom-image ${this.state.bottomImageClassName}`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.jpg`)} />)
-        }
+        // this.images = [];
+        // for (let i = 0; i < 18; i++) {
+        //     this.images.push(<img key={i + 1} className={`meiji-bottom-image ${this.state.bottomImageClassName}`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.jpg`)} />)
+        // }
 
+        // return this.images;
+        return new Promise((resolve, reject) => {
+            this.images = [];
+            for (let i = 0; i < 18; i++) {
+                this.images.push(<img key={i + 1} className={`meiji-bottom-image ${this.state.bottomImageClassName}`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.jpg`)} />)
+            }
+            resolve(this.images);
+        })
 
-        return this.images;
     }
 
     handleSlideLeft = () => {
@@ -71,6 +79,11 @@ class MeijiGallery extends Component {
         }))
     }
     componentDidMount() {
+
+        this.returnImages()
+            .then(respond => this.setState(() => ({
+                images: [...respond]
+            })));
         this.setState(() => ({
             currentUrl: require(`../images/Meiji_Shrine/${this.state.current}c.jpg`),
         }))
@@ -79,7 +92,8 @@ class MeijiGallery extends Component {
 
     render() {
         const image = <img className={`top-img ${this.state.topImageClassName}`} src={this.state.currentUrl} alt="" />
-        const images = this.returnImages();
+        // const images = this.returnImages();
+
 
         return (
             <div className="meiji-gallery">
@@ -102,7 +116,7 @@ class MeijiGallery extends Component {
                 </div>
                 <div className="meiji-gallery-bottom">
                     <div className="meiji-bottom-grid">
-                        {images}
+                        {this.state.images}
                     </div>
                 </div>
             </div>
