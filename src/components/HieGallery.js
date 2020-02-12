@@ -114,7 +114,6 @@ class HieGallery extends Component {
     //     window.removeEventListener('scroll', this.handleScroll);
     // }
     render() {
-        console.log(this.state.parentComponentAppeared);
         const { images, showGallery: show } = this.state;
         const galleryItems = images.map(image => (<div
             key={images.indexOf(image)}

@@ -14,7 +14,8 @@ class SensojiGallery extends Component {
         ],
         currentElement: null,
         show: false,
-        slideclass: "slideLeftModal"
+        slideclass: "slideLeftModal",
+        elements: [],
     }
     handleMouseDown = (e) => {
         e.preventDefault();
@@ -96,19 +97,38 @@ class SensojiGallery extends Component {
         window.scrollY > this.refs.senGalCol.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .4) && this.setState(() => ({
             show: true
         }))
+        if (this.props.allowAsyncGallery) {
+            this.returnElements()
+                .then(response => this.setState(() => ({
+                    elements: [...response]
+                })))
+        }
+    }
+    returnElements = () => {
+        return new Promise(resolve => {
+            const elements = this.state.photos.map(element => <GalleryItem
+                key={element}
+                src={require(`../images/Senso_ji_Temple/${element}_300.jpg`)}
+                srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
+
+                click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
+            />)
+
+            resolve(elements);
+        })
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
         const isHidden = this.state.show ? 'showGallery' : '';
-        const elements = this.state.photos.map(element => <GalleryItem
-            key={element}
-            src={require(`../images/Senso_ji_Temple/${element}_300.jpg`)}
-            srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
+        // const elements = this.state.photos.map(element => <GalleryItem
+        //     key={element}
+        //     src={require(`../images/Senso_ji_Temple/${element}_300.jpg`)}
+        //     srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
 
-            click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
-        />)
+        //     click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
+        // />)
         return (
             <div className={`sensoji-gallery ${isHidden}`}>
                 <h3>Gallery</h3>
@@ -121,7 +141,8 @@ class SensojiGallery extends Component {
                     style={{
                         //scrollSnapType: this.state.snapValue
                     }}>
-                    {elements}
+                    {/* {elements} */}
+                    {this.state.elements}
                 </div>
                 {this.state.openModal && <ModalWindow
                     modalSource={this.state.url}

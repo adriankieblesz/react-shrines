@@ -101,7 +101,7 @@ class Sensoji extends Component {
 
                 <article className="sensoji-article">
                     {grids}
-                    <SensojiGallery />
+                    <SensojiGallery allowAsyncGallery={this.state.isActive} />
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9162.670944887788!2d139.7924593836857!3d35.714082776094294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ec1a4463df1%3A0x6c0d289a8292810d!2zU2Vuc8WNLWpp!5e0!3m2!1spl!2spl!4v1577944734907!5m2!1spl!2spl"} />
@@ -113,12 +113,12 @@ class Sensoji extends Component {
                         }
                         tstation={
                             <P>
-                                You can get to <img src={require('../images/PT_icons/JK.jpg')} alt="JK" /> Keihin-Tōhoku Line to <strong>Kanada Station</strong> and then transfer to <img src={require('../images/PT_icons/G.jpg')} alt="G" /> Ginza Line to disembark at <strong>Asakusa Station</strong>
+                                You can get to <img src={require('../images/PT_icons/JK_25.png')} alt="JK" /> Keihin-Tōhoku Line to <strong>Kanada Station</strong> and then transfer to <img src={require('../images/PT_icons/G_25.png')} alt="G" /> Ginza Line to disembark at <strong>Asakusa Station</strong>
                             </P>
                         }
                         sstation={
                             <P>
-                                Find <img src={require('../images/PT_icons/JC.jpg')} alt="JC" /> Chūō Line and reach to <strong>Kanada Station</strong> then transfer to <img src={require('../images/PT_icons/G.jpg')} alt="G" /> Ginza Line and you will get to the <strong>Asakusa Station</strong>
+                                Find <img src={require('../images/PT_icons/JC_25.png')} alt="JC" /> Chūō Line and reach to <strong>Kanada Station</strong> then transfer to <img src={require('../images/PT_icons/G_25.png')} alt="G" /> Ginza Line and you will get to the <strong>Asakusa Station</strong>
                             </P>
                         }
                     />
