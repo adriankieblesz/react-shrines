@@ -11,11 +11,13 @@ class Gotokuji extends Component {
     state = {
         classname: "",
         backgroundPosition: 1,
-        showNextBtn: false
+        showNextBtn: false,
+        loadGallery: false
     }
     handleScroll = () => {
         window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
-            classname: "gotokuji-article-active"
+            classname: "gotokuji-article-active",
+            loadGallery: true
         }))
         if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
             this.setState(() => ({
@@ -126,7 +128,7 @@ class Gotokuji extends Component {
                     </div>
                 </article>
                 <article className="gotokuji-gallery-arcticle">
-                    <GotokujiGallery />
+                    <GotokujiGallery allowGallery={this.state.loadGallery} />
                 </article>
                 <article className="gotokuji-article-map" >
                     <Map ref={"map"}

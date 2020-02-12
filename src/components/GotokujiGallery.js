@@ -26,17 +26,25 @@ class GotokujiGallery extends Component {
         let pictureNumbers = [2, 11, 13, 16, 5, 18, 24, 15, 22, 21, 1, 20, 19, 7, 17, 25, 12, 23];
         this.setState(() => ({
             pictureNumbers: [...pictureNumbers],
-
         }))
+        window.addEventListener('scroll', this.handleScroll);
     }
-    componentDidUpdate() {
-        if (this.state.galleryItems.length === 0) {
+    handleScroll = () => {
+        if (this.props.allowGallery) {
             this.loadItems()
                 .then(respond => this.setState(() => ({
                     galleryItems: [...respond]
                 })))
         }
     }
+    // componentDidUpdate() {
+    //     if (this.state.galleryItems.length === 0) {
+    //         this.loadItems()
+    //             .then(respond => this.setState(() => ({
+    //                 galleryItems: [...respond]
+    //             })))
+    //     }
+    // }
     render() {
         // let galleryItems = this.state.pictureNumbers.map(number => (<GotokujiGalleryItem
         //     key={this.state.pictureNumbers.indexOf(number)}
