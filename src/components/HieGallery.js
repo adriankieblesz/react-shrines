@@ -11,17 +11,30 @@ class HieGallery extends Component {
         slideclass: "slideLeftModal"
     }
     loadImages = () => {
-        let images = [];
-        for (let i = 0; i < 13; i++) {
-            images.push(<img
-                src={require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)}
-                alt="hie-item"
-                srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
-                         ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
-            />)
-        }
+        // let images = [];
+        // for (let i = 0; i < 13; i++) {
+        //     images.push(<img
+        //         src={require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)}
+        //         alt="hie-item"
+        //         srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
+        //                  ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
+        //     />)
+        // }
 
-        return images;
+        // return images;
+        return new Promise(resolve => {
+            let images = [];
+            for (let i = 0; i < 13; i++) {
+                images.push(<img
+                    src={require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)}
+                    alt="hie-item"
+                    srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
+                            ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
+                />)
+            }
+
+            resolve(images);
+        })
     }
     handleModalOpen = (link, element) => {
         this.setState(() => ({
@@ -71,22 +84,37 @@ class HieGallery extends Component {
             }))
         }
     }
+    // handleScroll = () => {
+    //     window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - (this.refs.hie.clientHeight / 2) && this.setState(() => ({
+    //         showGallery: true,         
+    //     }))
+
+    // }
     handleScroll = () => {
+        if (this.props.asyncGalleryLoad) {
+            this.loadImages()
+                .then(respond => this.setState(() => ({
+                    images: [...respond]
+                })))
+
+        }
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - (this.refs.hie.clientHeight / 2) && this.setState(() => ({
-            showGallery: true
+            showGallery: true,
         }))
     }
     componentDidMount() {
-        let imgs = this.loadImages();
-        this.setState(() => ({
-            images: [...imgs]
-        }))
+        // let imgs = this.loadImages();
+        // this.setState(() => ({
+        //     images: [...imgs]
+        // }))
+
         window.addEventListener('scroll', this.handleScroll);
     }
     // componentWillUnmount() {
     //     window.removeEventListener('scroll', this.handleScroll);
     // }
     render() {
+        console.log(this.state.parentComponentAppeared);
         const { images, showGallery: show } = this.state;
         const galleryItems = images.map(image => (<div
             key={images.indexOf(image)}

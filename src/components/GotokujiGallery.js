@@ -47,7 +47,6 @@ class GotokujiGallery extends Component {
         //              ${require(`../images/Gotokuji_Temple/${number}c_500.jpg`)} 500w
         //              `}
         // />));
-        console.log(this.state.galleryItems);
         return (
             <div className="gotokuji-gallery">
                 {this.state.galleryItems}

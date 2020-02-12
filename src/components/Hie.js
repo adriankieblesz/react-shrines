@@ -12,11 +12,13 @@ class Hie extends Component {
         showHeader: false,
         scroll: 0,
         refss: 0,
-        showNextBtn: false
+        showNextBtn: false,
+        asyncGalleryLoad: false
     }
     handleScroll = () => {
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
-            showHeader: true
+            showHeader: true,
+            asyncGalleryLoad: true
         }))
 
         this.setState(() => ({
@@ -130,7 +132,7 @@ class Hie extends Component {
                     </ScrollShowElement>
 
                 </article>
-                <HieGallery />
+                <HieGallery asyncGalleryLoad={this.state.asyncGalleryLoad} />
                 <article className="gotokuji-article-map">
                     <Map ref={"map"}
                         iframe={
