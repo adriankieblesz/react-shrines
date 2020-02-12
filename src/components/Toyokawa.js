@@ -51,8 +51,8 @@ class Toyokawa extends Component {
                             experience embodied it into the statue of Daiki-Shinten.
                         </P>
                         <div className="toyokawa-grid">
-                            <img src={require(`../images/Toyokawa_Inari_Temple/3c.jpg`)} alt="" />
-                            <img src={require(`../images/Toyokawa_Inari_Temple/2c.jpg`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/3c_600.jpg`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/2c_600.jpg`)} alt="" />
                         </div>
                     </ScrollShowElement>
                     <ScrollShowElement classnameshow={"toyokawa-show-element"} classnamehide={"toyokawa-hide-element"}>
@@ -64,8 +64,8 @@ class Toyokawa extends Component {
                             see on the pictures there are pretty tight paths and there is no much space for crowds of people.
                         </P>
                         <div className="toyokawa-grid">
-                            <img src={require(`../images/Toyokawa_Inari_Temple/1c.jpg`)} alt="" />
-                            <img src={require(`../images/Toyokawa_Inari_Temple/4c.jpg`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/1c_600.jpg`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/4c_600.jpg`)} alt="" />
                         </div>
                         <P>
                             Nonetheless, Toyokawa Inari Shrine is one of those places that are worth being visited. Amazing

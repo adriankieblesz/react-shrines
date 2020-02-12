@@ -78,9 +78,9 @@ class Hie extends Component {
                             <img
                                 src={require(`../images/Hie_Shrine/12c_800.jpg`)}
                                 alt=""
-                                srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} 1600w, 
-                                         ${require(`../images/Hie_Shrine/12c_800.jpg`)} 800w,
-                                         ${require(`../images/Hie_Shrine/12c_400.jpg`)} 400w
+                                srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} x3, 
+                                         ${require(`../images/Hie_Shrine/12c_800.jpg`)} x2,
+                                         ${require(`../images/Hie_Shrine/12c_400.jpg`)} x1
                                          `}
                             />
                         </div>
