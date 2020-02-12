@@ -51,14 +51,22 @@ class Gotokuji extends Component {
                                 by Tokugawa Tsunayoshi. Tokugawa was fifth shōgun of the Tokugawa dynasty and
                                 lived between XVII and XVIII century. He dedicated this shrine to his mother Otama
                                 also known as Keishōin.
-                            <img src={require('../images/Gotokuji_Temple/23c.jpg')} alt="" />
+                            <img
+                                    src={require('../images/Gotokuji_Temple/23c_850.jpg')}
+                                    alt=""
+
+                                />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 This place is also known for Maneki-neko. Those cute cat figures are strictly related to
                                 Chinese and Japanese tradition. In XXI century Japan they symbolise prosperity and take away unhappiness.
-                            <img src={require('../images/Gotokuji_Temple/13c.jpg')} alt="" />
+                            <img
+                                    src={require('../images/Gotokuji_Temple/13c.jpg')}
+                                    alt=""
+
+                                />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>

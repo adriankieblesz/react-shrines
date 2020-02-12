@@ -14,7 +14,12 @@ class GotokujiGalleryItem extends Component {
     render() {
         return (
             <figure ref="figures" className={this.state.show ? `${this.props.classname} showFigure` : this.props.classname} >
-                <img src={this.props.source} alt="gotokuji-item" />
+                <img
+                    src={this.props.source}
+                    alt="gotokuji-item"
+                    srcSet={this.props.srcSet}
+                    sizes={this.props.sizes}
+                />
             </figure>
         );
     }
