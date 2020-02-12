@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "e21e2fd5fb858ae7453433df20435dcf",
-    "url": "/react-shrines/static/media/10c_500.e21e2fd5.jpg"
+    "revision": "14e6c85998cb77a4b0d16a1ee615181a",
+    "url": "/react-shrines/static/media/13c_500.14e6c859.jpg"
   },
   {
-    "revision": "609d6742e9d82837a573",
-    "url": "/react-shrines/static/css/main.8414f5fd.chunk.css"
+    "revision": "c1b5aa0690abc06e5102",
+    "url": "/react-shrines/static/css/main.97ee72ab.chunk.css"
   },
   {
     "revision": "923874c7f9e4e23be109",
@@ -388,8 +388,8 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/10c.eecf9060.jpg"
   },
   {
-    "revision": "609d6742e9d82837a573",
-    "url": "/react-shrines/static/js/main.288b522a.chunk.js"
+    "revision": "e21e2fd5fb858ae7453433df20435dcf",
+    "url": "/react-shrines/static/media/10c_500.e21e2fd5.jpg"
   },
   {
     "revision": "5795f5a5cb08ffd48ab79f97cb3934a4",
@@ -400,8 +400,8 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/12c_500.1c8bffbb.jpg"
   },
   {
-    "revision": "14e6c85998cb77a4b0d16a1ee615181a",
-    "url": "/react-shrines/static/media/13c_500.14e6c859.jpg"
+    "revision": "c1b5aa0690abc06e5102",
+    "url": "/react-shrines/static/js/main.288b522a.chunk.js"
   },
   {
     "revision": "fccaeb003c457b30907e20e5f794adf2",
@@ -776,7 +776,27 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/4c_600.f7bf00f1.jpg"
   },
   {
-    "revision": "5f65f67e0ba6dd684d6d01e98777ae16",
+    "revision": "5c679a0813930829d7bde8858cc2c180",
+    "url": "/react-shrines/static/media/8_500.5c679a08.jpg"
+  },
+  {
+    "revision": "df72a7a422d85ad526624d76111afc92",
+    "url": "/react-shrines/static/media/3c_500.df72a7a4.jpg"
+  },
+  {
+    "revision": "8112a5040c9a64be36b457bcfc71d639",
+    "url": "/react-shrines/static/media/13c_500.8112a504.jpg"
+  },
+  {
+    "revision": "078a1661f3f458b57ff178bd4a4a9cc6",
+    "url": "/react-shrines/static/media/1c_500.078a1661.jpg"
+  },
+  {
+    "revision": "0eb0e815f9ae38b0c93e1415c7b52927",
+    "url": "/react-shrines/static/media/10c_500.0eb0e815.jpg"
+  },
+  {
+    "revision": "8960cbc240057929f663e8c897e424ec",
     "url": "/react-shrines/index.html"
   }
 ];
