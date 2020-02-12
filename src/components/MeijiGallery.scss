@@ -119,8 +119,13 @@
         opacity: 1;
     }
 }
+// .trans{
+//         animation: opacityBlur 3s ease forwards; 
+// }
 .trans{
-    animation: opacityBlur 3s ease forwards;
+    .meiji-bottom-image{
+        animation: opacityBlur 3s ease forwards;
+    }   
 }
 
 @media(max-width:768px){

@@ -8,20 +8,34 @@ class ToyokawaGallery extends Component {
         url: "",
         currentElement: null,
         slideclass: "slideLeftModal",
-        show: false
+        show: false,
     }
     loadImages = () => {
-        let images = [];
-        for (let i = 0; i < 10; i++) {
-            images.push(<img
-                key={i + 1}
-                src={require(`../images/Toyokawa_Inari_Temple/${i + 1}c_400.jpg`)} alt="toyokawa"
-                onClick={() => this.handleModalOpen(require(`../images/Toyokawa_Inari_Temple/${i + 1}c.jpg`), (i + 1))
-                }
-            />);
-        }
+        // let images = [];
+        // for (let i = 0; i < 10; i++) {
+        //     images.push(<img
+        //         key={i + 1}
+        //         src={require(`../images/Toyokawa_Inari_Temple/${i + 1}c_400.jpg`)} alt="toyokawa"
+        //         onClick={() => this.handleModalOpen(require(`../images/Toyokawa_Inari_Temple/${i + 1}c.jpg`), (i + 1))
+        //         }
+        //     />);
+        // }
 
-        return images;
+        // return images;
+
+        return new Promise((resolve, reject) => {
+            let images = [];
+            for (let i = 0; i < 10; i++) {
+                images.push(<img
+                    key={i + 1}
+                    src={require(`../images/Toyokawa_Inari_Temple/${i + 1}c_400.jpg`)} alt="toyokawa"
+                    onClick={() => this.handleModalOpen(require(`../images/Toyokawa_Inari_Temple/${i + 1}c.jpg`), (i + 1))
+                    }
+                />);
+            }
+            resolve(images);
+        })
+
     }
     handleModalClose = () => {
         this.setState(() => ({ slideclass: "slideLeftModal" }))
@@ -79,8 +93,12 @@ class ToyokawaGallery extends Component {
         }))
     }
     componentDidMount() {
-        let images = this.loadImages();
-        this.setState({ images });
+        // let images = this.loadImages();
+        // this.setState({ images });
+        this.loadImages()
+            .then(respond => this.setState(() => ({
+                images: [...respond]
+            })))
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
