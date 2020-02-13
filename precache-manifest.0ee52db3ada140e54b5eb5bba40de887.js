@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "23d5ef587afa76c2529a3390b7da4bca",
-    "url": "/react-shrines/static/media/19c_500.23d5ef58.jpg"
+    "revision": "1e3010c78ce6b69558bd36920aa9fb1a",
+    "url": "/react-shrines/static/media/18c_500.1e3010c7.jpg"
   },
   {
-    "revision": "9f6e643f533df276b741",
-    "url": "/react-shrines/static/css/main.b8f1913f.chunk.css"
+    "revision": "db89d7838417c0006912",
+    "url": "/react-shrines/static/css/main.d6e8de3a.chunk.css"
   },
   {
     "revision": "923874c7f9e4e23be109",
@@ -348,6 +348,14 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/9c.56d8a5d8.jpg"
   },
   {
+    "revision": "05564ef2a564ccc0ac147f7491c657bd",
+    "url": "/react-shrines/static/media/8c_1920.05564ef2.jpg"
+  },
+  {
+    "revision": "657dcd8c24985976a4804feb1e292c87",
+    "url": "/react-shrines/static/media/3v2c_1920.657dcd8c.jpg"
+  },
+  {
     "revision": "2024744adbea28e8b99d34c2f800aa3c",
     "url": "/react-shrines/static/media/17c2_800.2024744a.jpg"
   },
@@ -368,8 +376,8 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/4c_800.820477a0.jpg"
   },
   {
-    "revision": "eecf90605107cb4e00e3b94efe24c8d5",
-    "url": "/react-shrines/static/media/10c.eecf9060.jpg"
+    "revision": "fed516a6d614a1e5a1c568a79a3211a0",
+    "url": "/react-shrines/static/media/10c_1920.fed516a6.jpg"
   },
   {
     "revision": "e21e2fd5fb858ae7453433df20435dcf",
@@ -400,12 +408,12 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/17c_500.7bd03144.jpg"
   },
   {
-    "revision": "1e3010c78ce6b69558bd36920aa9fb1a",
-    "url": "/react-shrines/static/media/18c_500.1e3010c7.jpg"
+    "revision": "db89d7838417c0006912",
+    "url": "/react-shrines/static/js/main.9cdb983c.chunk.js"
   },
   {
-    "revision": "9f6e643f533df276b741",
-    "url": "/react-shrines/static/js/main.9cdb983c.chunk.js"
+    "revision": "23d5ef587afa76c2529a3390b7da4bca",
+    "url": "/react-shrines/static/media/19c_500.23d5ef58.jpg"
   },
   {
     "revision": "3a8ee48c9f48b7d578cc94425f60b324",
@@ -450,6 +458,10 @@ self.__precacheManifest = [
   {
     "revision": "98951632a485fa8233b14bc3e2c69ac8",
     "url": "/react-shrines/static/media/7c_500.98951632.jpg"
+  },
+  {
+    "revision": "eecf90605107cb4e00e3b94efe24c8d5",
+    "url": "/react-shrines/static/media/10c.eecf9060.jpg"
   },
   {
     "revision": "abaf674db9447d80ce8c48895cd4ba0e",
@@ -772,12 +784,12 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/3c_500.df72a7a4.jpg"
   },
   {
-    "revision": "8112a5040c9a64be36b457bcfc71d639",
-    "url": "/react-shrines/static/media/13c_500.8112a504.jpg"
-  },
-  {
     "revision": "078a1661f3f458b57ff178bd4a4a9cc6",
     "url": "/react-shrines/static/media/1c_500.078a1661.jpg"
+  },
+  {
+    "revision": "8112a5040c9a64be36b457bcfc71d639",
+    "url": "/react-shrines/static/media/13c_500.8112a504.jpg"
   },
   {
     "revision": "0eb0e815f9ae38b0c93e1415c7b52927",
@@ -804,7 +816,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/4_1920.47fa11c5.jpg"
   },
   {
-    "revision": "b12b68981c435b7c7f4a8476132c1681",
+    "revision": "47f39f4065f7054fc5a50b290f6131e9",
     "url": "/react-shrines/index.html"
   }
 ];
