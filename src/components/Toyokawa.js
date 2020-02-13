@@ -51,8 +51,8 @@ class Toyokawa extends Component {
                             experience embodied it into the statue of Daiki-Shinten.
                         </P>
                         <div className="toyokawa-grid">
-                            <img src={require(`../images/Toyokawa_Inari_Temple/3c_600.jpg`)} alt="" />
-                            <img src={require(`../images/Toyokawa_Inari_Temple/2c_600.jpg`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/3c_600.webp`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/2c_600.webp`)} alt="" />
                         </div>
                     </ScrollShowElement>
                     <ScrollShowElement classnameshow={"toyokawa-show-element"} classnamehide={"toyokawa-hide-element"}>
@@ -64,8 +64,8 @@ class Toyokawa extends Component {
                             see on the pictures there are pretty tight paths and there is no much space for crowds of people.
                         </P>
                         <div className="toyokawa-grid">
-                            <img src={require(`../images/Toyokawa_Inari_Temple/1c_600.jpg`)} alt="" />
-                            <img src={require(`../images/Toyokawa_Inari_Temple/4c_600.jpg`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/1c_600.webp`)} alt="" />
+                            <img src={require(`../images/Toyokawa_Inari_Temple/4c_600.webp`)} alt="" />
                         </div>
                         <P>
                             Nonetheless, Toyokawa Inari Shrine is one of those places that are worth being visited. Amazing
@@ -85,12 +85,12 @@ class Toyokawa extends Component {
                         }
                         tstation={
                             <P>
-                                You can get to <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line which will directly take you to <strong>Akasaka-Mitsuke Station</strong> and then you will have to walk about 500 meters to shrine. The road is very easy.
+                                You can get to <img src={require('../images/PT_icons/M_25.png')} alt="M" /> Marunouchi Line which will directly take you to <strong>Akasaka-Mitsuke Station</strong> and then you will have to walk about 500 meters to shrine. The road is very easy.
                             </P>
                         }
                         sstation={
                             <P>
-                                The same story as with Tokyo Station, find <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 500 meters to destination.
+                                The same story as with Tokyo Station, find <img src={require('../images/PT_icons/M_25.png')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 500 meters to destination.
                             </P>
                         }
                     />

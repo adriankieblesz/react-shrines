@@ -29,7 +29,7 @@ class Meiji extends Component {
                             Meiji-jingu Shrine is placed deep inside of the forest in Shibuya district.
                             To get there you will need to pass one of the great gates at the beginning
                             of the forest. They are honestly big!
-                            <img src={require('../images/Meiji_Shrine/17c2_800.jpg')} alt="" />
+                            <img src={require('../images/Meiji_Shrine/17c2_800.webp')} alt="" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
@@ -37,14 +37,14 @@ class Meiji extends Component {
                             Then depending which side you passed in you will need to go through
                             long path of wonderful trees around you. To be hones when I was there
                             for the first time I felt like in some magic place.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/1c_800.jpg')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/1c_800.webp')} alt="" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
                         <P>
                             From time to time you will meet at your way those wonderful lanters
                             which probably are meant to elucidate path at nights.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/2c_800.jpg')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/2c_800.webp')} alt="" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
@@ -52,7 +52,7 @@ class Meiji extends Component {
                             And then you will finally reach to destination where entrance gate
                             of the shrine will meet you. If you are there around 1-4PM don't be
                             surprise by amount of people there. This shrine is very popular.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/9c_800.jpg')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/9c_800.webp')} alt="" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
@@ -62,7 +62,7 @@ class Meiji extends Component {
                             Emperor Mutsuhito (known as Meiji after death) contributed to significant
                             changes in Japanese system in XIX century creating fundamentals for modern Japan.
                             Shrine is also very popular amongs newlyweds for weeding ceremonies pictures.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/4c_800.jpg')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/4c_800.webp')} alt="" />
                         </P>
                     </MeijiItem>
 
@@ -81,7 +81,7 @@ class Meiji extends Component {
                         }
                         tstation={
                             <P>
-                                You can get to <img src={require('../images/PT_icons/JC.jpg')} alt="JK" /> Chūō Line Line to directly disembark at <strong>Yoyogi Station</strong>
+                                You can get to <img src={require('../images/PT_icons/JC_25.png')} alt="JK" /> Chūō Line Line to directly disembark at <strong>Yoyogi Station</strong>
                             </P>
                         }
                         sstation={

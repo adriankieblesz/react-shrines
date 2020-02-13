@@ -78,7 +78,7 @@ class Hie extends Component {
                                 one of those places where Tori Gates create wonderful and magic vibes.
                         </P>
                             <img
-                                src={require(`../images/Hie_Shrine/12c_800.jpg`)}
+                                src={require(`../images/Hie_Shrine/12c_800.webp`)}
                                 alt=""
                                 srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} x3, 
                                          ${require(`../images/Hie_Shrine/12c_800.jpg`)} x2,
@@ -100,7 +100,7 @@ class Hie extends Component {
                                 to try go up and down through both entrances and take buch of pictures there.
                         </P>
                             <img
-                                src={require(`../images/Hie_Shrine/8c_800.jpg`)}
+                                src={require(`../images/Hie_Shrine/8c_800.webp`)}
                                 alt=""
                                 srcSet={`${require(`../images/Hie_Shrine/8c.jpg`)} 1600w, 
                                          ${require(`../images/Hie_Shrine/8c_800.jpg`)} 800w,
@@ -121,7 +121,7 @@ class Hie extends Component {
                                 between traditional and modern Japan.
                         </P>
                             <img
-                                src={require(`../images/Hie_Shrine/5c_800.jpg`)}
+                                src={require(`../images/Hie_Shrine/5c_800.webp`)}
                                 alt=""
                                 srcSet={`${require(`../images/Hie_Shrine/5c.jpg`)} 1600w, 
                                          ${require(`../images/Hie_Shrine/5c_800.jpg`)} 800w,
@@ -145,12 +145,12 @@ class Hie extends Component {
                         }
                         tstation={
                             <P>
-                                You can get to <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line and disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk about 400 meters to get to the shrine.
+                                You can get to <img src={require('../images/PT_icons/M_25.png')} alt="M" /> Marunouchi Line and disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk about 400 meters to get to the shrine.
                             </P>
                         }
                         sstation={
                             <P>
-                                Simillary as with Tokyo Station, try to find <img src={require('../images/PT_icons/M.jpg')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 400 meters to shrine.
+                                Simillary as with Tokyo Station, try to find <img src={require('../images/PT_icons/M_25.png')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 400 meters to shrine.
                             </P>
                         }
                     />

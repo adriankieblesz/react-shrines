@@ -6,7 +6,7 @@ const MeijiHead = (props) => {
         <div className={`meiji-head ${props.classnameshow}`}>
             <div className="meiji-head-grid">
                 <div className="meiji-grid-item">
-                    <img src={require('../images/Meiji_Shrine/17c2.jpg')} alt="" />
+                    <img src={require('../images/Meiji_Shrine/17c2.webp')} alt="" />
                 </div>
                 <div className="meiji-grid-item">
                     <ShrineTitle

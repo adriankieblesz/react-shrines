@@ -21,7 +21,7 @@ class MeijiGallery extends Component {
         return new Promise((resolve, reject) => {
             let images = [];
             for (let i = 0; i < 18; i++) {
-                images.push(<img key={i + 1} className={`meiji-bottom-image`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.jpg`)} />)
+                images.push(<img key={i + 1} className={`meiji-bottom-image`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.webp`)} />)
             }
             resolve(images);
         })
