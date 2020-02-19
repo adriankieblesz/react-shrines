@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2144c1e2feaf34346ad27b794f99f811",
-    "url": "/react-shrines/static/media/18c_800.2144c1e2.webp"
+    "revision": "7930a7f5c5d3a11ed00dda49aa668522",
+    "url": "/react-shrines/static/media/5c_800.7930a7f5.webp"
   },
   {
-    "revision": "fe09053c7445b1587348",
-    "url": "/react-shrines/static/css/main.8fbd086a.chunk.css"
+    "revision": "552c3b649babc3391a08",
+    "url": "/react-shrines/static/css/main.8e2cc6a4.chunk.css"
   },
   {
     "revision": "923874c7f9e4e23be109",
@@ -424,16 +424,16 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/17c_800.2162baa8.webp"
   },
   {
-    "revision": "fe09053c7445b1587348",
-    "url": "/react-shrines/static/js/main.e56b66f5.chunk.js"
+    "revision": "2144c1e2feaf34346ad27b794f99f811",
+    "url": "/react-shrines/static/media/18c_800.2144c1e2.webp"
   },
   {
     "revision": "e6156e6966cef6dd2db2a2c89d9e80d3",
     "url": "/react-shrines/static/media/3c_800.e6156e69.webp"
   },
   {
-    "revision": "7930a7f5c5d3a11ed00dda49aa668522",
-    "url": "/react-shrines/static/media/5c_800.7930a7f5.webp"
+    "revision": "552c3b649babc3391a08",
+    "url": "/react-shrines/static/js/main.e56b66f5.chunk.js"
   },
   {
     "revision": "e0a4dcdfd581dc1f2d97aaa3713c0869",
@@ -840,6 +840,18 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/10c_500.d1db4b2e.webp"
   },
   {
+    "revision": "acf40a1ce56ee7109c1f8f033d028ea7",
+    "url": "/react-shrines/static/media/1_1920v2.acf40a1c.webp"
+  },
+  {
+    "revision": "322e9a10a53c77bc19a34bec6d2e04aa",
+    "url": "/react-shrines/static/media/3_1920v2.322e9a10.webp"
+  },
+  {
+    "revision": "e151911b50cb3ae522da55038628efec",
+    "url": "/react-shrines/static/media/2_1920v2.e151911b.webp"
+  },
+  {
     "revision": "79069a029dfaa0cc128594e4ac5db694",
     "url": "/react-shrines/static/media/5_1920v2.79069a02.webp"
   },
@@ -848,7 +860,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/4_1920v2.2c6f3f58.webp"
   },
   {
-    "revision": "0858319b86475b30b321a5de147b57eb",
+    "revision": "71f9c73bf1c58bf99244dbd1ab6b6932",
     "url": "/react-shrines/index.html"
   }
 ];
