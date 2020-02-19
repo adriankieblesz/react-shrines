@@ -26,10 +26,10 @@ class HieGallery extends Component {
             let images = [];
             for (let i = 0; i < 13; i++) {
                 images.push(<img
-                    src={require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)}
+                    src={require(`../images/Hie_Shrine/${i + 1}c_400.webp`)}
                     alt="hie-item"
-                    srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
-                            ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
+                // srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
+                //         ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
                 />)
             }
 
@@ -110,9 +110,9 @@ class HieGallery extends Component {
 
         window.addEventListener('scroll', this.handleScroll);
     }
-    // componentWillUnmount() {
-    //     window.removeEventListener('scroll', this.handleScroll);
-    // }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
     render() {
         const { images, showGallery: show } = this.state;
         const galleryItems = images.map(image => (<div

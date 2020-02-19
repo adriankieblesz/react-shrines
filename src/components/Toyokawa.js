@@ -11,11 +11,18 @@ import NextShrineButton from './NextShrineButton';
 class Toyokawa extends Component {
     state = {
         showHeader: false,
-        showNextBtn: false
+        showNextBtn: false,
+        allowGallery: false
     }
     handleScroll = () => {
+        if (!this.state.allowGallery) {
+            this.setState(() => ({
+                allowGallery: true
+            }))
+        }
         window.scrollY > this.refs.toyokawa.getBoundingClientRect().top + window.scrollY - 10 && this.setState(() => ({
-            showHeader: true
+            showHeader: true,
+            // allowGallery: true
         }))
         if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
             this.setState(() => ({
@@ -73,7 +80,7 @@ class Toyokawa extends Component {
                         </P>
                     </ScrollShowElement>
 
-                    <ToyokawaGallery />
+                    <ToyokawaGallery allowGallery={this.state.allowGallery} />
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.024221616309!2d139.73066131525857!3d35.67640558019544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c7e121ee92b%3A0x5761574668b96c9!2sToyokawa%20Inari%20Tokyo%20Betsuin!5e0!3m2!1spl!2spl!4v1580643642437!5m2!1spl!2spl"} />

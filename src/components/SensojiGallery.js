@@ -12,6 +12,7 @@ class SensojiGallery extends Component {
         photos: [
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
         ],
+        modalImages: [],
         currentElement: null,
         show: false,
         slideclass: "slideLeftModal",
@@ -108,17 +109,28 @@ class SensojiGallery extends Component {
         return new Promise(resolve => {
             const elements = this.state.photos.map(element => <GalleryItem
                 key={element}
-                src={require(`../images/Senso_ji_Temple/${element}_300.jpg`)}
-                srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
+                src={require(`../images/Senso_ji_Temple/${element}_300.webp`)}
+                // srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
 
                 click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
             />)
-
             resolve(elements);
         })
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        fetch('data/img-data.json')
+            .then(respond => respond.json())
+            .then(result => this.setState(() => ({
+                modalImages: [...result.sensoji]
+            })))
+        // .then(result => this.setState(() => ({
+        //     secondPhotos: result.images
+        // })))
+        // .catch(error => console.log(error))
+    }
+    componentDidUpdate() {
+        console.log(this.state.modalImages)
     }
     render() {
         const isHidden = this.state.show ? 'showGallery' : '';
@@ -129,6 +141,7 @@ class SensojiGallery extends Component {
 
         //     click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
         // />)
+
         return (
             <div className={`sensoji-gallery ${isHidden}`}>
                 <h3>Gallery</h3>

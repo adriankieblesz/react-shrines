@@ -70,22 +70,28 @@ class MeijiGallery extends Component {
         let current = imgIndex
         this.setState(() => ({
             current: current,
-            currentUrl: require(`../images/Meiji_Shrine/${current}c.jpg`)
+            currentUrl: require(`../images/Meiji_Shrine/${current}c_800.webp`)
         }))
     }
     handleScroll = () => {
         window.scrollY > this.refs.topPicture.getBoundingClientRect().top + window.scrollY - 200 && this.setState(() => ({
             bottomImageClassName: "trans"
         }))
+        if (this.props.allowGallery) {
+            this.returnImages()
+                .then(respond => this.setState(() => ({
+                    images: [...respond]
+                })));
+        }
     }
     componentDidMount() {
 
-        this.returnImages()
-            .then(respond => this.setState(() => ({
-                images: [...respond]
-            })));
+        // this.returnImages()
+        //     .then(respond => this.setState(() => ({
+        //         images: [...respond]
+        //     })));
         this.setState(() => ({
-            currentUrl: require(`../images/Meiji_Shrine/${this.state.current}c.jpg`),
+            currentUrl: require(`../images/Meiji_Shrine/${this.state.current}c_800.webp`),
         }))
         window.addEventListener('scroll', this.handleScroll);
     }

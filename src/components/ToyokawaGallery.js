@@ -89,16 +89,22 @@ class ToyokawaGallery extends Component {
     }
     handleScroll = () => {
         window.scrollY > this.refs.toyokawaGallery.getBoundingClientRect().top + window.scrollY - (this.refs.toyokawaGallery.clientHeight * .5) && this.setState(() => ({
-            show: true
+            show: true,
         }))
+        if (this.props.allowGallery) {
+            this.loadImages()
+                .then(respond => this.setState(() => ({
+                    images: [...respond]
+                })))
+        }
     }
     componentDidMount() {
         // let images = this.loadImages();
         // this.setState({ images });
-        this.loadImages()
-            .then(respond => this.setState(() => ({
-                images: [...respond]
-            })))
+        // this.loadImages()
+        //     .then(respond => this.setState(() => ({
+        //         images: [...respond]
+        //     })))
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {

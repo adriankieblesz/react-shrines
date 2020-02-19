@@ -15,9 +15,14 @@ class Gotokuji extends Component {
         loadGallery: false
     }
     handleScroll = () => {
+        if (!this.state.loadGallery) {
+            this.setState(() => ({
+                loadGallery: true
+            }))
+        }
         window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
             classname: "gotokuji-article-active",
-            loadGallery: true
+            // loadGallery: true
         }))
         if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
             this.setState(() => ({

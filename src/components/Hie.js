@@ -16,9 +16,14 @@ class Hie extends Component {
         asyncGalleryLoad: false
     }
     handleScroll = () => {
+        if (!this.state.asyncGalleryLoad) {
+            this.setState(() => ({
+                asyncGalleryLoad: true
+            }))
+        }
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHeader: true,
-            asyncGalleryLoad: true
+            // asyncGalleryLoad: true
         }))
 
         this.setState(() => ({
@@ -80,10 +85,10 @@ class Hie extends Component {
                             <img
                                 src={require(`../images/Hie_Shrine/12c_800.webp`)}
                                 alt=""
-                                srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} x3, 
-                                         ${require(`../images/Hie_Shrine/12c_800.jpg`)} x2,
-                                         ${require(`../images/Hie_Shrine/12c_400.jpg`)} x1
-                                         `}
+                            // srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} x3, 
+                            //          ${require(`../images/Hie_Shrine/12c_800.jpg`)} x2,
+                            //          ${require(`../images/Hie_Shrine/12c_400.jpg`)} x1
+                            //          `}
                             />
                         </div>
                     </ScrollShowElement>
@@ -102,10 +107,10 @@ class Hie extends Component {
                             <img
                                 src={require(`../images/Hie_Shrine/8c_800.webp`)}
                                 alt=""
-                                srcSet={`${require(`../images/Hie_Shrine/8c.jpg`)} 1600w, 
-                                         ${require(`../images/Hie_Shrine/8c_800.jpg`)} 800w,
-                                         ${require(`../images/Hie_Shrine/8c_400.jpg`)} 400w
-                                         `}
+                            // srcSet={`${require(`../images/Hie_Shrine/8c.jpg`)} 1600w, 
+                            //          ${require(`../images/Hie_Shrine/8c_800.jpg`)} 800w,
+                            //          ${require(`../images/Hie_Shrine/8c_400.jpg`)} 400w
+                            //          `}
                             />
                         </div>
                     </ScrollShowElement>
@@ -123,10 +128,10 @@ class Hie extends Component {
                             <img
                                 src={require(`../images/Hie_Shrine/5c_800.webp`)}
                                 alt=""
-                                srcSet={`${require(`../images/Hie_Shrine/5c.jpg`)} 1600w, 
-                                         ${require(`../images/Hie_Shrine/5c_800.jpg`)} 800w,
-                                         ${require(`../images/Hie_Shrine/5c_400.jpg`)} 400w
-                                         `}
+                            // srcSet={`${require(`../images/Hie_Shrine/5c.jpg`)} 1600w, 
+                            //          ${require(`../images/Hie_Shrine/5c_800.jpg`)} 800w,
+                            //          ${require(`../images/Hie_Shrine/5c_400.jpg`)} 400w
+                            //          `}
                             />
                         </div>
                     </ScrollShowElement>

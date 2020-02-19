@@ -8,11 +8,18 @@ import Iframe from './Iframe'
 import './Meiji.scss';
 class Meiji extends Component {
     state = {
-        showHead: false
+        showHead: false,
+        allowGallery: false
     }
     handleScroll = () => {
+        if (!this.state.allowGallery) {
+            this.setState(() => ({
+                allowGallery: true
+            }))
+        }
         window.scrollY > this.refs.meiji.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
-            showHead: true
+            showHead: true,
+            // allowGallery: true
         }))
     }
     componentDidMount() {
@@ -67,7 +74,7 @@ class Meiji extends Component {
                     </MeijiItem>
 
                 </article>
-                <MeijiGallery />
+                <MeijiGallery allowGallery={this.state.allowGallery} />
                 <article className="meiji-article meiji-article-map" >
                     <Map ref={"map"}
                         iframe={

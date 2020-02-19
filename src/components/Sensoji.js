@@ -70,18 +70,18 @@ class Sensoji extends Component {
             key={this.state.sensojiInfo.indexOf(info)}
             classname={info.classname}
             source={require(`../images/Senso_ji_Temple/${info.number[0]}_800.webp`)}
-            srcSet={`${require(`../images/Senso_ji_Temple/${info.number[0]}.jpg`)} 1600w, 
-                     ${require(`../images/Senso_ji_Temple/${info.number[0]}_800.jpg`)} 800w,
-                     ${require(`../images/Senso_ji_Temple/${info.number[0]}_300.jpg`)} 300w
-            `}
+            // srcSet={`${require(`../images/Senso_ji_Temple/${info.number[0]}.jpg`)} 1600w, 
+            //          ${require(`../images/Senso_ji_Temple/${info.number[0]}_800.jpg`)} 800w,
+            //          ${require(`../images/Senso_ji_Temple/${info.number[0]}_300.jpg`)} 300w
+            // `}
             alt={"Senso-Ji"}
             description={info.description[0]}
             secondDescription={info.description[1]}
             secondSource={require(`../images/Senso_ji_Temple/${info.number[1]}_800.webp`)}
-            secondSrcSet={`${require(`../images/Senso_ji_Temple/${info.number[1]}.jpg`)} 1600w, 
-                           ${require(`../images/Senso_ji_Temple/${info.number[1]}_800.jpg`)} 800w,
-                           ${require(`../images/Senso_ji_Temple/${info.number[1]}_300.jpg`)} 300w
-            `}
+        // secondSrcSet={`${require(`../images/Senso_ji_Temple/${info.number[1]}.jpg`)} 1600w, 
+        //                ${require(`../images/Senso_ji_Temple/${info.number[1]}_800.jpg`)} 800w,
+        //                ${require(`../images/Senso_ji_Temple/${info.number[1]}_300.jpg`)} 300w
+        // `}
         />)
         return (
             <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef" style={{ backgroundPositionY: this.state.backgroundPosition }}>
