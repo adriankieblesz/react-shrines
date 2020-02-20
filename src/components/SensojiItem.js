@@ -2,40 +2,39 @@ import React from 'react';
 import './SensojiItem.scss'
 import ScrollShowElement from './ScrollShowElement';
 
-const ShrineGrid = (props) => {
+const ShrineGrid = ({ classname, source, alt, srcSet, sizes, description, secondDescription, secondSource, secondSrcSet, seconsSizes }) => {
     return (
         <React.Fragment>
             <ScrollShowElement classnamehide={"hideLeft"} classnameshow={"showElementLeft"}>
-                <div className={props.classname}>
+                <div className={classname}>
                     <figure>
                         <img
-                            src={props.source}
-                            alt={props.alt}
-                            srcSet={props.srcSet}
-                            sizes={props.sizes}
+                            src={source}
+                            alt={alt}
+                            srcSet={srcSet}
+                            sizes={sizes}
                         />
                     </figure>
                     <p>
-                        {props.description}
+                        {description}
                     </p>
                 </div>
             </ScrollShowElement>
             <ScrollShowElement classnamehide={"hideRight"} classnameshow={"showElementRight"}>
-                <div className={props.classname}>
+                <div className={classname}>
                     <p>
-                        {props.secondDescription}
+                        {secondDescription}
                     </p>
                     <figure>
                         <img
-                            src={props.secondSource}
-                            alt={props.alt}
-                            srcSet={props.secondSrcSet}
-                            sizes={props.seconsSizes}
+                            src={secondSource}
+                            alt={alt}
+                            srcSet={secondSrcSet}
+                            sizes={seconsSizes}
                         />
                     </figure>
                 </div>
             </ScrollShowElement>
-
         </React.Fragment>
     );
 }

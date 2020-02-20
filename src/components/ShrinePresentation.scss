@@ -13,21 +13,11 @@
         transition: all .5s ease;
         opacity: 0;
         display: block;
-        
-        &:nth-child(1){
-            background-image: url('../images/Presentation/8_500.webp');
-        }
-        &:nth-child(2){           
-            background-image: url('../images/Presentation/1c_500.webp');
-        }
-        &:nth-child(3){           
-            background-image: url('../images/Presentation/10c_500.webp');
-        }
-        &:nth-child(4){           
-            background-image: url('../images/Presentation/3c_500.webp');
-        }
-        &:nth-child(5){           
-            background-image: url('../images/Presentation/13c_500.webp');
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}){
+                background-image: url("../images/Presentation/#{$i}_500.webp");
+            }
         }
         .blur{
             transition: background-color .5s ease;
@@ -51,7 +41,6 @@
         height: 100%;
     }
 }
-
 .displayBackgorund{
     animation: displayBackgorunds .5s ease-in forwards;
     @for $i from 1 through 5{
@@ -71,13 +60,21 @@
     }
 
 }
-
 .changeBlurOpacity{
+    -webkit-animation: changeBlurgroundOpacity 2s ease-in;
     animation: changeBlurgroundOpacity 2s ease-in;
     @for $i from 1 through 5{
         &:nth-child(#{$i}){
             animation-delay: ($i * 0.2s);
         }
+    }
+}
+@-webkit-keyframes changeBlurgroundOpacity{
+    0%{
+        background-color: rgba(0,0,0,.1);
+    }
+    100%{
+        background-color: rgba(0,0,0,.8);
     }
 }
 @keyframes changeBlurgroundOpacity{
@@ -88,7 +85,6 @@
         background-color: rgba(0,0,0,.8);
     }
 }
-
 @media(max-width:1024px){
     .shrine-presentation{
         grid-template-columns: 1fr;

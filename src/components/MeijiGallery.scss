@@ -4,7 +4,6 @@
 
     .meiji-gallery-top{
         width: 100%;
-        // min-height: 70vh;
         height: 70vh;
         background-color: rgb(45, 45, 58);
         display: grid;
@@ -13,14 +12,12 @@
 
         .meiji-top-picture{
             max-width: 40%;
-            // height: auto;
             height: 80%;
             border: 10px solid white;
             position: relative;
+
             .top-img{
                 transition: opacity .3s ease;
-                // opacity: 0;
-                // animation: opacityBlur 2s ease forwards;
                 width: 100%;
                 min-height: 100%;
                 max-height: 100%;
@@ -34,10 +31,10 @@
                 top: 50%;
                 border-radius: 50px;
                 border: none;
+
                 &:hover{
                     cursor: pointer;
-                }
-                
+                }          
                 figure{
                     padding:0;
                     margin: 0;
@@ -46,8 +43,7 @@
                         width: 100%;
                         height: 100%;
                     }
-                }
-                
+                }     
             }
             .meiji-btnLeft{
                 left: -120px;
@@ -68,7 +64,6 @@
         align-content: center;
         padding: 10px 0;
         
-
         .meiji-bottom-grid{
             justify-items: center;
             width: 90%;
@@ -81,20 +76,16 @@
             
             .meiji-bottom-image{
                 transition: transform .2s ease;;
-                // max-width: 100%;
-                // max-height: auto;
                 width: 100%;
                 max-height: 115px;
-
-
                 justify-self: center;
                 opacity: 0;
+
                 @for $i from 1 through 18{
                     &:nth-child(#{$i}){
                         animation-delay: $i * 0.05s;
                     }
                 }
-
                 &:hover{
                     cursor: pointer;
                     transform: scale(1.05,1.05);
@@ -119,9 +110,6 @@
         opacity: 1;
     }
 }
-// .trans{
-//         animation: opacityBlur 3s ease forwards; 
-// }
 .trans{
     .meiji-bottom-image{
         animation: opacityBlur 3s ease forwards;
@@ -131,19 +119,17 @@
 @media(max-width:768px){
     .meiji-gallery{
         .meiji-gallery-top{
+
             .meiji-top-picture{
                 max-width: 100%;
+
                 .meiji-btnLeft{
-                    left: -20px;
-                    
-                    
+                    left: -20px;                   
                 }
                 .meiji-btnRight{
-                    right: -20px;
-                    
+                    right: -20px;                   
                 }
             } 
-
         }        
     }    
 }

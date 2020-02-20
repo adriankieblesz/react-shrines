@@ -5,6 +5,7 @@ class Map extends Component {
         classname: ""
     }
     handleScroll = () => {
+        //show map if passes fixed visible point
         window.scrollY > this.refs.map.getBoundingClientRect().top + window.scrollY - 500 && this.setState(() => ({
             classname: "show-map"
         }))
@@ -13,27 +14,27 @@ class Map extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
+        const { classname } = this.state;
+        const { iframe, description, tstation, sstation } = this.props;
         return (
             <Fragment>
-                <div className={this.state.classname} ref="map">
+                <div className={classname} ref="map">
                     <h2 className="map-header">How to get there?</h2>
                     <img className="map-img" src={require('../images/Icons/map.png')} alt="" />
                     <div className="map-grid">
                         <div className="map-item map-first">
-                            {this.props.iframe}
+                            {iframe}
                         </div>
                         <div className="map-item map-second">
-                            <span>{this.props.description}</span>
+                            <span>{description}</span>
                             <span><h4>From Tokyo Station:</h4></span>
-                            <span>{this.props.tstation}</span>
+                            <span>{tstation}</span>
                             <span><h4>From Shinjuku Station:</h4></span>
-                            <span>{this.props.sstation}</span>
+                            <span>{sstation}</span>
                         </div>
                     </div>
                 </div>
-
             </Fragment>
-
         );
     }
 }

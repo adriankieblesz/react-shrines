@@ -7,8 +7,7 @@
     z-index: 1;
     right: 20px;
     
-    #nav-btn-spans{
-        
+    #nav-btn-spans{       
         width: 25px;
         height: 25px;
         position: relative;
@@ -28,43 +27,36 @@
             position: absolute;           
             left: 50%;
             transform: translate(-50%, 0);
-            &:nth-child(1){
-                top: 6px;
-            }
-            &:nth-child(2){
-                top:12px;
-            }
-            &:nth-child(3){
-                top: 18px;
+
+            @for $i from 1 through 3{
+                &:nth-child(#{$i}){
+                    top: calc(#{$i} * 6px);
+                }
             }
         }
     }
     
 }
-
-#nav-btn-spans.openSpan span{
+#nav-btn-spans.openSpan span{  
     
-    &:nth-child(1){
-        top:12px; 
-        transform: translate(-50%, 0) rotate(135deg) ;
-        
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}){
+            @if $i == 1 {
+                top:12px; 
+                transform: translate(-50%, 0) rotate(135deg) ;
+            }
+            @else if $i == 2 {
+                left: 0;
+                opacity: 0;
+            }
+            @else {
+                top:12px;
+                transform: translate(-50%,0) rotate(-135deg) ;     
+            }
+        }
     }
-    &:nth-child(2){
-     left: 0;
-        opacity: 0;
-    }
-    &:nth-child(3){
-         top:12px;
-         transform: translate(-50%,0) rotate(-135deg) ;
-         
-    }
-
-
 }
-
-
 @media(max-width:1024px){
-
     .nav-btn{
         display: block;
     }

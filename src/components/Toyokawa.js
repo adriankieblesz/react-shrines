@@ -15,20 +15,24 @@ class Toyokawa extends Component {
         allowGallery: false
     }
     handleScroll = () => {
-        if (!this.state.allowGallery) {
+        const { allowGallery } = this.state;
+        //allow gallery loading asynchronously
+        if (!allowGallery) {
             this.setState(() => ({
                 allowGallery: true
             }))
         }
+        //show top part of the component
         window.scrollY > this.refs.toyokawa.getBoundingClientRect().top + window.scrollY - 10 && this.setState(() => ({
             showHeader: true,
-            // allowGallery: true
         }))
+        //show next shrine button
         if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
             this.setState(() => ({
                 showNextBtn: true
             }))
         }
+        //hide next shrine button
         if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
             this.setState(() => ({
                 showNextBtn: false
@@ -42,9 +46,10 @@ class Toyokawa extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
     render() {
+        const { showHeader, allowGallery, showNextBtn } = this.state;
         return (
             <section id="toyokawa" ref="toyokawa">
-                <ToyokawaHead classname={this.state.showHeader ? "toyokawa-header show-toyokawa-header" : "toyokawa-header"} />
+                <ToyokawaHead classname={showHeader ? "toyokawa-header show-toyokawa-header" : "toyokawa-header"} />
                 <article className="toyokawa-article">
                     <ScrollShowElement classnameshow={"toyokawa-show-element"} classnamehide={"toyokawa-hide-element"}>
                         <P>
@@ -80,7 +85,7 @@ class Toyokawa extends Component {
                         </P>
                     </ScrollShowElement>
 
-                    <ToyokawaGallery allowGallery={this.state.allowGallery} />
+                    <ToyokawaGallery allowGallery={allowGallery} />
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.024221616309!2d139.73066131525857!3d35.67640558019544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c7e121ee92b%3A0x5761574668b96c9!2sToyokawa%20Inari%20Tokyo%20Betsuin!5e0!3m2!1spl!2spl!4v1580643642437!5m2!1spl!2spl"} />
@@ -102,14 +107,10 @@ class Toyokawa extends Component {
                         }
                     />
                 </article>
-                {/* {this.state.showNextBtn && <NextShrineButton
-                    text={"Go to Meiji Shrine"}
-                    source={"#meiji"}
-                />} */}
                 <NextShrineButton
                     text={"Go to Meiji Shrine"}
                     source={"#meiji"}
-                    show={this.state.showNextBtn}
+                    show={showNextBtn}
                 />
             </section>
         );

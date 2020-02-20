@@ -1,3 +1,4 @@
+// set of possible animations
 .hideLeft{   
     opacity: 0;
     transform: translateX(-100%);
@@ -29,7 +30,16 @@
     transform: translateY(-100%);
 }
 .showElementHeight{
+    -webkit-animation: heightDown .5s ease-in-out forwards;
     animation: heightDown .5s ease-in-out forwards;
+}
+@-webkit-keyframes heightDown{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
 }
 @keyframes heightDown{
     from{

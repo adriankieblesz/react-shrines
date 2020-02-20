@@ -16,8 +16,8 @@ class SensojiGallery extends Component {
         currentElement: null,
         show: false,
         slideclass: "slideLeftModal",
-        elements: [],
     }
+    //calculate for mouse button clicked and held
     handleMouseDown = (e) => {
         e.preventDefault();
         this.setState({
@@ -26,24 +26,29 @@ class SensojiGallery extends Component {
             scrollLeft: this.refs.senGalCol.scrollLeft,
         })
     }
+    //mouse leaves area of gallery images list
     handleMouseLeave = () => {
         this.setState(() => ({
             isDown: false
         }))
     }
+    //mouse button is not pushed anymore
     handleMouseUp = () => {
         this.setState(() => ({
             isDown: false,
             snapValue: ""
         }))
     }
+    //mouse moves after mouse button had been held
     handleMouseMove = (e) => {
-        if (!this.state.isDown) return;
+        const { isDown, startX, scrollLeft } = this.state;
+        if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - this.refs.senGalCol.offsetLeft
-        const movePath = x - this.state.startX;
-        this.refs.senGalCol.scrollLeft = this.state.scrollLeft - movePath;
+        const movePath = x - startX;
+        this.refs.senGalCol.scrollLeft = scrollLeft - movePath;
     }
+    //open modal window
     handleModalOpen = (link, element) => {
         this.setState(() => ({
             openModal: true,
@@ -52,6 +57,7 @@ class SensojiGallery extends Component {
             slideclass: "slideRightModal"
         }))
     }
+    //close modal window (wait 300ms before erasing component)
     handleModalClose = () => {
         this.setState(() => ({ slideclass: "slideLeftModal" }))
         setTimeout(
@@ -60,11 +66,12 @@ class SensojiGallery extends Component {
             }.bind(this)
             , 300);
     }
+    //load previous photo
     handleSlideLeftImage = () => {
-        let current = this.state.currentElement - 1;
+        const { currentElement, photos } = this.state;
+        let current = currentElement - 1;
         if (current < 1) {
-            // current = 1
-            current = this.state.photos.length;
+            current = photos.length;
             this.setState(() => ({
                 currentElement: current,
                 url: require(`../images/Senso_ji_Temple/${current}.jpg`)
@@ -77,10 +84,11 @@ class SensojiGallery extends Component {
             }))
         }
     }
+    //load next photo
     handleSlideRightImage = () => {
-        let current = this.state.currentElement + 1;
-        if (current > this.state.photos.length) {
-            // current = this.state.photos.length;
+        const { currentElement, photos } = this.state;
+        let current = currentElement + 1;
+        if (current > photos.length) {
             current = 1
             this.setState(() => ({
                 currentElement: current,
@@ -95,72 +103,63 @@ class SensojiGallery extends Component {
         }
     }
     handleScroll = () => {
+        const { allowAsyncGallery } = this.props;
+        //show gallery if scrollY gets to the specific point
         window.scrollY > this.refs.senGalCol.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .4) && this.setState(() => ({
             show: true
         }))
-        if (this.props.allowAsyncGallery) {
+        //load images asynchronously after first scroll
+        if (allowAsyncGallery) {
             this.returnElements()
                 .then(response => this.setState(() => ({
                     elements: [...response]
                 })))
         }
     }
+    //Promise for asnychronous loading of pictures
     returnElements = () => {
+        const { photos } = this.state;
         return new Promise(resolve => {
-            const elements = this.state.photos.map(element => <GalleryItem
+            const elements = photos.map(element => <GalleryItem
                 key={element}
                 src={require(`../images/Senso_ji_Temple/${element}_300.webp`)}
-                // srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
-
                 click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
             />)
+
             resolve(elements);
         })
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        //fetch urls from json file
         fetch('data/img-data.json')
             .then(respond => respond.json())
             .then(result => this.setState(() => ({
                 modalImages: [...result.sensoji]
             })))
-        // .then(result => this.setState(() => ({
-        //     secondPhotos: result.images
-        // })))
-        // .catch(error => console.log(error))
     }
     render() {
-        const isHidden = this.state.show ? 'showGallery' : '';
-        // const elements = this.state.photos.map(element => <GalleryItem
-        //     key={element}
-        //     src={require(`../images/Senso_ji_Temple/${element}_300.jpg`)}
-        //     srcSet={`${require(`../images/Senso_ji_Temple/${element}.jpg`)} 1600w, ${require(`../images/Senso_ji_Temple/${element}_300.jpg`)} 300w`}
-
-        //     click={() => this.handleModalOpen(require(`../images/Senso_ji_Temple/${element}.jpg`), element)}
-        // />)
+        const { show, isDown, elements, openModal, url, slideclass } = this.state;
+        const isHidden = show ? 'showGallery' : '';
 
         return (
             <div className={`sensoji-gallery ${isHidden}`}>
                 <h3>Gallery</h3>
-                <div ref="senGalCol" className={`sensoji-gallery-container ${this.state.isDown ? "" : "man"}`}
+                <div ref="senGalCol" className={`sensoji-gallery-container ${isDown ? "" : "man"}`}
                     onMouseDown={this.handleMouseDown}
                     onMouseLeave={this.handleMouseLeave}
                     onMouseUp={this.handleMouseUp}
                     onMouseMove={this.handleMouseMove}
-                    //onScroll={this.handleScroll}
-                    style={{
-                        //scrollSnapType: this.state.snapValue
-                    }}>
-                    {/* {elements} */}
-                    {this.state.elements}
+                >
+                    {elements}
                 </div>
-                {this.state.openModal && <ModalWindow
-                    modalSource={this.state.url}
+                {openModal && <ModalWindow
+                    modalSource={url}
                     closeclick={this.handleModalClose}
-                    open={this.state.openModal}
+                    open={openModal}
                     slideLeft={this.handleSlideLeftImage}
                     slideRight={this.handleSlideRightImage}
-                    slideclass={this.state.slideclass}
+                    slideclass={slideclass}
                 />}
             </div>
         );

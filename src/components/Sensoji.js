@@ -19,44 +19,50 @@ class Sensoji extends Component {
         distance: 0,
         backgroundPosition: null,
         showNextBtn: false,
-        btnClassName: ""
+        btnClassName: "",
+        allowGallery: false
     }
 
     handleScroll = () => {
+        const { allowGallery, distance } = this.state;
+        //allow loading gallery asynchronously after first scroll
+        if (!allowGallery) {
+            this.setState(() => ({
+                allowGallery: true
+            }))
+        }
         let scrollY = window.scrollY || window.pageYOffset
+        //if scrollY reaches visible point then show backogrund and title of the top part of the component
         let position = this.refs.sensojiHead.getBoundingClientRect().top + scrollY;
-        if (position - this.state.distance <= scrollY) {
+        if (position - distance <= scrollY) {
             this.setState(() => ({
                 isActive: true
             }))
         }
-        this.setState(() => ({ backgroundPosition: window.scrollY * -.2 }))
-
+        //show next shrine button
         if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.25)) {
             this.setState(() => ({
                 showNextBtn: true
             }))
         }
-        // if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.25)) {
-        //     this.setState(() => ({
-        //         showNextBtn: false
-        //     }))
-        // }
+        //hide next shrine button
         if (window.scrollY > this.refs.sensojiRef.getBoundingClientRect().top + window.scrollY + this.refs.sensojiRef.clientHeight - 500 || window.scrollY < this.refs.sensojiRef.getBoundingClientRect().bottom + window.scrollY - (this.refs.sensojiRef.clientHeight * 0.25)) {
             this.setState(() => ({
                 showNextBtn: false
             }))
         }
-
     }
     handleResize = () => {
+        //change distance of "visible point" for scrollY
         if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
         else this.setState(() => ({ distance: 10 }))
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll)
         window.addEventListener('resize', this.handleResize);
+        //initial height of head of the component
         this.height = this.refs.sensojiHead.clientHeight;
+        //if mobile mode then distance where animation for component's head executes is changed to 300px
         if (window.innerWidth < 1025) this.setState(() => ({ distance: 300 }))
         else this.setState(() => ({ distance: 10 }))
     }
@@ -65,42 +71,35 @@ class Sensoji extends Component {
         window.removeEventListener('resize', this.handleResize);
     }
     render() {
-        const grids = this.state.sensojiInfo.map(info => <SensojiItem
-            key={this.state.sensojiInfo.indexOf(info)}
+        const { sensojiInfo, isActive, showNextBtn, allowGallery } = this.state;
+        const grids = sensojiInfo.map(info => <SensojiItem
+            key={sensojiInfo.indexOf(info)}
             classname={info.classname}
             source={require(`../images/Senso_ji_Temple/${info.number[0]}_800.webp`)}
-            // srcSet={`${require(`../images/Senso_ji_Temple/${info.number[0]}.jpg`)} 1600w, 
-            //          ${require(`../images/Senso_ji_Temple/${info.number[0]}_800.jpg`)} 800w,
-            //          ${require(`../images/Senso_ji_Temple/${info.number[0]}_300.jpg`)} 300w
-            // `}
             alt={"Senso-Ji"}
             description={info.description[0]}
             secondDescription={info.description[1]}
             secondSource={require(`../images/Senso_ji_Temple/${info.number[1]}_800.webp`)}
-        // secondSrcSet={`${require(`../images/Senso_ji_Temple/${info.number[1]}.jpg`)} 1600w, 
-        //                ${require(`../images/Senso_ji_Temple/${info.number[1]}_800.jpg`)} 800w,
-        //                ${require(`../images/Senso_ji_Temple/${info.number[1]}_300.jpg`)} 300w
-        // `}
         />)
+
         return (
-            <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef" style={{ backgroundPositionY: this.state.backgroundPosition }}>
+            <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef">
                 <div ref={"sensojiHead"} className="sensoji-head">
-                    <div className={`sensoji-img ${this.state.isActive ? "imgDown" : ""}`} >
-                        <div className={`sensoji-dim ${this.state.isActive ? "dimDown" : ""}`}>
+                    <div className={`sensoji-img ${isActive ? "imgDown" : ""}`} >
+                        <div className={`sensoji-dim ${isActive ? "dimDown" : ""}`}>
                             <ShrineTitle
                                 engTitle={"Sensō-ji"}
                                 japTitle={"浅草寺"}
                                 classname={"sensoji-title"}
-                                engclass={this.state.isActive ? "showEngTitle" : ""}
-                                japclass={this.state.isActive ? "showJapTitle" : ""}
+                                engclass={isActive ? "showEngTitle" : ""}
+                                japclass={isActive ? "showJapTitle" : ""}
                             />
                         </div>
                     </div>
                 </div>
-
                 <article className="sensoji-article">
                     {grids}
-                    <SensojiGallery allowAsyncGallery={this.state.isActive} />
+                    <SensojiGallery allowAsyncGallery={allowGallery} />
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9162.670944887788!2d139.7924593836857!3d35.714082776094294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ec1a4463df1%3A0x6c0d289a8292810d!2zU2Vuc8WNLWpp!5e0!3m2!1spl!2spl!4v1577944734907!5m2!1spl!2spl"} />
@@ -122,15 +121,10 @@ class Sensoji extends Component {
                         }
                     />
                 </article>
-                {/* {this.state.showNextBtn && <NextShrineButton
-                    text={"Go to Hie Shrine"}
-                    source={"#hie"}
-                    show={this.state.showNextBtn}
-                />} */}
                 <NextShrineButton
                     text={"Go to Hie Shrine"}
                     source={"#hie"}
-                    show={this.state.showNextBtn}
+                    show={showNextBtn}
                 />
             </section>
         );

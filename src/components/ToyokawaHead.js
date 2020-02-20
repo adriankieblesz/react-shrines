@@ -1,8 +1,8 @@
 import React from 'react';
 import ShrineTitle from './ShrineTitle';
-const ToyokawaHead = (props) => {
+const ToyokawaHead = ({ classname, backgroundposition }) => {
     return (
-        <header className={props.classname} style={{ backgroundPositionY: props.backgroundposition }}>
+        <header className={classname} style={{ backgroundPositionY: backgroundposition }}>
             <ShrineTitle
                 classname={"toyokawa-title"}
                 engclass={"toyokawa-title-eng"}

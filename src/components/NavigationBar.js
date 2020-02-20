@@ -56,7 +56,7 @@ class NavigationBar extends Component {
         }
         else {
             this.setState(() => ({
-                className: ""
+                className: "",
             }))
         }
         //if scrollY reaches to the top of NavigationBar component's container then execute animation responsible for showing buttons in fixed order 

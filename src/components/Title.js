@@ -2,7 +2,6 @@ import React from 'react';
 import './Title.scss';
 
 const Title = () => {
-
     return (
         <React.Fragment>
             <div className="p2-container">
@@ -10,7 +9,6 @@ const Title = () => {
                 <span className="p2-span"></span>
             </div>
         </React.Fragment>
-
     );
 }
 

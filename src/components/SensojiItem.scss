@@ -23,8 +23,6 @@
         transition: .5s ease all;
     }
 }
-
-
 @media screen and (max-width:1024px){
     .shrine-grid{
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -7,21 +7,27 @@ class ScrollShowElement extends Component {
         distance: 0,
     }
     static defaultProps = {
+        //value of multiplier for distance
         ratio: 1
     }
     handleScroll = () => {
+        const { classnameshow } = this.props;
+        //get current value of scrollY
         this.scrollY = window.scrollY || window.pageYOffset;
+        //update position of component
         this.setState(() => ({
             position: this.refs.element.getBoundingClientRect().top + this.scrollY
         }))
+        //change class name (class responsible for animation) once component gets to the specific point
         if (this.state.position - this.state.distance <= this.scrollY) {
             this.setState(() => ({
-                classname: this.props.classnameshow
+                classname: classnameshow
             }))
         }
     }
     componentDidMount() {
         window.addEventListener('scroll', () => (this.handleScroll()));
+        //calculating initial distance when state should be changed (if ratio not determined then default point is when scrollY meets top of the component)
         this.setState(() => ({
             distance: (this.refs.element.clientHeight * this.props.ratio)
         }))
@@ -30,10 +36,11 @@ class ScrollShowElement extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
     render() {
-
+        const { classname } = this.state;
+        const { id, children } = this.props;
         return (
-            <div id={this.props.id} className={this.state.classname} ref={"element"}>
-                {this.props.children}
+            <div id={id} className={classname} ref={"element"}>
+                {children}
             </div>
         );
     }

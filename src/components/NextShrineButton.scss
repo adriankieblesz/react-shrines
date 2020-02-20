@@ -2,21 +2,21 @@
     position: fixed;
     bottom: 50px;
     right: -105%;
-    // background-color: rgba(0, 0, 0, 0.65);
     background-color: rgba(30, 4, 32, 0.65);
-    // color: rgb(224, 224, 40);
     color: rgb(202, 202, 166);
     padding: 5px 20px;
     opacity: .5;
     transition: .4s ease-in all;
     border-radius: 5px;  
     z-index: 20;
+
     &:hover a{
         color: rgb(224, 224, 40);
     }
         a{
             display: block;
             padding: 10px;
+
             p{
                 display: inline-block;
                 margin: 0
@@ -27,15 +27,26 @@
                 height: 25px;
                 vertical-align: top;
                 position: relative;
+                -webkit-animation: moveUpDown 1s infinite;
                 animation: moveUpDown 1s infinite;
             }
-        }
-        
+        }      
 }
 .show-next-shrine-button{
     opacity: 1;
     bottom: 50px;
     right: 2%;
+}
+@-webkit-keyframes moveUpDown{
+    0%{
+        top: 0;
+    }
+    75%{
+        top: -15%;
+    }
+    100%{
+        top: 0;
+    }
 }
 @keyframes moveUpDown{
     0%{

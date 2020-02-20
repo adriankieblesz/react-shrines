@@ -12,31 +12,33 @@ class Meiji extends Component {
         allowGallery: false
     }
     handleScroll = () => {
-        if (!this.state.allowGallery) {
+        const { allowGallery } = this.state;
+        //allow asynchronous gallery loading after first scroll
+        if (!allowGallery) {
             this.setState(() => ({
                 allowGallery: true
             }))
         }
+        //animate top part of component when scrollY reaches the point
         window.scrollY > this.refs.meiji.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHead: true,
-            // allowGallery: true
         }))
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
+        const { showHead, allowGallery } = this.state;
         return (
             <section id="meiji" ref={"meiji"}>
-                <MeijiHead classnameshow={this.state.showHead ? "meiji-show" : ""} />
+                <MeijiHead classnameshow={showHead ? "meiji-show" : ""} />
                 <article className="meiji-article">
-
                     <MeijiItem>
                         <P>
                             Meiji-jingu Shrine is placed deep inside of the forest in Shibuya district.
                             To get there you will need to pass one of the great gates at the beginning
                             of the forest. They are honestly big!
-                            <img src={require('../images/Meiji_Shrine/17c2_800.webp')} alt="" />
+                            <img src={require('../images/Meiji_Shrine/17c2_800.webp')} alt="Meiji Shrine" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
@@ -44,14 +46,14 @@ class Meiji extends Component {
                             Then depending which side you passed in you will need to go through
                             long path of wonderful trees around you. To be hones when I was there
                             for the first time I felt like in some magic place.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/1c_800.webp')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/1c_800.webp')} alt="Meiji Shrine" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
                         <P>
                             From time to time you will meet at your way those wonderful lanters
                             which probably are meant to elucidate path at nights.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/2c_800.webp')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/2c_800.webp')} alt="Meiji Shrine" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
@@ -59,7 +61,7 @@ class Meiji extends Component {
                             And then you will finally reach to destination where entrance gate
                             of the shrine will meet you. If you are there around 1-4PM don't be
                             surprise by amount of people there. This shrine is very popular.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/9c_800.webp')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/9c_800.webp')} alt="Meiji Shrine" />
                         </P>
                     </MeijiItem>
                     <MeijiItem>
@@ -69,12 +71,12 @@ class Meiji extends Component {
                             Emperor Mutsuhito (known as Meiji after death) contributed to significant
                             changes in Japanese system in XIX century creating fundamentals for modern Japan.
                             Shrine is also very popular amongs newlyweds for weeding ceremonies pictures.
-                            <img className="rotate" src={require('../images/Meiji_Shrine/4c_800.webp')} alt="" />
+                            <img className="rotate" src={require('../images/Meiji_Shrine/4c_800.webp')} alt="Meiji Shrine" />
                         </P>
                     </MeijiItem>
 
                 </article>
-                <MeijiGallery allowGallery={this.state.allowGallery} />
+                <MeijiGallery allowGallery={allowGallery} />
                 <article className="meiji-article meiji-article-map" >
                     <Map ref={"map"}
                         iframe={
@@ -98,7 +100,6 @@ class Meiji extends Component {
                         }
                     />
                 </article>
-
             </section >
         );
     }

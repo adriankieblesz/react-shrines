@@ -10,27 +10,22 @@ class MeijiGallery extends Component {
         topImageClassName: "",
         images: []
     }
-
+    //Promise for asynchronous loading of images
     returnImages = () => {
-        // this.images = [];
-        // for (let i = 0; i < 18; i++) {
-        //     this.images.push(<img key={i + 1} className={`meiji-bottom-image ${this.state.bottomImageClassName}`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.jpg`)} />)
-        // }
-
-        // return this.images;
         return new Promise((resolve, reject) => {
             let images = [];
             for (let i = 0; i < 18; i++) {
                 images.push(<img key={i + 1} className={`meiji-bottom-image`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.webp`)} />)
             }
+
             resolve(images);
         })
-
     }
-
+    //Load previous picture
     handleSlideLeft = () => {
+        const { current: curr } = this.state;
         this.transparent = "trans"
-        let current = this.state.current - 1;
+        let current = curr - 1;
         if (current < 1) {
             current = 18
             this.setState(() => ({
@@ -47,9 +42,11 @@ class MeijiGallery extends Component {
             }))
         }
     }
+    //Load next picture
     handleSlideRight = () => {
+        const { current: curr } = this.state;
         this.transparent = "trans"
-        let current = this.state.current + 1;
+        let current = curr + 1;
         if (current > 18) {
             current = 1;
             this.setState(() => ({
@@ -66,6 +63,7 @@ class MeijiGallery extends Component {
             }))
         }
     }
+    //Set currentUrl according to clicked image from gallery image list
     handleImageClick = (imgIndex) => {
         let current = imgIndex
         this.setState(() => ({
@@ -74,9 +72,11 @@ class MeijiGallery extends Component {
         }))
     }
     handleScroll = () => {
+        //When scrollY reaches visible point then execute animation for gallery image list items
         window.scrollY > this.refs.topPicture.getBoundingClientRect().top + window.scrollY - 200 && this.setState(() => ({
             bottomImageClassName: "trans"
         }))
+        //load images asynchronously if allowed 
         if (this.props.allowGallery) {
             this.returnImages()
                 .then(respond => this.setState(() => ({
@@ -85,21 +85,17 @@ class MeijiGallery extends Component {
         }
     }
     componentDidMount() {
-
-        // this.returnImages()
-        //     .then(respond => this.setState(() => ({
-        //         images: [...respond]
-        //     })));
+        const { current } = this.state;
+        //set initial url
         this.setState(() => ({
-            currentUrl: require(`../images/Meiji_Shrine/${this.state.current}c_800.webp`),
+            currentUrl: require(`../images/Meiji_Shrine/${current}c_800.webp`),
         }))
         window.addEventListener('scroll', this.handleScroll);
     }
 
     render() {
-        const image = <img className={`top-img ${this.state.topImageClassName}`} src={this.state.currentUrl} alt="" />
-        // const images = this.returnImages();
-
+        const { topImageClassName, currentUrl, bottomImageClassName, images } = this.state;
+        const image = <img className={`top-img ${topImageClassName}`} src={currentUrl} alt="" />
 
         return (
             <div className="meiji-gallery">
@@ -121,8 +117,8 @@ class MeijiGallery extends Component {
                     </div>
                 </div>
                 <div className="meiji-gallery-bottom">
-                    <div className={`meiji-bottom-grid ${this.state.bottomImageClassName}`}>
-                        {this.state.images}
+                    <div className={`meiji-bottom-grid ${bottomImageClassName}`}>
+                        {images}
                     </div>
                 </div>
             </div>

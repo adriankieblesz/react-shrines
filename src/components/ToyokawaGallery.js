@@ -10,19 +10,8 @@ class ToyokawaGallery extends Component {
         slideclass: "slideLeftModal",
         show: false,
     }
+    //Promise for asynchronous picture loading
     loadImages = () => {
-        // let images = [];
-        // for (let i = 0; i < 10; i++) {
-        //     images.push(<img
-        //         key={i + 1}
-        //         src={require(`../images/Toyokawa_Inari_Temple/${i + 1}c_400.jpg`)} alt="toyokawa"
-        //         onClick={() => this.handleModalOpen(require(`../images/Toyokawa_Inari_Temple/${i + 1}c.jpg`), (i + 1))
-        //         }
-        //     />);
-        // }
-
-        // return images;
-
         return new Promise((resolve, reject) => {
             let images = [];
             for (let i = 0; i < 10; i++) {
@@ -33,18 +22,11 @@ class ToyokawaGallery extends Component {
                     }
                 />);
             }
+
             resolve(images);
         })
-
     }
-    handleModalClose = () => {
-        this.setState(() => ({ slideclass: "slideLeftModal" }))
-        setTimeout(
-            function () {
-                this.setState(() => ({ openModal: false }))
-            }.bind(this)
-            , 300);
-    }
+    //open modal window
     handleModalOpen = (link, element) => {
         this.setState(() => ({
             openModal: true,
@@ -53,11 +35,21 @@ class ToyokawaGallery extends Component {
             slideclass: "slideRightModal"
         }))
     }
+    //close modal window (wait 300ms before erase of component)
+    handleModalClose = () => {
+        this.setState(() => ({ slideclass: "slideLeftModal" }))
+        setTimeout(
+            function () {
+                this.setState(() => ({ openModal: false }))
+            }.bind(this)
+            , 300);
+    }
+    //load previous image
     handleSlideLeftImage = () => {
-        let current = this.state.currentElement - 1;
+        const { currentElement, images } = this.state;
+        let current = currentElement - 1;
         if (current < 1) {
-            // current = 1
-            current = this.state.images.length;
+            current = images.length;
             this.setState(() => ({
                 currentElement: current,
                 url: require(`../images/Toyokawa_Inari_Temple/${current}c.jpg`)
@@ -70,10 +62,11 @@ class ToyokawaGallery extends Component {
             }))
         }
     }
+    //load next image
     handleSlideRightImage = () => {
-        let current = this.state.currentElement + 1;
-        if (current > this.state.images.length) {
-            // current = this.state.photos.length;
+        const { currentElement, images } = this.state;
+        let current = currentElement + 1;
+        if (current > images.length) {
             current = 1
             this.setState(() => ({
                 currentElement: current,
@@ -88,10 +81,13 @@ class ToyokawaGallery extends Component {
         }
     }
     handleScroll = () => {
+        const { allowGallery } = this.props;
+        //show gallery when scrollY reaches specific point
         window.scrollY > this.refs.toyokawaGallery.getBoundingClientRect().top + window.scrollY - (this.refs.toyokawaGallery.clientHeight * .5) && this.setState(() => ({
             show: true,
         }))
-        if (this.props.allowGallery) {
+        //load gallery images list asynchronously
+        if (allowGallery) {
             this.loadImages()
                 .then(respond => this.setState(() => ({
                     images: [...respond]
@@ -99,28 +95,23 @@ class ToyokawaGallery extends Component {
         }
     }
     componentDidMount() {
-        // let images = this.loadImages();
-        // this.setState({ images });
-        // this.loadImages()
-        //     .then(respond => this.setState(() => ({
-        //         images: [...respond]
-        //     })))
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
-        let images = this.state.images.map(element => element);
+        const { images: imgs, show, openModal, url, slideclass } = this.state;
+        let images = imgs.map(element => element);
         return (
-            <div className={this.state.show ? "toyokawa-gallery show-toyokawa-gallery" : "toyokawa-gallery"} ref={"toyokawaGallery"}>
+            <div className={show ? "toyokawa-gallery show-toyokawa-gallery" : "toyokawa-gallery"} ref={"toyokawaGallery"}>
                 <div className="toyokawa-gallery-wrapper">
                     {images}
                 </div>
-                {this.state.openModal && <ModalWindow
-                    modalSource={this.state.url}
+                {openModal && <ModalWindow
+                    modalSource={url}
                     closeclick={this.handleModalClose}
-                    open={this.state.openModal}
+                    open={openModal}
                     slideLeft={this.handleSlideLeftImage}
                     slideRight={this.handleSlideRightImage}
-                    slideclass={this.state.slideclass}
+                    slideclass={slideclass}
                 />}
             </div>
         );

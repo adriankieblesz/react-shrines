@@ -1,7 +1,7 @@
 import React from 'react';
-const P = (props) => {
+const P = ({ children }) => {
     return (
-        <p>{props.children}</p>
+        <p>{children}</p>
     );
 }
 

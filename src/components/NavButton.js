@@ -1,9 +1,9 @@
 import React from 'react';
 import './NavButton.scss'
-const NavButton = (props) => {
+const NavButton = ({ iconClicked, click }) => {
     return (
         <div className="nav-btn">
-            <div id="nav-btn-spans" className={`${props.iconClicked ? "openSpan" : ""}`} onClick={props.click}>
+            <div id="nav-btn-spans" className={`${iconClicked ? "openSpan" : ""}`} onClick={click}>
                 <span></span>
                 <span></span>
                 <span></span>
