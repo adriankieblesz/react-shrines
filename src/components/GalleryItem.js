@@ -1,9 +1,9 @@
 import React from 'react';
-const GalleryItem = (props) => {
+const GalleryItem = ({ src, srcSet, sizes, click }) => {
     return (
         <figure className="sensoji-gallery-item">
-            <img src={props.src} alt="" srcSet={props.srcSet} sizes={props.sizes} />
-            <div onClick={props.click} className="expand-gallery-item"></div>
+            <img src={src} alt="" srcSet={srcSet} sizes={sizes} />
+            <div onClick={click} className="expand-gallery-item"></div>
         </figure>
     );
 }

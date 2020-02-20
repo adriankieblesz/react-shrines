@@ -1,10 +1,10 @@
 import React from 'react';
-const GalleryButton = (props) => {
+const GalleryButton = ({ changeImageClick, classname, source, alt }) => {
     //Universal gallery button
     return (
-        <button onClick={props.changeImageClick} className={props.classname}>
+        <button onClick={changeImageClick} className={classname}>
             <figure>
-                <img src={props.source} alt={props.alt} />
+                <img src={source} alt={alt} />
             </figure>
         </button>
     );
