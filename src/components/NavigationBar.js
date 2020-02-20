@@ -17,10 +17,17 @@ class NavigationBar extends Component {
     handleScroll = () => {
         let scrollY = window.scrollY || window.pageYOffset;
 
+        //determine navbar position related to scroll position
         this.setState(() => ({
             navPosition: this.refs.navbar.getBoundingClientRect().top + this.state.navHeight + scrollY
         }))
-
+        //update navbar height when changed
+        if (this.state.navHeight !== this.refs.navbar.clientHeight) {
+            this.setState(() => ({
+                navHeight: this.refs.navbar.clientHeight
+            }))
+        }
+        //if top navbar verge is below or same level as scrollY then make it sticky to the top of the window
         if (this.state.navPosition <= scrollY + this.state.navHeight) {
             this.setState(() => ({
                 isFixed: true,
@@ -29,6 +36,22 @@ class NavigationBar extends Component {
                 listClassName: ""
             }))
         }
+        //if substitute size box exists and  top navbar verge sticks to substitute box then make it relative and erase substitute box
+        if (this.refs.tempDiv && this.state.navPosition <= this.refs.tempDiv.getBoundingClientRect().top + scrollY + this.refs.tempDiv.clientHeight - 1) {
+            this.setState(() => ({
+                isFixed: false,
+                idName: "relativeNav",
+                showButton: false,
+                listClassName: "gridList"
+            }))
+        }
+        console.log(`navPosition: ` + this.state.navPosition);
+        console.log(`scrollY: ` + scrollY);
+        console.log(`scrollY + navHeight: ` + (scrollY + this.state.navHeight));
+        console.log(`navbar bounding top: ` + this.refs.navbar.getBoundingClientRect().top);
+        if (this.refs.tempDiv) console.log(`tempDiv bounding top` + this.refs.tempDiv.getBoundingClientRect().top + `\ntempDiv height:` + this.refs.tempDiv.clientHeight + `\ncondition amount: ` + (this.refs.tempDiv.getBoundingClientRect().top + scrollY + this.refs.tempDiv.clientHeight - 1))
+        console.log(`----------------------------------------------------`);
+        //
         if (window.innerWidth < 1025 && this.state.navPosition <= scrollY + this.state.navHeight) {
             this.setState(() => ({
                 className: "close",
@@ -40,15 +63,14 @@ class NavigationBar extends Component {
                 className: ""
             }))
         }
-        if (this.refs.tempDiv && this.state.navPosition <= this.refs.tempDiv.getBoundingClientRect().top + scrollY + this.refs.tempDiv.clientHeight - 1) {
-            this.setState(() => ({
-                isFixed: false,
-                idName: "relativeNav",
-                showButton: false,
-                listClassName: "gridList"
-            }))
-
-        }
+        // if (this.refs.tempDiv && this.state.navPosition <= this.refs.tempDiv.getBoundingClientRect().top + scrollY + this.refs.tempDiv.clientHeight - 1) {
+        //     this.setState(() => ({
+        //         isFixed: false,
+        //         idName: "relativeNav",
+        //         showButton: false,
+        //         listClassName: "gridList"
+        //     }))
+        // }
         window.scrollY > this.refs.navbar.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .7) && this.setState(() => ({
             animate: true
         }))

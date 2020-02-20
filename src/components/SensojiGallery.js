@@ -129,9 +129,6 @@ class SensojiGallery extends Component {
         // })))
         // .catch(error => console.log(error))
     }
-    componentDidUpdate() {
-        console.log(this.state.modalImages)
-    }
     render() {
         const isHidden = this.state.show ? 'showGallery' : '';
         // const elements = this.state.photos.map(element => <GalleryItem
