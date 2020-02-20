@@ -42,11 +42,22 @@
     }
 }
 .displayBackgorund{
+    -webkit-animation: displayBackgorunds .5s ease-in forwards;
     animation: displayBackgorunds .5s ease-in forwards;
     @for $i from 1 through 5{
         &:nth-child(#{$i}){
             animation-delay: ($i * 0.2s);
         }
+    }
+}
+@-webkit-keyframes displayBackgorunds{
+    from{
+        opacity: 0;
+        pointer-events: none;
+    }
+    to{
+        opacity: 1;
+        pointer-events: all;
     }
 }
 @keyframes displayBackgorunds{
@@ -58,7 +69,6 @@
         opacity: 1;
         pointer-events: all;
     }
-
 }
 .changeBlurOpacity{
     -webkit-animation: changeBlurgroundOpacity 2s ease-in;

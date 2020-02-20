@@ -87,7 +87,6 @@ class HieGallery extends Component {
                 .then(respond => this.setState(() => ({
                     images: [...respond]
                 })))
-
         }
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - (this.refs.hie.clientHeight / 2) && this.setState(() => ({
             showGallery: true,
