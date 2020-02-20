@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ShrineTitle from './ShrineTitle.js';
 import SensojiItem from './SensojiItem.js';
 import SensojiGallery from './SensojiGallery.js';
-import ScrollShowElement from './ScrollShowElement.js';
 import Map from './Map';
 import P from './P';
 import Iframe from './Iframe';

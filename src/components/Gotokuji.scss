@@ -84,19 +84,23 @@
 
 .gotokuji-article-active{
     // background-position-y: 0;
+    -webkit-animation: backgroundDown .5s 1.2s ease forwards;;
     animation: backgroundDown .5s 1.2s ease forwards;
 
     .title-container{
         .gotokuji-title{
             .gotokuji-title-eng{
+                -webkit-animation: titleOpacity 1.5s .8s ease forwards;;
                 animation: titleOpacity 1.5s .8s ease forwards;
             }
             .gotokuji-title-jap{
+                -webkit-animation: titleOpacity 1s ease forwards, positonDown .5s .5s ease forwards;
                 animation: titleOpacity 1s ease forwards, positonDown .5s .5s ease forwards;
             }
         }
     }
     .gotokuji-container{
+        -webkit-animation: titleOpacity 1s 1.7s ease forwards;
         animation: titleOpacity 1s 1.7s ease forwards;
     }
 }
@@ -114,6 +118,14 @@
     text-align: center;
     padding-bottom: 100px;
 }
+@-webkit-keyframes positonDown{
+    from{
+        top: -20%;
+    }
+    to{
+        top: 40%;
+    }
+}
 @keyframes positonDown{
     from{
         top: -20%;
@@ -122,12 +134,28 @@
         top: 40%;
     }
 }
+@-webkit-keyframes titleOpacity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 @keyframes titleOpacity {
     from{
         opacity: 0;
     }
     to{
         opacity: 1;
+    }
+}
+@-webkit-keyframes backgroundDown {
+    from{
+        background-position-y: -3500px;
+    }
+    to{
+        background-position-y: 0;
     }
 }
 @keyframes backgroundDown {

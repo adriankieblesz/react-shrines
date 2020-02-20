@@ -1,9 +1,9 @@
 import React from 'react';
 import './HieHead.scss';
 import ShrineTitle from './ShrineTitle';
-const HieHead = (props) => {
+const HieHead = ({ classname, backgroundposition }) => {
     return (
-        <header className={props.classname} style={{ backgroundPositionY: props.backgroundposition }}>
+        <header className={classname} style={{ backgroundPositionY: backgroundposition }}>
             <ShrineTitle
                 classname={"hie-title"}
                 engclass={"hie-title-eng"}

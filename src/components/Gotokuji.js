@@ -10,25 +10,28 @@ import NextShrineButton from './NextShrineButton';
 class Gotokuji extends Component {
     state = {
         classname: "",
-        backgroundPosition: 1,
         showNextBtn: false,
         loadGallery: false
     }
     handleScroll = () => {
-        if (!this.state.loadGallery) {
+        const { loadGallery } = this.state;
+        //allow to load gallery images asynchronously
+        if (!loadGallery) {
             this.setState(() => ({
                 loadGallery: true
             }))
         }
+        //animate initial part of component (trim down backogrund image, opacity:1 for right side of article)
         window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
             classname: "gotokuji-article-active",
-            // loadGallery: true
         }))
+        //if scrollY reaches almost end of the component then show button for next shrine
         if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
             this.setState(() => ({
                 showNextBtn: true
             }))
         }
+        //if scrollY passes some part of the next shrine then hide button for next shrine
         if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY + this.refs.gotokuji.clientHeight - 500 || window.scrollY < this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
             this.setState(() => ({
                 showNextBtn: false
@@ -39,9 +42,10 @@ class Gotokuji extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
+        const { classname, loadGallery, showNextBtn } = this.state;
         return (
             <section id="gotokuji" ref={"gotokuji"}>
-                <article className={`gotokuji-article ${this.state.classname}`} ref={"gotokujiArticle"} >
+                <article className={`gotokuji-article ${classname}`} ref={"gotokujiArticle"} >
                     <div className="title-container">
                         <ShrineTitle
                             classname={"gotokuji-title"}
@@ -58,7 +62,7 @@ class Gotokuji extends Component {
                                 by Tokugawa Tsunayoshi. Tokugawa was fifth shōgun of the Tokugawa dynasty and
                                 lived between XVII and XVIII century. He dedicated this shrine to his mother Otama
                                 also known as Keishōin.
-                            <img
+                                <img
                                     src={require('../images/Gotokuji_Temple/23c_850.webp')}
                                     alt=""
                                 />
@@ -68,7 +72,7 @@ class Gotokuji extends Component {
                             <P>
                                 This place is also known for Maneki-neko. Those cute cat figures are strictly related to
                                 Chinese and Japanese tradition. In XXI century Japan they symbolise prosperity and take away unhappiness.
-                            <img
+                                <img
                                     src={require('../images/Gotokuji_Temple/13c_850.webp')}
                                     alt=""
 
@@ -78,44 +82,44 @@ class Gotokuji extends Component {
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 If you reach to the shrine you will have oppurtunity to purchase one with reception that stays around the temple area.
-                            <img src={require('../images/Gotokuji_Temple/22c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/22c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Except main hall that you've seen on the first photo there is a lot of spots to view. For example,
                                 Three-Story Pagoda, which looks amazing and even better in autumn.
-                            <img src={require('../images/Gotokuji_Temple/2c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/2c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 A dog statue sitting on a big black incense burner
-                            <img src={require('../images/Gotokuji_Temple/7c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/7c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 A bell tower next to the one of entrance gates.
-                            <img src={require('../images/Gotokuji_Temple/1c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/1c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Maneki-neko hall. Usually closed inside but wonderful design.
-                            <img src={require('../images/Gotokuji_Temple/15c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/15c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Maneki-neko stalls, which is great place for taking pictures.
-                            <img src={require('../images/Gotokuji_Temple/12c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/12c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 You can also get to the Japanese buddish cementary.
-                            <img src={require('../images/Gotokuji_Temple/19c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/19c_850.webp')} alt="" />
                                 <img src={require('../images/Gotokuji_Temple/17c_850.webp')} alt="" />
                                 <img src={require('../images/Gotokuji_Temple/18c_850.webp')} alt="" />
                                 <img src={require('../images/Gotokuji_Temple/21c_850.webp')} alt="" />
@@ -133,7 +137,7 @@ class Gotokuji extends Component {
                     </div>
                 </article>
                 <article className="gotokuji-gallery-arcticle">
-                    <GotokujiGallery allowGallery={this.state.loadGallery} />
+                    <GotokujiGallery allowGallery={loadGallery} />
                 </article>
                 <article className="gotokuji-article-map" >
                     <Map ref={"map"}
@@ -158,14 +162,10 @@ class Gotokuji extends Component {
                         }
                     />
                 </article>
-                {/* {this.state.showNextBtn && <NextShrineButton
-                    text={"Go to Toyokawa Shrine"}
-                    source={"#toyokawa"}
-                />} */}
                 <NextShrineButton
                     text={"Go to Toyokawa Shrine"}
                     source={"#toyokawa"}
-                    show={this.state.showNextBtn}
+                    show={showNextBtn}
                 />
             </section>
         );

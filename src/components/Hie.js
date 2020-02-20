@@ -16,30 +16,36 @@ class Hie extends Component {
         asyncGalleryLoad: false
     }
     handleScroll = () => {
-        if (!this.state.asyncGalleryLoad) {
+        const { asyncGalleryLoad, refss } = this.state;
+        //allow to load gallery images asynchronously
+        if (!asyncGalleryLoad) {
             this.setState(() => ({
                 asyncGalleryLoad: true
             }))
         }
+        //animate initial part of component (title animation)
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHeader: true,
-            // asyncGalleryLoad: true
         }))
-
+        //reset scroll position variable to 0 for adjusting backgroundPoistionY of top component's part background
         this.setState(() => ({
-            scroll: -((window.scrollY * .3) - (this.state.refss * .3)),
+            scroll: -((window.scrollY * .3) - (refss * .3)),
             refss: this.refs.hie.getBoundingClientRect().top + window.scrollY
         }))
+
+        //if background not fisible then backgroundPositionY = 0
         if (window.scrollY > this.refs.hieHead.getBoundingClientRect().bottom + window.scrollY) {
             this.setState(() => ({
                 scroll: 0
             }))
         }
+        //if scrollY reaches almost end of the component then show button for next shrine
         if (window.scrollY > this.refs.hie.getBoundingClientRect().bottom + window.scrollY - (this.refs.hie.clientHeight * 0.2)) {
             this.setState(() => ({
                 showNextBtn: true
             }))
         }
+        //if scrollY passes some part of the next shrine then hide button for next shrine
         if (window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY + this.refs.hie.clientHeight - 500 || window.scrollY < this.refs.hie.getBoundingClientRect().bottom + window.scrollY - (this.refs.hie.clientHeight * 0.2)) {
             this.setState(() => ({
                 showNextBtn: false
@@ -48,14 +54,16 @@ class Hie extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        //determine initial position of component after component has been mounted
         this.setState(() => ({
             refss: this.refs.hie.getBoundingClientRect().top + window.scrollY
         }))
     }
     render() {
+        const { showHeader, scroll, asyncGalleryLoad, showNextBtn } = this.state;
         return (
             <section id="hie" ref="hie" style={{ backgroundColor: "black" }}>
-                <div ref="hieHead"><HieHead classname={`${this.state.showHeader ? "hie-header show-hie-header" : "hie-header"}`} backgroundposition={this.state.scroll} /></div>
+                <div ref="hieHead"><HieHead classname={`${showHeader ? "hie-header show-hie-header" : "hie-header"}`} backgroundposition={scroll} /></div>
                 <article className="hie-article" >
 
                     <ScrollShowElement classnameshow={"hie-show-first"} classnamehide={"hie-hide-first"} ratio={1}>
@@ -66,12 +74,11 @@ class Hie extends Component {
                             celebration of their children named Shichi-Go-San (directly translating from
                             Japanese Seven-Five-Three). In other words, it is a Japanese traditional festival
                             day dedicated for five years old boys and three or seven years old girls.
-                    </P>
+                        </P>
                     </ScrollShowElement>
 
-                    <div className="hie-space">
+                    <div className="hie-space"></div>
 
-                    </div>
                     <ScrollShowElement classnameshow={"hie-show-element"} classnamehide={"hie-hide-element"} ratio={1}>
                         <div className="hie-grid">
                             <P>
@@ -81,21 +88,15 @@ class Hie extends Component {
                                 where god or gods can be present. Not only shrines but also places like mountais, water
                                 and any other related to Shinto beliefs can have Tori Gates. Nonetheless, Hie shrine is
                                 one of those places where Tori Gates create wonderful and magic vibes.
-                        </P>
+                            </P>
                             <img
                                 src={require(`../images/Hie_Shrine/12c_800.webp`)}
-                                alt=""
-                            // srcSet={`${require(`../images/Hie_Shrine/12c.jpg`)} x3, 
-                            //          ${require(`../images/Hie_Shrine/12c_800.jpg`)} x2,
-                            //          ${require(`../images/Hie_Shrine/12c_400.jpg`)} x1
-                            //          `}
+                                alt="hie shrine"
                             />
                         </div>
                     </ScrollShowElement>
 
-                    <div className="hie-space">
-
-                    </div>
+                    <div className="hie-space"></div>
 
                     <ScrollShowElement classnameshow={"hie-show-element"} classnamehide={"hie-hide-element"} ratio={1}>
                         <div className="hie-grid">
@@ -103,20 +104,16 @@ class Hie extends Component {
                                 There is also very interesting entrance through one but definitely bigger Tori Gate than
                                 previous ones. And you will not escape from going up long and steep stairs. Anyway, it is worth
                                 to try go up and down through both entrances and take buch of pictures there.
-                        </P>
+                            </P>
                             <img
                                 src={require(`../images/Hie_Shrine/8c_800.webp`)}
-                                alt=""
-                            // srcSet={`${require(`../images/Hie_Shrine/8c.jpg`)} 1600w, 
-                            //          ${require(`../images/Hie_Shrine/8c_800.jpg`)} 800w,
-                            //          ${require(`../images/Hie_Shrine/8c_400.jpg`)} 400w
-                            //          `}
+                                alt="hie shrine"
                             />
                         </div>
                     </ScrollShowElement>
-                    <div className="hie-space">
 
-                    </div>
+                    <div className="hie-space"></div>
+
                     <ScrollShowElement classnameshow={"hie-show-element"} classnamehide={"hie-hide-element"} ratio={1}>
                         <div className="hie-grid">
                             <P>
@@ -124,20 +121,16 @@ class Hie extends Component {
                                 about this place is that it's placed on hill and despite it's surrounded by trees you can
                                 easly see skyscrapers on the background. I think pictures like that show interesting connection
                                 between traditional and modern Japan.
-                        </P>
+                            </P>
                             <img
                                 src={require(`../images/Hie_Shrine/5c_800.webp`)}
-                                alt=""
-                            // srcSet={`${require(`../images/Hie_Shrine/5c.jpg`)} 1600w, 
-                            //          ${require(`../images/Hie_Shrine/5c_800.jpg`)} 800w,
-                            //          ${require(`../images/Hie_Shrine/5c_400.jpg`)} 400w
-                            //          `}
+                                alt="hie shrine"
                             />
                         </div>
                     </ScrollShowElement>
 
                 </article>
-                <HieGallery asyncGalleryLoad={this.state.asyncGalleryLoad} />
+                <HieGallery asyncGalleryLoad={asyncGalleryLoad} />
                 <article className="gotokuji-article-map">
                     <Map ref={"map"}
                         iframe={
@@ -160,14 +153,10 @@ class Hie extends Component {
                         }
                     />
                 </article>
-                {/* {this.state.showNextBtn && <NextShrineButton
-                    text={"Go to Gotokuji Shrine"}
-                    source={"#gotokuji"}
-                />} */}
                 <NextShrineButton
                     text={"Go to Gotokuji Shrine"}
                     source={"#gotokuji"}
-                    show={this.state.showNextBtn}
+                    show={showNextBtn}
                 />
             </section >
         );

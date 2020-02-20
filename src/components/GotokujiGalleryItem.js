@@ -12,13 +12,15 @@ class GotokujiGalleryItem extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
+        const { classname, source, srcSet, sizes } = this.props;
+        const { show } = this.state;
         return (
-            <figure ref="figures" className={this.state.show ? `${this.props.classname} showFigure` : this.props.classname} >
+            <figure ref="figures" className={show ? `${classname} showFigure` : classname} >
                 <img
-                    src={this.props.source}
+                    src={source}
                     alt="gotokuji-item"
-                    srcSet={this.props.srcSet}
-                    sizes={this.props.sizes}
+                    srcSet={srcSet}
+                    sizes={sizes}
                 />
             </figure>
         );

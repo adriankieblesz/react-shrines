@@ -9,13 +9,8 @@
     display: grid;
     justify-content: center;
     align-items: center;
- 
-            
+             
     .hie-title{
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
         transition: background 1s ease, border .5s 1.2s ease;
         overflow: hidden;
         border: 15px solid transparent;
@@ -37,10 +32,7 @@
             transition: all .4s .8s ease;
         }
     }
-    
-
-}
-    
+}   
 .show-hie-header{
     
     .hie-title{
@@ -56,7 +48,6 @@
         }
     }   
 }
-
 @media(max-width:1024px){
     .hie-header{
         width: 100%;
@@ -67,7 +58,6 @@
         background-position: center;
                 
         .hie-title{
-
             padding: 0 70px;
 
             .hie-title-eng{
@@ -76,9 +66,7 @@
             .hie-title-jap{
                 font-size: 2rem;
             }
-        }
-        
-    
+        }  
     }
     .show-hie-header{   
         .hie-title{

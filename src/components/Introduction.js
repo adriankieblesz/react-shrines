@@ -8,6 +8,7 @@ class Introduction extends Component {
 
     handleScroll = () => {
         let scrollY = window.scrollY || window.pageYOffset;
+        //change backgroundPositionY according to scrollY
         this.setState(() => ({
             backgroundPositionY: (scrollY * (-0.2))
         }))
@@ -16,9 +17,10 @@ class Introduction extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
+        const { backgroundPositionY } = this.state;
         return (
             <section id="introduction" style={{
-                backgroundPositionY: this.state.backgroundPositionY
+                backgroundPositionY: backgroundPositionY
             }}>
 
                 <article className="intro-article">

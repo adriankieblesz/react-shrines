@@ -5,6 +5,7 @@ class Iframe extends Component {
         source: "",
         load: false
     }
+    //Promise for asynchronous passing string source for iframe component
     loadIframe = (source) => {
         return new Promise((resolve, reject) => {
             if (source === "" || source === null)
@@ -14,33 +15,27 @@ class Iframe extends Component {
         })
     }
     handleScroll = () => {
-        if (!this.state.load) {
+        const { load } = this.state;
+        const { source } = this.props;
+        //Asynchronous maps loading during first scroll
+        if (!load) {
             setTimeout(() => {
-                this.loadIframe(this.props.source)
+                this.loadIframe(source)
                     .then(respond => this.setState(() => ({ source: respond })));
                 this.setState(() => ({ load: true }))
-            }, 1000);
+            }, 500);
         }
     }
     componentDidMount() {
-
-        // this.loadIframe(this.props.source)
-        //     .then(respond => this.setState(() => ({ source: respond })));
         window.addEventListener('scroll', this.handleScroll);
     }
 
     render() {
+        const { source } = this.state;
         return (
-            <iframe className="map" title="map" src={this.state.source} frameBorder="0" style={{ "border": 0 }} allowFullScreen=""></iframe>
+            <iframe className="map" title="map" src={source} frameBorder="0" style={{ "border": 0 }} allowFullScreen=""></iframe>
         );
     }
 }
 
 export default Iframe;
-// const Iframe = (props) => {
-//     return (
-//         <iframe className="map" title="map" src={props.source} frameBorder="0" style={{ "border": 0 }} allowFullScreen=""></iframe>
-//     );
-// }
-
-// export default Iframe;

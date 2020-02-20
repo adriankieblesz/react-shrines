@@ -10,32 +10,21 @@ class HieGallery extends Component {
         showGallery: false,
         slideclass: "slideLeftModal"
     }
+    //function for asynchronous loading of images for gallery
     loadImages = () => {
-        // let images = [];
-        // for (let i = 0; i < 13; i++) {
-        //     images.push(<img
-        //         src={require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)}
-        //         alt="hie-item"
-        //         srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
-        //                  ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
-        //     />)
-        // }
-
-        // return images;
         return new Promise(resolve => {
             let images = [];
             for (let i = 0; i < 13; i++) {
                 images.push(<img
                     src={require(`../images/Hie_Shrine/${i + 1}c_400.webp`)}
                     alt="hie-item"
-                // srcSet={`${require(`../images/Hie_Shrine/${i + 1}c.jpg`)} 1600w, 
-                //         ${require(`../images/Hie_Shrine/${i + 1}c_400.jpg`)} 400w`}
                 />)
             }
 
             resolve(images);
         })
     }
+    //Open modal window
     handleModalOpen = (link, element) => {
         this.setState(() => ({
             openModal: true,
@@ -44,6 +33,7 @@ class HieGallery extends Component {
             slideclass: "slideRightModal"
         }))
     }
+    //Close modal window (wait 300ms before erasing component)
     handleModalClose = () => {
         this.setState(() => ({ slideclass: "slideLeftModal" }))
         setTimeout(
@@ -52,10 +42,12 @@ class HieGallery extends Component {
             }.bind(this)
             , 300);
     }
+    //Load previous image
     handleSlideLeftImage = () => {
-        let current = this.state.currentElement - 1;
+        const { currentElement, images } = this.state;
+        let current = currentElement - 1;
         if (current < 1) {
-            current = this.state.images.length;
+            current = images.length;
             this.setState(() => ({
                 currentElement: current,
                 url: require(`../images/Hie_Shrine/${current}c.jpg`)
@@ -68,9 +60,11 @@ class HieGallery extends Component {
             }))
         }
     }
+    //Load next image
     handleSlideRightImage = () => {
-        let current = this.state.currentElement + 1;
-        if (current > this.state.images.length) {
+        const { currentElement, images } = this.state;
+        let current = currentElement + 1;
+        if (current > images.length) {
             current = 1;
             this.setState(() => ({
                 currentElement: current,
@@ -84,14 +78,11 @@ class HieGallery extends Component {
             }))
         }
     }
-    // handleScroll = () => {
-    //     window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - (this.refs.hie.clientHeight / 2) && this.setState(() => ({
-    //         showGallery: true,         
-    //     }))
 
-    // }
     handleScroll = () => {
-        if (this.props.asyncGalleryLoad) {
+        const { asyncGalleryLoad } = this.props;
+        //load asynchronously after first scroll
+        if (asyncGalleryLoad) {
             this.loadImages()
                 .then(respond => this.setState(() => ({
                     images: [...respond]
@@ -103,18 +94,14 @@ class HieGallery extends Component {
         }))
     }
     componentDidMount() {
-        // let imgs = this.loadImages();
-        // this.setState(() => ({
-        //     images: [...imgs]
-        // }))
-
         window.addEventListener('scroll', this.handleScroll);
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
     render() {
-        const { images, showGallery: show } = this.state;
+        const { images, showGallery: show, openModal, url, slideclass } = this.state;
+
         const galleryItems = images.map(image => (<div
             key={images.indexOf(image)}
             className="hie-gallery-item"
@@ -124,19 +111,19 @@ class HieGallery extends Component {
                 <img src={require('../images/Icons/expand2.png')} alt="expand" />
             </div>
         </div>))
+
         return (
             <div className={`${show ? "hie-gallery show-hie-gallery" : "hie-gallery"}`} ref={"hie"}>
                 <div className="hie-gallery-container">
-                    {/* {images} */}
                     {galleryItems}
                 </div>
-                {this.state.openModal && <ModalWindow
-                    modalSource={this.state.url}
+                {openModal && <ModalWindow
+                    modalSource={url}
                     closeclick={this.handleModalClose}
-                    open={this.state.openModal}
+                    open={openModal}
                     slideLeft={this.handleSlideLeftImage}
                     slideRight={this.handleSlideRightImage}
-                    slideclass={this.state.slideclass}
+                    slideclass={slideclass}
                 />}
             </div>
         );

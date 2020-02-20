@@ -14,7 +14,9 @@ class NavigationBar extends Component {
         animate: false,
         listClassName: "gridList"
     }
+
     handleScroll = () => {
+        //update current scrollY position
         let scrollY = window.scrollY || window.pageYOffset;
 
         //determine navbar position related to scroll position
@@ -45,13 +47,7 @@ class NavigationBar extends Component {
                 listClassName: "gridList"
             }))
         }
-        console.log(`navPosition: ` + this.state.navPosition);
-        console.log(`scrollY: ` + scrollY);
-        console.log(`scrollY + navHeight: ` + (scrollY + this.state.navHeight));
-        console.log(`navbar bounding top: ` + this.refs.navbar.getBoundingClientRect().top);
-        if (this.refs.tempDiv) console.log(`tempDiv bounding top` + this.refs.tempDiv.getBoundingClientRect().top + `\ntempDiv height:` + this.refs.tempDiv.clientHeight + `\ncondition amount: ` + (this.refs.tempDiv.getBoundingClientRect().top + scrollY + this.refs.tempDiv.clientHeight - 1))
-        console.log(`----------------------------------------------------`);
-        //
+        //if mobile mode and navbar position under or equal it's relative place then close it
         if (window.innerWidth < 1025 && this.state.navPosition <= scrollY + this.state.navHeight) {
             this.setState(() => ({
                 className: "close",
@@ -63,19 +59,13 @@ class NavigationBar extends Component {
                 className: ""
             }))
         }
-        // if (this.refs.tempDiv && this.state.navPosition <= this.refs.tempDiv.getBoundingClientRect().top + scrollY + this.refs.tempDiv.clientHeight - 1) {
-        //     this.setState(() => ({
-        //         isFixed: false,
-        //         idName: "relativeNav",
-        //         showButton: false,
-        //         listClassName: "gridList"
-        //     }))
-        // }
+        //if scrollY reaches to the top of NavigationBar component's container then execute animation responsible for showing buttons in fixed order 
         window.scrollY > this.refs.navbar.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .7) && this.setState(() => ({
             animate: true
         }))
     }
     handleResize = () => {
+        //if mobile mode and still resizing then set navbar as default
         if (window.innerWidth < 1025 && !this.state.iconClicked) {
             this.setState(() => ({
                 className: "close",
@@ -86,12 +76,14 @@ class NavigationBar extends Component {
                 className: ""
             }))
         }
+        //update navbar height when changed
         if (this.state.navHeight !== this.refs.navbar.clientHeight) {
             this.setState(() => ({
                 navHeight: this.refs.navbar.clientHeight
             }))
         }
     }
+    //if mobile mode and one of the links has been clicked then close navbar
     handleClickLink = () => {
         if (window.innerWidth < 1025) {
             this.setState(() => ({
@@ -101,7 +93,9 @@ class NavigationBar extends Component {
         }
 
     }
+    //Function responsible for changing the state of the navbar button during mobile mode
     handleClickNavBtn = () => {
+
         this.setState((prevState) => ({
             iconClicked: !prevState.iconClicked
         }))
@@ -126,6 +120,7 @@ class NavigationBar extends Component {
     componentDidMount() {
         window.addEventListener('resize', this.handleResize)
         window.addEventListener('scroll', this.handleScroll);
+        //determine initial nav height
         this.setState(() => ({
             navHeight: this.refs.navbar.clientHeight
         }))
@@ -136,31 +131,32 @@ class NavigationBar extends Component {
     }
 
     render() {
-
+        const { isFixed, navHeight, idName, className, listClassName, animate, showButton, iconClicked } = this.state;
         return (
             <React.Fragment>
-                {this.state.isFixed && <div ref={"tempDiv"} style={{ height: this.state.navHeight, position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }}></div>}
-                <nav id={`${this.state.idName}`} className={`${this.state.className}`} ref={"navbar"}>
-                    <ul className={this.state.listClassName}>
-                        <li className={`${this.state.animate ? 'showButtons' : ''}`}>
+                {isFixed && <div ref={"tempDiv"} style={{ height: navHeight, position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }}></div>}
+                <nav id={`${idName}`} className={`${className}`} ref={"navbar"}>
+                    <ul className={listClassName}>
+                        <li className={`${animate ? 'showButtons' : ''}`}>
                             <a href="#sensoji" onClick={this.handleClickLink}>Sensō-ji</a>
                         </li>
-                        <li className={`${this.state.animate ? 'showButtons' : ''}`}>
+                        <li className={`${animate ? 'showButtons' : ''}`}>
                             <a href="#hie" onClick={this.handleClickLink}>Hie</a>
                         </li>
-                        <li className={`${this.state.animate ? 'showButtons' : ''}`}>
+                        <li className={`${animate ? 'showButtons' : ''}`}>
                             <a href="#gotokuji" onClick={this.handleClickLink}>Gotokuji</a>
                         </li>
-                        <li className={`${this.state.animate ? 'showButtons' : ''}`}>
+                        <li className={`${animate ? 'showButtons' : ''}`}>
                             <a href="#toyokawa" onClick={this.handleClickLink}>Toyokawa</a>
                         </li>
-                        <li className={`${this.state.animate ? 'showButtons' : ''}`}>
+                        <li className={`${animate ? 'showButtons' : ''}`}>
                             <a href="#meiji" onClick={this.handleClickLink}>Meiji-jingu</a>
                         </li>
                     </ul>
                 </nav>
-                {this.state.showButton ? <NavButton
-                    iconClicked={this.state.iconClicked}
+                {/* Show hamburger menu*/}
+                {showButton ? <NavButton
+                    iconClicked={iconClicked}
                     click={this.handleClickNavBtn}
                 /> : null}
 
