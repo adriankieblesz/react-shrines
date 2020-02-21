@@ -8,9 +8,6 @@ nav{
     scroll-snap-align: center;
     height: auto;
     max-height: 700px;
-    transition: max-height 1.5s ease-in;
-    // height: 0;
-    // transition: height 1.5s ease-in;
 
         ul{
             list-style-type: none;
@@ -91,7 +88,6 @@ nav{
 }
 .open{
     max-height: 100vh;
-    // height: 100vh;
     height: 100%;
     opacity: 1;
     pointer-events: all;
@@ -100,7 +96,6 @@ nav{
     }
 }
 .close{
-    // max-height: 0;
     height: 0;
     opacity: 0;
     pointer-events: none;
@@ -141,18 +136,20 @@ nav{
     nav{   
         max-height: 100%;
         display: block;
+
         ul{
             margin: 0;
+
             li{
                 display: flex;
                 align-items: center;
                 position: relative;
+                
                 a{
                     width: max-content;
                     margin: 0 auto;
                 }
-                a::after{
-                    
+                a::after{                  
                     margin: 0 auto;
                 }
             }
