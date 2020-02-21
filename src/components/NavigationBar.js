@@ -24,11 +24,12 @@ class NavigationBar extends Component {
             navPosition: this.refs.navbar.getBoundingClientRect().top + this.state.navHeight + scrollY
         }))
         //update navbar height when changed
-        if (this.state.navHeight !== this.refs.navbar.clientHeight) {
+        if (this.state.navHeight !== this.refs.navbar.clientHeight && window.innerWidth >= 1025) {
             this.setState(() => ({
                 navHeight: this.refs.navbar.clientHeight
             }))
         }
+
         //if top navbar verge is below or same level as scrollY then make it sticky to the top of the window
         if (this.state.navPosition <= scrollY + this.state.navHeight) {
             this.setState(() => ({
@@ -59,6 +60,12 @@ class NavigationBar extends Component {
                 className: "",
             }))
         }
+        // console.log(`scrollY: ${scrollY}`);
+        // console.log(`navHeight: ${this.state.navHeight}`);
+        // console.log(`navPosition: ${this.state.navPosition}`);
+        // console.log(`scrollY + navHeight: ` + (scrollY + this.state.navHeight));
+        // console.log(`---------------------------------------------`);
+
         //if scrollY reaches to the top of NavigationBar component's container then execute animation responsible for showing buttons in fixed order 
         window.scrollY > this.refs.navbar.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .7) && this.setState(() => ({
             animate: true
@@ -77,7 +84,7 @@ class NavigationBar extends Component {
             }))
         }
         //update navbar height when changed
-        if (this.state.navHeight !== this.refs.navbar.clientHeight) {
+        if (this.state.navHeight !== this.refs.navbar.clientHeight && window.innerWidth >= 1025) {
             this.setState(() => ({
                 navHeight: this.refs.navbar.clientHeight
             }))
@@ -91,7 +98,6 @@ class NavigationBar extends Component {
                 iconClicked: false
             }))
         }
-
     }
     //Function responsible for changing the state of the navbar button during mobile mode
     handleClickNavBtn = () => {
@@ -99,22 +105,12 @@ class NavigationBar extends Component {
         this.setState((prevState) => ({
             iconClicked: !prevState.iconClicked
         }))
-        // if (this.state.iconClicked) {
-        //     this.setState(() => ({
-        //         className: "close"
-        //     }))
-        // }
-        // else {
-        //     this.setState(() => ({
-        //         className: ""
-        //     }))
-        // }
         this.state.iconClicked ?
             this.setState(() => ({
                 className: "close"
             })) :
             this.setState(() => ({
-                className: ""
+                className: "open"
             }))
     }
     componentDidMount() {

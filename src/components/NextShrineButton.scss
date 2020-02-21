@@ -27,8 +27,8 @@
                 height: 25px;
                 vertical-align: top;
                 position: relative;
-                -webkit-animation: moveUpDown 1s infinite;
-                animation: moveUpDown 1s infinite;
+                -webkit-animation: moveUpDown .75s infinite ease;
+                animation: moveUpDown .75s infinite ease;
             }
         }      
 }
@@ -39,23 +39,29 @@
 }
 @-webkit-keyframes moveUpDown{
     0%{
-        top: 0;
+        // top: 0;
+        -webkit-transform: translateY(0%);
     }
     75%{
-        top: -15%;
+        // top: -15%;
+        -webkit-transform: translateY(15%);
     }
     100%{
-        top: 0;
+        // top: 0;
+        -webkit-transform: translateY(0%);
     }
 }
 @keyframes moveUpDown{
     0%{
-        top: 0;
+        // top: 0;
+        transform: translateY(0%);
     }
     75%{
-        top: -15%;
+        // top: -15%;
+        transform: translateY(15%);
     }
     100%{
-        top: 0;
+        // top: 0;
+        transform: translateY(0%);
     }
 }
