@@ -48,11 +48,12 @@ nav{
     transition: padding .5s, grid-template-columns .5s;
 }
 #fixedNav{
-    transition: position .5s, height 1.5s ease;
+    transition: position .5s, height 1s ease, opacity 1s ease;
     background-color: rgba(0, 0, 0, 0.65);
     position: fixed;
     top: 0;
     text-align: center;
+    overflow: hidden;
 
     ul{
         transition: all .5s;
@@ -80,7 +81,7 @@ nav{
     ul{
         li{
             opacity: 0;
-
+            position: relative;
             a{
                 transition: color .5s, padding .5s;
                 color: white;
@@ -91,12 +92,16 @@ nav{
 .open{
     max-height: 100vh;
     // height: 100vh;
+    height: 100%;
     opacity: 1;
     pointer-events: all;
+    ul{
+        margin: 25px;
+    }
 }
 .close{
-    max-height: 0;
-    // height: 0px;
+    // max-height: 0;
+    height: 0;
     opacity: 0;
     pointer-events: none;
 }
@@ -126,23 +131,22 @@ nav{
     }
 }
 @media(max-width:1024px){
-    #relativeNav{
-        height: 100%;
-        .gridList{
-              
+    #relativeNav{      
+        .gridList{   
             grid-template-columns: 1fr;
             grid-template-rows: repeat(5,20%);
             height: 100vh;
         }
     }
     nav{   
-    
+        max-height: 100%;
         display: block;
         ul{
-
+            margin: 0;
             li{
-                display: block;
-
+                display: flex;
+                align-items: center;
+                position: relative;
                 a{
                     width: max-content;
                     margin: 0 auto;
