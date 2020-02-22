@@ -32,6 +32,9 @@ class Sensoji extends Component {
             }))
         }
         let scrollY = window.scrollY || window.pageYOffset
+        this.setState(() => ({
+            backgroundPosition: scrollY * (-.2)
+        }))
         //if scrollY reaches visible point then show backogrund and title of the top part of the component
         let position = this.refs.sensojiHead.getBoundingClientRect().top + scrollY;
         if (position - distance <= scrollY) {
@@ -71,7 +74,7 @@ class Sensoji extends Component {
         window.removeEventListener('resize', this.handleResize);
     }
     render() {
-        const { sensojiInfo, isActive, showNextBtn, allowGallery } = this.state;
+        const { sensojiInfo, isActive, showNextBtn, allowGallery, backgroundPosition } = this.state;
         const grids = sensojiInfo.map(info => <SensojiItem
             key={sensojiInfo.indexOf(info)}
             classname={info.classname}
@@ -83,7 +86,7 @@ class Sensoji extends Component {
         />)
 
         return (
-            <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef">
+            <section id="sensoji" className="shrine-section sensoji-margin" ref="sensojiRef" style={{ backgroundPositionY: backgroundPosition }}>
                 <div ref={"sensojiHead"} className="sensoji-head">
                     <div className={`sensoji-img ${isActive ? "imgDown" : ""}`} >
                         <div className={`sensoji-dim ${isActive ? "dimDown" : ""}`}>
