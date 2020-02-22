@@ -8,12 +8,14 @@
             transition: opacity .5s ease-in-out;
         }
     }
+
     .hie-space{
         width: 100%;
         height: 50vh;
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+
         &:nth-child(2){
             background-image: url('../images/Hie_Shrine/12c_1920.webp');
         }
@@ -22,8 +24,7 @@
         }
         &:nth-child(6){
             background-image: url('../images/Hie_Shrine/4c_1920.webp');
-        }
-        
+        }      
     }
     .hie-grid{
         padding: 50px 20%;
@@ -32,6 +33,7 @@
         align-items: center;
         grid-gap: 10px;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
         p{
             transition: .5s cubic-bezier(.68,-0.55,.27,1.55);
             position: relative;
@@ -58,10 +60,8 @@
         opacity: 1;
     }
 }
-.hie-hide-element{
-    
+.hie-hide-element{  
     .hie-grid{
-
         p{
             opacity: 0;
             left: -50%;
@@ -75,7 +75,6 @@
 .hie-show-element{
     opacity: 1;
     .hie-grid{
-
         p{
             opacity: 1;
             left: 0;
@@ -104,6 +103,13 @@
     .hie-show-first{
         p{
             padding: 50px 20px;
+        }
+    }
+}
+@media(max-width:1024px) and (orientation:landscape){
+    .hie-grid{
+        img{
+            max-height: 80vh;           
         }
     }
 }

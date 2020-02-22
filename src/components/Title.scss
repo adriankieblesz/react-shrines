@@ -69,23 +69,21 @@
 }
 @media(max-width:1024px){
     .p2-container{
+        width: max-content;
         .p2{
             font-size: 1.5rem;
             padding: 35px 50px;
-        }
-        
-    }
-    
+        }   
+    } 
 }
 @media(max-width:568px){
-    .p2-container{
+    .p2-container{   
         .p2{
-            font-size: .7rem;
+            font-size: 1.1rem;
             padding: 20px 30px;
         }
         .p2-span{
             border-bottom: 1px solid white;   
         }
-    }
-   
+    } 
 }

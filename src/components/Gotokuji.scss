@@ -13,7 +13,6 @@
     overflow: hidden;
     text-align: center;
     color: rgb(126, 126, 126);
-    // font-family: "Gentium Book Basic",serif;
 
     .title-container{
         width: 50%;
@@ -28,7 +27,6 @@
             color: white;
             left: 50%;
             transform: translate(-50%, -50%);
-
 
             .gotokuji-title-eng{
                 // transition: opacity 2s ease;
@@ -166,7 +164,7 @@
         background-position-y: 0;
     }
 }
-@media(max-width:768px){
+@media(max-width:1024px){
     .gotokuji-article{
         background-size: 100% 100%;
         .title-container{
@@ -183,5 +181,18 @@
                 margin-bottom: 0;
             }
         }
+    }
+}
+@media(max-width:1024px) and (orientation:landscape){
+    .gotokuji-show-element{      
+        img{
+            max-height: 90vh;
+        }
+    }
+}
+@media(max-width:586px) and (orientation:portrait){
+    .gotokuji-article{
+        background-size: 150% 100%;
+        background-position-x: center;
     }
 }

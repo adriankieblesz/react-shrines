@@ -18,10 +18,16 @@
 
         .intro-p{
             color: rgb(255, 255, 255);
-            margin: 0;           
+            margin: 0;
+            transition: .5s ease all;           
         }
     }
     
+}
+@media(max-width:1366px) and (orientation:landscape){
+    #introduction{
+        background-size: 150% 150%;
+    }
 }
 @media(max-width:1024px){
     #introduction{
@@ -32,6 +38,16 @@
             margin: 50px 0;
         }
     }    
+}
+@media(max-width:1024px) and (orientation:landscape){
+    #introduction{
+        background-size: 150% 175%;
+    }
+}
+@media(max-width:768px) and (orientation:landscape){
+    .intro-p{
+        font-size: 1.2rem;
+    }
 }
 @media screen and (max-width:568px){
     #introduction{
