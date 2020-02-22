@@ -228,12 +228,12 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/9_300.3d227a12.webp"
   },
   {
-    "revision": "744da80528c90d0555d19bdac3894f80",
-    "url": "/react-shrines/static/media/yantramanav-v5-latin-regular.744da805.woff"
-  },
-  {
     "revision": "c31cb91e5fb813604ad89ab0c623808e",
     "url": "/react-shrines/static/media/yantramanav-v5-latin-regular.c31cb91e.woff2"
+  },
+  {
+    "revision": "744da80528c90d0555d19bdac3894f80",
+    "url": "/react-shrines/static/media/yantramanav-v5-latin-regular.744da805.woff"
   },
   {
     "revision": "01e51eaebfca712bf731c79ed667b65c",
@@ -872,7 +872,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/stylish-v8-korean-regular.a7e03cce.woff"
   },
   {
-    "revision": "0fc99557433c06d75ac554cfde1cb694",
+    "revision": "4d1bcbcfa39fb480e76e86a438f153c7",
     "url": "/react-shrines/index.html"
   }
 ];
