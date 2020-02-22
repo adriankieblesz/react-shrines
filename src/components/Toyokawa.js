@@ -105,6 +105,7 @@ class Toyokawa extends Component {
                                 The same story as with Tokyo Station, find <img src={require('../images/PT_icons/M_25.png')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 500 meters to destination.
                             </P>
                         }
+                        source={require('../images/Icons/map_black.png')}
                     />
                 </article>
                 <NextShrineButton

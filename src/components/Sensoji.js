@@ -122,6 +122,7 @@ class Sensoji extends Component {
                                 Find <img src={require('../images/PT_icons/JC_25.png')} alt="JC" /> Chūō Line and reach to <strong>Kanada Station</strong> then transfer to <img src={require('../images/PT_icons/G_25.png')} alt="G" /> Ginza Line and you will get to the <strong>Asakusa Station</strong>
                             </P>
                         }
+                        source={require('../images/Icons/map_black.png')}
                     />
                 </article>
                 <NextShrineButton

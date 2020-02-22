@@ -15,12 +15,12 @@ class Map extends Component {
     }
     render() {
         const { classname } = this.state;
-        const { iframe, description, tstation, sstation } = this.props;
+        const { iframe, description, tstation, sstation, source } = this.props;
         return (
             <Fragment>
                 <div className={classname} ref="map">
                     <h2 className="map-header">How to get there?</h2>
-                    <img className="map-img" src={require('../images/Icons/map.png')} alt="" />
+                    <img className="map-img" src={source} alt="" />
                     <div className="map-grid">
                         <div className="map-item map-first">
                             {iframe}

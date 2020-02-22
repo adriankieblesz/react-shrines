@@ -98,6 +98,7 @@ class Meiji extends Component {
                                 Temple is relatively close to <strong>Shinjuku Station</strong> and there is about 10 to 15 minutes walk from there.
                             </P>
                         }
+                        source={require('../images/Icons/map_white.png')}
                     />
                 </article>
             </section >

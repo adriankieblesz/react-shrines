@@ -160,6 +160,7 @@ class Gotokuji extends Component {
                                 Find <img src={require('../images/PT_icons/OH_25.png')} alt="OH" /> Odakyu Line which will transport you directly to <strong>Gotokuji Station</strong> then there is about 10 minutes walk to shrine.
                             </P>
                         }
+                        source={require('../images/Icons/map_white.png')}
                     />
                 </article>
                 <NextShrineButton

@@ -151,6 +151,7 @@ class Hie extends Component {
                                 Simillary as with Tokyo Station, try to find <img src={require('../images/PT_icons/M_25.png')} alt="M" /> Marunouchi Line to disembark at <strong>Akasaka-Mitsuke Station</strong> and then walk 400 meters to shrine.
                             </P>
                         }
+                        source={require('../images/Icons/map_white.png')}
                     />
                 </article>
                 <NextShrineButton

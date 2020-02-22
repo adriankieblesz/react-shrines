@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Yantramanav&display=swap');
 .map-header{
     display: inline-block;
     transition: all .5s;
@@ -5,6 +6,7 @@
     top: -100px;
     opacity: 0;
     pointer-events: none;
+    font-family: 'Yantramanav', ;
 }
 
 .map-img{
@@ -101,21 +103,6 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 1366px){
     .map-header{
         font-size: 1.7rem;
