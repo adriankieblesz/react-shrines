@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Concert+One|Yantramanav&display=swap');
-.map-header{
+ .map-header{
     display: inline-block;
     transition: all .5s;
     position: relative;
     top: -100px;
     opacity: 0;
     pointer-events: none;
-    font-family: 'Yantramanav', ;
+    font-family: 'Yantramanav', sans-serif;
 }
 
 .map-img{
