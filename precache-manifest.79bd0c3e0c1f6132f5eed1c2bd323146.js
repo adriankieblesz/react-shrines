@@ -840,7 +840,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/3_500.d1db4b2e.webp"
   },
   {
-    "revision": "d3cc902e5feeaa6f78d9b79e58f35cfd",
+    "revision": "ce026d7b66d438076daa403d66ae56da",
     "url": "/react-shrines/index.html"
   }
 ];
