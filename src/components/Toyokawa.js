@@ -27,13 +27,13 @@ class Toyokawa extends Component {
             showHeader: true,
         }))
         //show next shrine button
-        if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
+        if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * .3)) {
             this.setState(() => ({
                 showNextBtn: true
             }))
         }
         //hide next shrine button
-        if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY || window.scrollY < this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.25)) {
+        if (window.scrollY > this.refs.toyokawa.getBoundingClientRect().top + window.scrollY + this.refs.toyokawa.clientHeight - 500 || window.scrollY < this.refs.toyokawa.getBoundingClientRect().bottom + window.scrollY - (this.refs.toyokawa.clientHeight * 0.3)) {
             this.setState(() => ({
                 showNextBtn: false
             }))
