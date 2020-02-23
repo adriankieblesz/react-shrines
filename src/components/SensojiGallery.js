@@ -26,6 +26,14 @@ class SensojiGallery extends Component {
             scrollLeft: this.refs.senGalCol.scrollLeft,
         })
     }
+    handleTouchStart = (e) => {
+        // e.preventDefault();
+        this.setState({
+            isDown: true,
+            startX: e.touches[0].pageX - this.refs.senGalCol.offsetLeft,
+            scrollLeft: this.refs.senGalCol.scrollLeft
+        })
+    }
     //mouse leaves area of gallery images list
     handleMouseLeave = () => {
         this.setState(() => ({
@@ -45,6 +53,14 @@ class SensojiGallery extends Component {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - this.refs.senGalCol.offsetLeft
+        const movePath = x - startX;
+        this.refs.senGalCol.scrollLeft = scrollLeft - movePath;
+    }
+    handleTouchMove = (e) => {
+        const { isDown, startX, scrollLeft } = this.state;
+        if (!isDown) return;
+        // e.preventDefault();
+        const x = e.touches[0].pageX - this.refs.senGalCol.offsetLeft
         const movePath = x - startX;
         this.refs.senGalCol.scrollLeft = scrollLeft - movePath;
     }
@@ -147,9 +163,13 @@ class SensojiGallery extends Component {
                 <h3>Gallery</h3>
                 <div ref="senGalCol" className={`sensoji-gallery-container ${isDown ? "" : "man"}`}
                     onMouseDown={this.handleMouseDown}
+                    onTouchStart={this.handleTouchStart}
                     onMouseLeave={this.handleMouseLeave}
+                    onTouchCancel={this.handleMouseLeave}
                     onMouseUp={this.handleMouseUp}
+                    onTouchEnd={this.handlemouseUp}
                     onMouseMove={this.handleMouseMove}
+                    onTouchMove={this.handleTouchMove}
                 >
                     {elements}
                 </div>
