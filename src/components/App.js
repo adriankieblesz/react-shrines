@@ -5,11 +5,8 @@ import Introduction from './Introduction.js';
 import ShrineDescription from './ShrineDescription.js';
 import ShrinePresentation from './ShrinePresentation.js';
 
-
-
 class App extends Component {
   state = {}
-
   render() {
     return (
       <div className="App">
