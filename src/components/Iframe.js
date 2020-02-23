@@ -3,15 +3,16 @@ import React, { Component } from 'react';
 class Iframe extends Component {
     state = {
         source: "",
-        load: false
+        load: false,
     }
     //Promise for asynchronous passing string source for iframe component
     loadIframe = (source) => {
         return new Promise((resolve, reject) => {
             if (source === "" || source === null)
                 reject(new Error('Incorrect string source'));
-            else
-                resolve(source);
+            else {
+                resolve(source)
+            }
         })
     }
     handleScroll = () => {
@@ -23,13 +24,12 @@ class Iframe extends Component {
                 this.loadIframe(source)
                     .then(respond => this.setState(() => ({ source: respond })));
                 this.setState(() => ({ load: true }))
-            }, 500);
+            }, 400);
         }
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
-
     render() {
         const { source } = this.state;
         return (

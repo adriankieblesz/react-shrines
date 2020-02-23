@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonDown from "./ButtonDown";
 import Title from './Title';
 import './MainHead.scss';
-const MainHead = () => {
+const MainHead = ({ click }) => {
     return (
         <header id="head">
             <ul className="cb-slideshow">
@@ -22,7 +22,10 @@ const MainHead = () => {
                     <span></span>
                 </li>
             </ul>
-            <ButtonDown link={"#introduction"} />
+            <ButtonDown
+                link={"#introduction"}
+                click={click}
+            />
             <div className="background-div"></div>
             <Title />
         </header>

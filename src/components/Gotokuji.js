@@ -10,20 +10,24 @@ import NextShrineButton from './NextShrineButton';
 class Gotokuji extends Component {
     state = {
         classname: "",
+        load: false,
         showNextBtn: false,
         loadGallery: false
     }
     handleScroll = () => {
         const { loadGallery } = this.state;
         //allow to load gallery images asynchronously
-        if (!loadGallery) {
-            this.setState(() => ({
-                loadGallery: true
-            }))
-        }
+        // if (!loadGallery) {
+        //     setTimeout(() => {
+        //         this.setState(() => ({
+        //             loadGallery: true
+        //         }))
+        //     }, 2000);
+        // }
         //animate initial part of component (trim down backogrund image, opacity:1 for right side of article)
         window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
             classname: "gotokuji-article-active",
+            load: true
         }))
         //if scrollY reaches almost end of the component then show button for next shrine
         if (window.scrollY > this.refs.gotokuji.getBoundingClientRect().bottom + window.scrollY - (this.refs.gotokuji.clientHeight * 0.1)) {
@@ -137,14 +141,14 @@ class Gotokuji extends Component {
                     </div>
                 </article>
                 <article className="gotokuji-gallery-arcticle">
-                    <GotokujiGallery allowGallery={loadGallery} />
+                    {/* <GotokujiGallery allowGallery={loadGallery} /> */}
+                    <GotokujiGallery allowGallery={this.props.asyncLoading} />
                 </article>
                 <article className="gotokuji-article-map" >
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15422.562447997836!2d139.64475975514102!3d35.6475825399903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f39f99015555%3A0x6b0e9ad51be4cac!2sG%C5%8Dtokuji%20Temple!5e0!3m2!1spl!2spl!4v1579611452188!5m2!1spl!2spl"} />
                         }
-
                         description={
                             <P>
                                 Gotokuji Temple is placed in Setagaya district and it is far away from city center.

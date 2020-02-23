@@ -26,11 +26,13 @@ class Sensoji extends Component {
     handleScroll = () => {
         const { allowGallery, distance } = this.state;
         //allow loading gallery asynchronously after first scroll
-        if (!allowGallery) {
-            this.setState(() => ({
-                allowGallery: true
-            }))
-        }
+        // if (!allowGallery) {
+        //     setTimeout(() => {
+        //         this.setState(() => ({
+        //             allowGallery: true
+        //         }))
+        //     }, 2000);
+        // }
         let scrollY = window.scrollY || window.pageYOffset
         this.setState(() => ({
             backgroundPosition: scrollY * (-.2)
@@ -102,7 +104,8 @@ class Sensoji extends Component {
                 </div>
                 <article className="sensoji-article">
                     {grids}
-                    <SensojiGallery allowAsyncGallery={allowGallery} />
+                    {/* <SensojiGallery allowAsyncGallery={allowGallery} /> */}
+                    <SensojiGallery allowAsyncGallery={this.props.asyncLoading} />
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9162.670944887788!2d139.7924593836857!3d35.714082776094294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ec1a4463df1%3A0x6c0d289a8292810d!2zU2Vuc8WNLWpp!5e0!3m2!1spl!2spl!4v1577944734907!5m2!1spl!2spl"} />

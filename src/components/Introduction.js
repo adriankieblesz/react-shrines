@@ -13,6 +13,7 @@ class Introduction extends Component {
         this.setState(() => ({
             backgroundPositionY: (scrollY * (-0.2))
         }))
+        //show scroll down button
         scrollY >= this.refs.introduction.getBoundingClientRect().top + scrollY && this.setState(() => ({
             classname: "scrollIntroShowBtn"
         }))
@@ -27,7 +28,6 @@ class Introduction extends Component {
                 backgroundPositionY: backgroundPositionY
             }}>
                 <article className="intro-article">
-
                     <p className="intro-p">
                         When it comes to visit Tokyo Japan there is a plety of places to see.
                         Absolutely must see are temples/shrines placed all around entire Tokyo
@@ -36,7 +36,6 @@ class Introduction extends Component {
                         choose?". Below are presented five incredibely georgous and well known
                         temples in Tokyo with exact location and tips how to get there.
                     </p>
-
                 </article>
                 <ButtonDown
                     classname={classname}

@@ -9,6 +9,7 @@ import ShrinePresentation from './ShrinePresentation.js';
 
 class App extends Component {
   state = {}
+
   render() {
     return (
       <div className="App">

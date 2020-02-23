@@ -4,6 +4,7 @@
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
   scroll-snap-points-x: initial;
+  overflow: hidden;
 }
 
 article{   

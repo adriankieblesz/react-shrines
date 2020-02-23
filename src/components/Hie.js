@@ -18,11 +18,13 @@ class Hie extends Component {
     handleScroll = () => {
         const { asyncGalleryLoad, refss } = this.state;
         //allow to load gallery images asynchronously
-        if (!asyncGalleryLoad) {
-            this.setState(() => ({
-                asyncGalleryLoad: true
-            }))
-        }
+        // if (!asyncGalleryLoad) {
+        //     setTimeout(() => {
+        //         this.setState(() => ({
+        //             asyncGalleryLoad: true
+        //         }))
+        //     }, 2000);
+        // }
         //animate initial part of component (title animation)
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHeader: true,
@@ -130,7 +132,8 @@ class Hie extends Component {
                     </ScrollShowElement>
 
                 </article>
-                <HieGallery asyncGalleryLoad={asyncGalleryLoad} />
+                {/* <HieGallery asyncGalleryLoad={asyncGalleryLoad} /> */}
+                <HieGallery asyncGalleryLoad={this.props.asyncLoading} />
                 <article className="gotokuji-article-map">
                     <Map ref={"map"}
                         iframe={

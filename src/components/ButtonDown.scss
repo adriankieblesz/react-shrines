@@ -54,7 +54,6 @@
         transform: translateY(0%);
     }
 }
-
 @-webkit-keyframes showButton{
     
     to{
@@ -74,5 +73,10 @@
 @keyframes rotateButton{
     to{
         transform: rotateZ(720deg);
+    }
+}
+@media(max-width:1024px){
+    .scrollDownBtn{
+        bottom: 7.5%;
     }
 }

@@ -17,11 +17,13 @@ class Toyokawa extends Component {
     handleScroll = () => {
         const { allowGallery } = this.state;
         //allow gallery loading asynchronously
-        if (!allowGallery) {
-            this.setState(() => ({
-                allowGallery: true
-            }))
-        }
+        // if (!allowGallery) {
+        //     setTimeout(() => {
+        //         this.setState(() => ({
+        //             allowGallery: true
+        //         }))
+        //     }, 2000);
+        // }
         //show top part of the component
         window.scrollY > this.refs.toyokawa.getBoundingClientRect().top + window.scrollY - 10 && this.setState(() => ({
             showHeader: true,
@@ -46,7 +48,7 @@ class Toyokawa extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
     render() {
-        const { showHeader, allowGallery, showNextBtn } = this.state;
+        const { showHeader, asyncLoading, showNextBtn } = this.state;
         return (
             <section id="toyokawa" ref="toyokawa">
                 <ToyokawaHead classname={showHeader ? "toyokawa-header show-toyokawa-header" : "toyokawa-header"} />
@@ -85,7 +87,8 @@ class Toyokawa extends Component {
                         </P>
                     </ScrollShowElement>
 
-                    <ToyokawaGallery allowGallery={allowGallery} />
+                    {/* <ToyokawaGallery allowGallery={allowGallery} /> */}
+                    <ToyokawaGallery allowGallery={asyncLoading} />
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.024221616309!2d139.73066131525857!3d35.67640558019544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c7e121ee92b%3A0x5761574668b96c9!2sToyokawa%20Inari%20Tokyo%20Betsuin!5e0!3m2!1spl!2spl!4v1580643642437!5m2!1spl!2spl"} />

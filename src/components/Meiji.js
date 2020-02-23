@@ -14,11 +14,13 @@ class Meiji extends Component {
     handleScroll = () => {
         const { allowGallery } = this.state;
         //allow asynchronous gallery loading after first scroll
-        if (!allowGallery) {
-            this.setState(() => ({
-                allowGallery: true
-            }))
-        }
+        // if (!allowGallery) {
+        //     setTimeout(() => {
+        //         this.setState(() => ({
+        //             allowGallery: true
+        //         }))
+        //     }, 2000);
+        // }
         //animate top part of component when scrollY reaches the point
         window.scrollY > this.refs.meiji.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHead: true,
@@ -76,13 +78,13 @@ class Meiji extends Component {
                     </MeijiItem>
 
                 </article>
-                <MeijiGallery allowGallery={allowGallery} />
+                {/* <MeijiGallery allowGallery={allowGallery} /> */}
+                <MeijiGallery allowGallery={this.props.asyncLoading} />
                 <article className="meiji-article meiji-article-map" >
                     <Map ref={"map"}
                         iframe={
                             <Iframe source={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6482.063958660946!2d139.69675097670705!3d35.67621455891326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cb79a4c26e5%3A0x8fca893849103f73!2sMeiji%20Shrine!5e0!3m2!1spl!2spl!4v1579191224896!5m2!1spl!2spl"} />
                         }
-
                         description={
                             <P>
                                 Meiji-jingu Temple is placed in Shibuya district and it is very close to Yoyogi Station.
