@@ -9,6 +9,7 @@ nav{
     height: auto;
     max-height: 700px;
 
+
         ul{
             list-style-type: none;
             padding-left: 0;
@@ -126,7 +127,8 @@ nav{
     }
 }
 @media(max-width:1024px){
-    #relativeNav{      
+    #relativeNav{   
+        margin-top: 1px;  
         .gridList{   
             grid-template-columns: 1fr;
             grid-template-rows: repeat(5,20%);

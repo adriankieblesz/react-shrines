@@ -30,7 +30,7 @@ class NavigationBar extends Component {
             }))
         }
         //if top navbar verge is below or same level as scrollY then make it sticky to the top of the window
-        if (this.state.navPosition <= scrollY + this.state.navHeight) {
+        if (this.state.navPosition < scrollY + this.state.navHeight) {
             this.setState(() => ({
                 isFixed: true,
                 idName: "fixedNav",
@@ -51,7 +51,7 @@ class NavigationBar extends Component {
         if (window.innerWidth < 1025 && this.state.navPosition <= scrollY + this.state.navHeight) {
             this.setState(() => ({
                 className: "close",
-                iconClicked: false
+                iconClicked: false,
             }))
         }
         else {
@@ -59,6 +59,9 @@ class NavigationBar extends Component {
                 className: "",
             }))
         }
+        console.log(`this.state.navPosition: ${this.state.navPosition}`);
+        console.log(`scrollY + this.state.navHeight: ${scrollY + this.state.navHeight}`);
+        console.log(`-----------------------------------------------`);
         //if scrollY reaches to the top of NavigationBar component's container then execute animation responsible for showing buttons in fixed order 
         window.scrollY > this.refs.navbar.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .7) && this.setState(() => ({
             animate: true
@@ -112,6 +115,11 @@ class NavigationBar extends Component {
         this.setState(() => ({
             navHeight: this.refs.navbar.clientHeight
         }))
+        // if (window.innerWidth < 1025) {
+        //     this.setState(() => ({
+        //         navHeight: (this.refs.navbar.clientHeight + 1)
+        //     }))
+        // }
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize)
@@ -119,6 +127,7 @@ class NavigationBar extends Component {
     }
 
     render() {
+
         const { isFixed, navHeight, idName, className, listClassName, animate, showButton, iconClicked } = this.state;
         return (
             <React.Fragment>
