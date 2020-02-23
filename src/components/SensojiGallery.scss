@@ -69,15 +69,18 @@
 }
 @media screen and (max-width:760px){
     .sensoji-gallery{   
+       
         h3{
             font-size: 2rem;
         }
         .sensoji-gallery-container{
-            height: 50vh;
-            margin: 50px 0;
-            padding-top:0;
+            height: 60vh;
+            margin: 0;
+            padding:30px 10px 0px 0px;
+
 
             .sensoji-gallery-item{
+                overflow-y: visible;
                 min-width: 100%;
                 height: 100%;   
                 img{
@@ -89,9 +92,7 @@
 }
 @media screen and (max-width:760px) and (orientation: landscape){
     .sensoji-gallery{  
-        .sensoji-gallery-container{
-            margin: 50px auto;
-            
+        .sensoji-gallery-container{          
             .sensoji-gallery-item{
                 min-width: 50%;  
             }

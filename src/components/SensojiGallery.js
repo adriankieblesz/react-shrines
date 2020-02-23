@@ -26,8 +26,8 @@ class SensojiGallery extends Component {
             scrollLeft: this.refs.senGalCol.scrollLeft,
         })
     }
+    //touched in mobile device
     handleTouchStart = (e) => {
-        // e.preventDefault();
         this.setState({
             isDown: true,
             startX: e.touches[0].pageX - this.refs.senGalCol.offsetLeft,
@@ -56,10 +56,10 @@ class SensojiGallery extends Component {
         const movePath = x - startX;
         this.refs.senGalCol.scrollLeft = scrollLeft - movePath;
     }
+    //moved in mobile device
     handleTouchMove = (e) => {
         const { isDown, startX, scrollLeft } = this.state;
         if (!isDown) return;
-        // e.preventDefault();
         const x = e.touches[0].pageX - this.refs.senGalCol.offsetLeft
         const movePath = x - startX;
         this.refs.senGalCol.scrollLeft = scrollLeft - movePath;
