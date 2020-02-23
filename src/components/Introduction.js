@@ -3,7 +3,8 @@ import ButtonDown from './ButtonDown';
 import './Introduction.scss';
 class Introduction extends Component {
     state = {
-        backgroundPositionY: null
+        backgroundPositionY: null,
+        classname: ""
     }
 
     handleScroll = () => {
@@ -12,17 +13,19 @@ class Introduction extends Component {
         this.setState(() => ({
             backgroundPositionY: (scrollY * (-0.2))
         }))
+        scrollY >= this.refs.introduction.getBoundingClientRect().top + scrollY && this.setState(() => ({
+            classname: "scrollIntroShowBtn"
+        }))
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
-        const { backgroundPositionY } = this.state;
+        const { backgroundPositionY, classname } = this.state;
         return (
-            <section id="introduction" style={{
+            <section id="introduction" ref={"introduction"} style={{
                 backgroundPositionY: backgroundPositionY
             }}>
-
                 <article className="intro-article">
 
                     <p className="intro-p">
@@ -35,7 +38,9 @@ class Introduction extends Component {
                     </p>
 
                 </article>
-                <ButtonDown link={"#presentation"} />
+                <ButtonDown
+                    classname={classname}
+                    link={"#presentation"} />
             </section >
         );
     }
