@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/18c_800.2144c1e2.webp"
   },
   {
-    "revision": "212bb416f6b8c3f974d4",
+    "revision": "2a396a88b6e5d619cdc7",
     "url": "/react-shrines/static/css/main.81b4a7dd.chunk.css"
   },
   {
@@ -424,8 +424,8 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/17c_800.2162baa8.webp"
   },
   {
-    "revision": "212bb416f6b8c3f974d4",
-    "url": "/react-shrines/static/js/main.17af64d4.chunk.js"
+    "revision": "2a396a88b6e5d619cdc7",
+    "url": "/react-shrines/static/js/main.50c903ad.chunk.js"
   },
   {
     "revision": "e6156e6966cef6dd2db2a2c89d9e80d3",
@@ -844,7 +844,7 @@ self.__precacheManifest = [
     "url": "/react-shrines/static/media/3_500.d1db4b2e.webp"
   },
   {
-    "revision": "e426bfa7d446750ea6ea7538c52b7425",
+    "revision": "73282ec92beb104d17753eae326f6713",
     "url": "/react-shrines/index.html"
   }
 ];
