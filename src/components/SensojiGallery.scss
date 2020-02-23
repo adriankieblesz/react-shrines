@@ -79,7 +79,10 @@
 
             .sensoji-gallery-item{
                 min-width: 100%;
-                height: 100%;       
+                height: 100%;   
+                img{
+                    height: 100%;
+                }    
             }
         }       
     }
@@ -88,7 +91,7 @@
     .sensoji-gallery{  
         .sensoji-gallery-container{
             margin: 50px auto;
-
+            
             .sensoji-gallery-item{
                 min-width: 50%;  
             }

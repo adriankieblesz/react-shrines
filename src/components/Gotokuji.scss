@@ -183,8 +183,10 @@
         }
     }
 }
-@media(max-width:1024px) and (orientation:landscape){
-    .gotokuji-show-element{      
+@media(max-width:890px) and (orientation:landscape){
+    .gotokuji-show-element{  
+        max-width: 60%;
+        margin: 0 auto;    
         img{
             max-height: 90vh;
         }
