@@ -53,28 +53,55 @@
     .meiji-head-grid{
         .meiji-grid-item{
             img{
+                -webkit-animation: swipeLeft .5s ease forwards;
                 animation: swipeLeft .5s ease forwards;
             }
             .meiji-title{
+                -webkit-animation: swipeRight .5s .5s cubic-bezier(0.54,-0.01, 0, 0.97) forwards;
                 animation: swipeRight .5s .5s cubic-bezier(0.54,-0.01, 0, 0.97) forwards;
             }
         }   
     }    
 }
-@media(max-width:1024px){
+@media(max-width:1024px) and (orientation:portrait){
     .meiji-head{       
         .meiji-head-grid{
             grid-template-columns: 1fr;
-            .meiji-grid-item{
+            .meiji-grid-item{              
                 img{
                     height: 100%;
                 }
                 .meiji-title{
                     top: 40%;
                     transform: translate(0,-50%);
+
+                    .meiji-eng-title, .meiji-jap-title{
+                        font-size: 2rem;
+                    }
                 }
             }
         }
+    }
+}
+@media(max-width:1024px) and (orientation:landscape){
+    .meiji-head{
+        .meiji-head-grid{
+            .meiji-grid-item{
+                .meiji-title{
+                    .meiji-eng-title, .meiji-jap-title{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@-webkit-keyframes swipeLeft{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0%;
     }
 }
 @keyframes swipeLeft{
@@ -83,6 +110,14 @@
     }
     to{
         left: 0%;
+    }
+}
+@-webkit-keyframes swipeRight{
+    from{
+        right: -100%;
+    }
+    to{
+        right: 0%;
     }
 }
 @keyframes swipeRight{

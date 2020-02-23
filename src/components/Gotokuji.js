@@ -11,19 +11,9 @@ class Gotokuji extends Component {
     state = {
         classname: "",
         load: false,
-        showNextBtn: false,
-        loadGallery: false
+        showNextBtn: false
     }
     handleScroll = () => {
-        const { loadGallery } = this.state;
-        //allow to load gallery images asynchronously
-        // if (!loadGallery) {
-        //     setTimeout(() => {
-        //         this.setState(() => ({
-        //             loadGallery: true
-        //         }))
-        //     }, 2000);
-        // }
         //animate initial part of component (trim down backogrund image, opacity:1 for right side of article)
         window.scrollY > this.refs.gotokuji.getBoundingClientRect().top + window.scrollY - 100 && this.setState(() => ({
             classname: "gotokuji-article-active",
@@ -46,7 +36,8 @@ class Gotokuji extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
-        const { classname, loadGallery, showNextBtn } = this.state;
+        const { asyncLoading } = this.props;
+        const { classname, showNextBtn } = this.state;
         return (
             <section id="gotokuji" ref={"gotokuji"}>
                 <article className={`gotokuji-article ${classname}`} ref={"gotokujiArticle"} >
@@ -137,12 +128,10 @@ class Gotokuji extends Component {
                             of crowded city. Great place to meet part of Japanese culture and spend a bit time
                             for relax.
                         </P>
-
                     </div>
                 </article>
                 <article className="gotokuji-gallery-arcticle">
-                    {/* <GotokujiGallery allowGallery={loadGallery} /> */}
-                    <GotokujiGallery allowGallery={this.props.asyncLoading} />
+                    <GotokujiGallery allowGallery={asyncLoading} />
                 </article>
                 <article className="gotokuji-article-map" >
                     <Map ref={"map"}

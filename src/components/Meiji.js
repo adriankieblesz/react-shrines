@@ -8,19 +8,9 @@ import Iframe from './Iframe'
 import './Meiji.scss';
 class Meiji extends Component {
     state = {
-        showHead: false,
-        allowGallery: false
+        showHead: false
     }
     handleScroll = () => {
-        const { allowGallery } = this.state;
-        //allow asynchronous gallery loading after first scroll
-        // if (!allowGallery) {
-        //     setTimeout(() => {
-        //         this.setState(() => ({
-        //             allowGallery: true
-        //         }))
-        //     }, 2000);
-        // }
         //animate top part of component when scrollY reaches the point
         window.scrollY > this.refs.meiji.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHead: true,
@@ -30,7 +20,8 @@ class Meiji extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
     render() {
-        const { showHead, allowGallery } = this.state;
+        const { asyncLoading } = this.props;
+        const { showHead } = this.state;
         return (
             <section id="meiji" ref={"meiji"}>
                 <MeijiHead classnameshow={showHead ? "meiji-show" : ""} />
@@ -78,8 +69,7 @@ class Meiji extends Component {
                     </MeijiItem>
 
                 </article>
-                {/* <MeijiGallery allowGallery={allowGallery} /> */}
-                <MeijiGallery allowGallery={this.props.asyncLoading} />
+                <MeijiGallery allowGallery={asyncLoading} />
                 <article className="meiji-article meiji-article-map" >
                     <Map ref={"map"}
                         iframe={

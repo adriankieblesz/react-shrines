@@ -12,19 +12,11 @@ class Hie extends Component {
         showHeader: false,
         scroll: 0,
         refss: 0,
-        showNextBtn: false,
-        asyncGalleryLoad: false
+        showNextBtn: false
     }
     handleScroll = () => {
-        const { asyncGalleryLoad, refss } = this.state;
-        //allow to load gallery images asynchronously
-        // if (!asyncGalleryLoad) {
-        //     setTimeout(() => {
-        //         this.setState(() => ({
-        //             asyncGalleryLoad: true
-        //         }))
-        //     }, 2000);
-        // }
+        const { refss } = this.state;
+
         //animate initial part of component (title animation)
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - 300 && this.setState(() => ({
             showHeader: true,
@@ -34,7 +26,6 @@ class Hie extends Component {
             scroll: -((window.scrollY * .3) - (refss * .3)),
             refss: this.refs.hie.getBoundingClientRect().top + window.scrollY
         }))
-
         //if background not fisible then backgroundPositionY = 0
         if (window.scrollY > this.refs.hieHead.getBoundingClientRect().bottom + window.scrollY) {
             this.setState(() => ({
@@ -62,7 +53,8 @@ class Hie extends Component {
         }))
     }
     render() {
-        const { showHeader, scroll, asyncGalleryLoad, showNextBtn } = this.state;
+        const { asyncLoading } = this.props;
+        const { showHeader, scroll, showNextBtn } = this.state;
         return (
             <section id="hie" ref="hie" style={{ backgroundColor: "black" }}>
                 <div ref="hieHead"><HieHead classname={`${showHeader ? "hie-header show-hie-header" : "hie-header"}`} backgroundposition={scroll} /></div>
@@ -130,10 +122,8 @@ class Hie extends Component {
                             />
                         </div>
                     </ScrollShowElement>
-
                 </article>
-                {/* <HieGallery asyncGalleryLoad={asyncGalleryLoad} /> */}
-                <HieGallery asyncGalleryLoad={this.props.asyncLoading} />
+                <HieGallery asyncGalleryLoad={asyncLoading} />
                 <article className="gotokuji-article-map">
                     <Map ref={"map"}
                         iframe={

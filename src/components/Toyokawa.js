@@ -11,19 +11,9 @@ import NextShrineButton from './NextShrineButton';
 class Toyokawa extends Component {
     state = {
         showHeader: false,
-        showNextBtn: false,
-        allowGallery: false
+        showNextBtn: false
     }
     handleScroll = () => {
-        const { allowGallery } = this.state;
-        //allow gallery loading asynchronously
-        // if (!allowGallery) {
-        //     setTimeout(() => {
-        //         this.setState(() => ({
-        //             allowGallery: true
-        //         }))
-        //     }, 2000);
-        // }
         //show top part of the component
         window.scrollY > this.refs.toyokawa.getBoundingClientRect().top + window.scrollY - 10 && this.setState(() => ({
             showHeader: true,
@@ -48,7 +38,8 @@ class Toyokawa extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
     render() {
-        const { showHeader, asyncLoading, showNextBtn } = this.state;
+        const { asyncLoading } = this.props;
+        const { showHeader, showNextBtn } = this.state;
         return (
             <section id="toyokawa" ref="toyokawa">
                 <ToyokawaHead classname={showHeader ? "toyokawa-header show-toyokawa-header" : "toyokawa-header"} />
@@ -84,10 +75,9 @@ class Toyokawa extends Component {
                         <P>
                             Nonetheless, Toyokawa Inari Shrine is one of those places that are worth being visited. Amazing
                             vibe of this place and unique style will contribute to bring wonderful memories and pictures from here.
+                            Check those pictures in gallery below.
                         </P>
                     </ScrollShowElement>
-
-                    {/* <ToyokawaGallery allowGallery={allowGallery} /> */}
                     <ToyokawaGallery allowGallery={asyncLoading} />
                     <Map ref={"map"}
                         iframe={

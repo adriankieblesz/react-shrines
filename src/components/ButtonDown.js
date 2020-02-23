@@ -11,7 +11,6 @@ const ButtonDown = ({ link, classname }) => {
                 </figure>
             </a>
         </button>
-
     );
 }
 

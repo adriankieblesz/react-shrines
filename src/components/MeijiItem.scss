@@ -16,3 +16,8 @@
         z-index: 2;
     }
 }
+@media(max-width:1024px) and (orientation:landscape){
+    .meijiItem{
+        max-width: 50%;
+    }
+}
