@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import MainHead from './MainHead.js';
+import MainHead from './MainHead';
 import './App.scss';
-import Introduction from './Introduction.js';
-import ShrineDescription from './ShrineDescription.js';
-import ShrinePresentation from './ShrinePresentation.js';
+import Introduction from './Introduction';
+import ShrineDescription from './ShrineDescription';
+import ShrinePresentation from './ShrinePresentation';
+import Footer from './Footer';
 
 class App extends Component {
   state = {}
@@ -14,6 +15,7 @@ class App extends Component {
         <Introduction />
         <ShrinePresentation />
         <ShrineDescription />
+        <Footer />
       </div>
     );
   }
