@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import ShrineTitle from './ShrineTitle.js';
-import SensojiItem from './SensojiItem.js';
-import SensojiGallery from './SensojiGallery.js';
+import ShrineTitle from './ShrineTitle';
+import SensojiItem from './SensojiItem';
+import SensojiGallery from './SensojiGallery';
 import Map from './Map';
 import P from './P';
 import Iframe from './Iframe';
 import './Sensoji.scss';
-import NextShrineButton from './NextShrineButton.js';
+import NextShrineButton from './NextShrineButton';
+import ScrollStart from './ScrollStart';
 
 class Sensoji extends Component {
     state = {
@@ -19,7 +20,8 @@ class Sensoji extends Component {
         distance: 0,
         backgroundPosition: null,
         showNextBtn: false,
-        btnClassName: ""
+        btnClassName: "",
+        showScrollUpBtn: false
     }
 
     handleScroll = () => {
@@ -33,7 +35,13 @@ class Sensoji extends Component {
         let position = this.refs.sensojiHead.getBoundingClientRect().top + scrollY;
         if (position - distance <= scrollY) {
             this.setState(() => ({
-                isActive: true
+                isActive: true,
+                showScrollUpBtn: true
+            }))
+        }
+        else {
+            this.setState(() => ({
+                showScrollUpBtn: false
             }))
         }
         //show next shrine button
@@ -69,7 +77,7 @@ class Sensoji extends Component {
     }
     render() {
         const { asyncLoading } = this.props;
-        const { sensojiInfo, isActive, showNextBtn, backgroundPosition } = this.state;
+        const { sensojiInfo, isActive, showNextBtn, backgroundPosition, showScrollUpBtn } = this.state;
         const grids = sensojiInfo.map(info => <SensojiItem
             key={sensojiInfo.indexOf(info)}
             classname={info.classname}
@@ -125,6 +133,7 @@ class Sensoji extends Component {
                     source={"#hie"}
                     show={showNextBtn}
                 />
+                <ScrollStart classname={`${showScrollUpBtn ? "scrollUpBtn scrollUpBtnShow" : "scrollUpBtn"}`} />
             </section>
         );
     }

@@ -1,0 +1,65 @@
+:root{
+    --button-bottom-value: 5px;
+}
+.scrollUpBtn{
+    width: 75px;
+    height: 75px;
+    border: none;
+    outline: none;
+    background-color: gray;
+    z-index: 12;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%); 
+    position: fixed;
+    bottom: 0;
+    right: -100px;
+    transition: .5 ease all;
+    a{  
+        position: absolute;
+        bottom: var(--button-bottom-value);
+        right: 7px;
+        &:hover{
+            -webkit-animation: arrowUpAnimation .65s ease infinite;
+            animation: arrowUpAnimation .65s ease infinite;
+        }
+    }   
+    img{
+        width: 35px;
+        height: 35px;
+    }   
+ }
+ .scrollUpBtnShow{
+     -webkit-animation: scrollUpSlideLeft .25s 1s ease forwards;
+     animation: scrollUpSlideLeft .25s 1s ease forwards;
+ }
+ @-webkit-keyframes scrollUpSlideLeft{
+    to{
+        right: 0;
+    }
+ }
+ @keyframes scrollUpSlideLeft{
+    to{
+        right: 0;
+    } 
+}
+ @-webkit-keyframes arrowUpAnimation{
+    0%{
+        bottom: var(--button-bottom-value);
+    }
+    75%{
+        bottom: 10px;
+    }
+    100%{
+        bottom: var(--button-bottom-value);
+    }
+}
+@keyframes arrowUpAnimation{
+    0%{
+        bottom: var(--button-bottom-value);
+    }
+    75%{
+        bottom: 10px;
+    }
+    100%{
+        bottom: var(--button-bottom-value);
+    }
+}
