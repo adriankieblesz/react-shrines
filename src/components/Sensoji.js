@@ -36,11 +36,13 @@ class Sensoji extends Component {
         if (position - distance <= scrollY) {
             this.setState(() => ({
                 isActive: true,
+                //allow scroll top button to be shown
                 showScrollUpBtn: true
             }))
         }
         else {
             this.setState(() => ({
+                //disallow scroll top button to be shown
                 showScrollUpBtn: false
             }))
         }

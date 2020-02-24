@@ -37,8 +37,7 @@
                         opacity: 0;
                     }
                 }
-            }
-            
+            }  
         }
     }  
     .sensoji-article
@@ -47,10 +46,8 @@
         img{
             max-width: 100%;
         }
-    } 
-     
+    }    
 }
-
 .sensoji-margin{
     position: relative;
 }
@@ -70,7 +67,6 @@
     -webkit-animation: showTitle .5 1.5s forwards ease;
     animation: showTitle .5 1.5s forwards ease;
 }
-
 @-webkit-keyframes showTitle {
     to{
         opacity: 1;

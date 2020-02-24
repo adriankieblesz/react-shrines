@@ -1,5 +1,6 @@
 :root{
     --button-bottom-value: 5px;
+    --animation-top-peak:10px
 }
 .scrollUpBtn{
     width: 75px;
@@ -7,16 +8,18 @@
     border: none;
     outline: none;
     background-color: gray;
-    z-index: 12;
+    z-index: 11;
     clip-path: polygon(100% 0, 0% 100%, 100% 100%); 
     position: fixed;
     bottom: 0;
     right: -100px;
     transition: .5 ease all;
+
     a{  
         position: absolute;
         bottom: var(--button-bottom-value);
         right: 7px;
+        
         &:hover{
             -webkit-animation: arrowUpAnimation .65s ease infinite;
             animation: arrowUpAnimation .65s ease infinite;
@@ -46,7 +49,7 @@
         bottom: var(--button-bottom-value);
     }
     75%{
-        bottom: 10px;
+        bottom: var(--animation-top-peak);
     }
     100%{
         bottom: var(--button-bottom-value);
@@ -57,9 +60,26 @@
         bottom: var(--button-bottom-value);
     }
     75%{
-        bottom: 10px;
+        bottom: var(--animation-top-peak);
     }
     100%{
         bottom: var(--button-bottom-value);
+    }
+}
+@media(max-width:1024px){
+    :root{
+        --button-bottom-value: 2px;
+        --animation-top-peak: 5px;
+    }
+    .scrollUpBtn{
+        width: 60px;
+        height: 60px;
+        a{
+            right: 2px;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+        }
     }
 }
