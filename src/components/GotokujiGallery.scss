@@ -28,8 +28,7 @@ $i: 1;
                     transition: opacity 1s ease;                      
                         img{
                             width: 100%;                          
-                            height: 100%;   
-                                             
+                            height: 100%;                      
                         }
                 }
         $i: $i + 1;
@@ -37,5 +36,4 @@ $i: 1;
     .showFigure{
         opacity: 1;
     }
-
 }

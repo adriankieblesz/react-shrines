@@ -55,11 +55,11 @@ class Hie extends Component {
     render() {
         const { asyncLoading } = this.props;
         const { showHeader, scroll, showNextBtn } = this.state;
+
         return (
             <section id="hie" ref="hie" style={{ backgroundColor: "black" }}>
                 <div ref="hieHead"><HieHead classname={`${showHeader ? "hie-header show-hie-header" : "hie-header"}`} backgroundposition={scroll} /></div>
                 <article className="hie-article" >
-
                     <ScrollShowElement classnameshow={"hie-show-first"} classnamehide={"hie-hide-first"} ratio={1}>
                         <P>
                             Hie shrine is placed in Chiyoda district and it's affiliated to Shinto.
@@ -148,7 +148,7 @@ class Hie extends Component {
                     />
                 </article>
                 <NextShrineButton
-                    text={"Go to Gotokuji Shrine"}
+                    text={"Go to Gotokuji Temple"}
                     source={"#gotokuji"}
                     show={showNextBtn}
                 />

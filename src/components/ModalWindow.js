@@ -6,9 +6,10 @@ class ModalWindow extends Component {
     }
     render() {
         const { slideclass, open, modalSource, closeclick, slideLeft, slideRight } = this.props;
+
         return (
             // <div className={props.open ? `modalWindow slideRightModal` : `modalWindow ${props.slideleftclass}`} >
-            <div className={`modalWindow ${slideclass}`} >
+            <div className={`modalWindow ${slideclass}`}  >
                 {/* {this.state.image} */}
                 <img className={open ? "modalImg showModalImage" : "modalImg"} src={modalSource} alt="shrine" />
                 <div onClick={closeclick} className="closeBtn" >

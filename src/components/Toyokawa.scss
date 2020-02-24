@@ -30,6 +30,7 @@
 .show-toyokawa-header{
     .toyokawa-title{
         left: 0;
+
         .toyokawa-title-eng{
             opacity: 1;
         }
@@ -96,6 +97,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 10px;
+    
     img{
         width: 100%;
         height: auto;

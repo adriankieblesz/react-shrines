@@ -16,6 +16,7 @@ class Map extends Component {
     render() {
         const { classname } = this.state;
         const { iframe, description, tstation, sstation, source } = this.props;
+
         return (
             <Fragment>
                 <div className={classname} ref="map">

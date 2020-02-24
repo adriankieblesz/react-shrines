@@ -9,7 +9,6 @@ nav{
     height: auto;
     max-height: 700px;
 
-
         ul{
             list-style-type: none;
             padding-left: 0;
@@ -61,6 +60,7 @@ nav{
                 transition: color .5s, padding .5s;
                 padding: 10px 30px;
                 color: rgb(224, 224, 40);
+
                 &::after{
                     border-bottom: 2px solid rgb(224, 224, 40);;
                 } 
@@ -92,6 +92,7 @@ nav{
     height: 100%;
     opacity: 1;
     pointer-events: all;
+
     ul{
         margin: 25px;
     }
@@ -104,6 +105,7 @@ nav{
 .showButtons{
     -webkit-animation: showBtns .5s ease-in forwards;
     animation: showBtns .5s ease-in forwards;
+
     @for $i from 1 through 5{
         &:nth-child(#{$i}){
             animation-delay: (($i +6) * 0.2s);
@@ -129,6 +131,7 @@ nav{
 @media(max-width:1024px){
     #relativeNav{   
         margin-top: 1px;  
+        
         .gridList{   
             grid-template-columns: 1fr;
             grid-template-rows: repeat(5,20%);

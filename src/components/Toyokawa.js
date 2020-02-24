@@ -40,6 +40,7 @@ class Toyokawa extends Component {
     render() {
         const { asyncLoading } = this.props;
         const { showHeader, showNextBtn } = this.state;
+
         return (
             <section id="toyokawa" ref="toyokawa">
                 <ToyokawaHead classname={showHeader ? "toyokawa-header show-toyokawa-header" : "toyokawa-header"} />

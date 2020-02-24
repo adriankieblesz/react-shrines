@@ -20,7 +20,6 @@
         -o-transition: font-size 1s;
         transition: font-size 1s;
     }
-
     .p2-span{       
         display: block;
         border-bottom: 2px solid white;
@@ -46,7 +45,6 @@
         transform: scaleX(1);
     }
 }
-
 @-webkit-keyframes loadTitle {
     from{
         -webkit-transform: translateX(40%);
@@ -70,6 +68,7 @@
 @media(max-width:1024px){
     .p2-container{
         width: max-content;
+        
         .p2{
             font-size: 1.5rem;
             padding: 35px 50px;

@@ -44,6 +44,7 @@
 .displayBackgorund{
     -webkit-animation: displayBackgorunds .5s ease-in forwards;
     animation: displayBackgorunds .5s ease-in forwards;
+
     @for $i from 1 through 5{
         &:nth-child(#{$i}){
             animation-delay: ($i * 0.2s);
@@ -73,6 +74,7 @@
 .changeBlurOpacity{
     -webkit-animation: changeBlurgroundOpacity 2s ease-in;
     animation: changeBlurgroundOpacity 2s ease-in;
+    
     @for $i from 1 through 5{
         &:nth-child(#{$i}){
             animation-delay: ($i * 0.2s);

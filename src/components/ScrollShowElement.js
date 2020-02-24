@@ -38,6 +38,7 @@ class ScrollShowElement extends Component {
     render() {
         const { classname } = this.state;
         const { id, children } = this.props;
+
         return (
             <div id={id} className={classname} ref={"element"}>
                 {children}

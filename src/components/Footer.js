@@ -6,7 +6,8 @@ const Footer = () => {
             <ul>
                 <li>
                     <p>
-                        Majority of icons were taken from <a className="icons" href="https://icons8.com/">icons8.com</a></p>
+                        Majority of icons were taken from <a className="icons" href="https://icons8.com/">icons8.com</a>
+                    </p>
                 </li>
                 <li>
                     <p>All pictures of temples has been made by author of website</p>

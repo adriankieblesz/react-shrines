@@ -100,6 +100,7 @@ class ToyokawaGallery extends Component {
     render() {
         const { images: imgs, show, openModal, url, slideclass } = this.state;
         let images = imgs.map(element => element);
+
         return (
             <div className={show ? "toyokawa-gallery show-toyokawa-gallery" : "toyokawa-gallery"} ref={"toyokawaGallery"}>
                 <div className="toyokawa-gallery-wrapper">

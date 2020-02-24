@@ -28,6 +28,7 @@
             margin: 0 5px;
             position: relative;
             transition: all .3s ease;
+
             &:hover{
                 cursor: grabbing;
                 transform: translateY(-20px);
@@ -68,8 +69,7 @@
     top: 0;
 }
 @media screen and (max-width:760px){
-    .sensoji-gallery{   
-       
+    .sensoji-gallery{     
         h3{
             font-size: 2rem;
         }
@@ -78,11 +78,11 @@
             margin: 0;
             padding:30px 10px 0px 0px;
 
-
             .sensoji-gallery-item{
                 overflow-y: visible;
                 min-width: 100%;
                 height: 100%;   
+                
                 img{
                     height: 100%;
                 }    

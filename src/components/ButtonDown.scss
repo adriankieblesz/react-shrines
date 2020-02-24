@@ -12,16 +12,15 @@
     -webkit-animation: showButton .5s 1.5s forwards;
     animation: showButton .5s 1.5s forwards;
     
-    .scrollDownAnchor{
-
-        &:hover{
-            cursor: pointer;
-        }
+    .scrollDownAnchor{    
         color: white;                     
         display: block;
         -webkit-animation: animateButton 1s infinite;
         animation: animateButton 1s infinite;
 
+        &:hover{
+            cursor: pointer;
+        }
         figure{
             margin: 0;
             img{
@@ -31,7 +30,6 @@
         }
     }       
 }
-
 @-webkit-keyframes animateButton{
     0%{
         -webkit-transform: translateY(0);

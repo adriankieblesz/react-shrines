@@ -120,9 +120,8 @@ class Gotokuji extends Component {
                                 <img src={require('../images/Gotokuji_Temple/21c_850.webp')} alt="" />
                             </P>
                         </ScrollShowElement>
-
                         <P>
-                            Despite this shrine is far away from centre of Tokyo (Setagaya district),
+                            Despite this temple is far away from centre of Tokyo (Setagaya district),
                             it is highly recommended to visit this place due to it's magic vibes.
                             You can also experience here incredible silence as it is far away from main roads
                             of crowded city. Great place to meet part of Japanese culture and spend a bit time

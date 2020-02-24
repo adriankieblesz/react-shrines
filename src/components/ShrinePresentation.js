@@ -16,6 +16,7 @@ class ShrinePresentation extends Component {
     }
     render() {
         const { displayBackgrounds } = this.state;
+
         return (
             <section id="presentation" className="shrine-presentation" ref={"presentation"}>
                 <a href="#sensoji" className={displayBackgrounds ? "presentation-background displayBackgorund" : "presentation-background"}>

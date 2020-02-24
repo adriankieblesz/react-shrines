@@ -22,6 +22,7 @@ class Meiji extends Component {
     render() {
         const { asyncLoading } = this.props;
         const { showHead } = this.state;
+
         return (
             <section id="meiji" ref={"meiji"}>
                 <MeijiHead classnameshow={showHead ? "meiji-show" : ""} />

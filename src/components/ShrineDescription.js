@@ -22,6 +22,7 @@ class ShrineDescription extends Component {
     }
     render() {
         const { load } = this.state;
+
         return (
             <React.Fragment>
                 <Sensoji asyncLoading={load} />

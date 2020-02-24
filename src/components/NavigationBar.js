@@ -18,7 +18,6 @@ class NavigationBar extends Component {
     handleScroll = () => {
         //update current scrollY position
         let scrollY = window.scrollY || window.pageYOffset;
-
         //determine navbar position related to scroll position
         this.setState(() => ({
             navPosition: this.refs.navbar.getBoundingClientRect().top + this.state.navHeight + scrollY
@@ -117,10 +116,9 @@ class NavigationBar extends Component {
         window.removeEventListener('resize', this.handleResize)
         window.removeEventListener('scroll', this.handleScroll);
     }
-
     render() {
-
         const { isFixed, navHeight, idName, className, listClassName, animate, showButton, iconClicked } = this.state;
+
         return (
             <React.Fragment>
                 {isFixed && <div ref={"tempDiv"} style={{ height: navHeight, position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }}></div>}
@@ -143,7 +141,6 @@ class NavigationBar extends Component {
                         </li>
                     </ul>
                 </nav>
-                {/* Show hamburger menu*/}
                 {showButton ? <NavButton
                     iconClicked={iconClicked}
                     click={this.handleClickNavBtn}

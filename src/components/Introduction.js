@@ -23,6 +23,7 @@ class Introduction extends Component {
     }
     render() {
         const { backgroundPositionY, classname } = this.state;
+
         return (
             <section id="introduction" ref={"introduction"} style={{
                 backgroundPositionY: backgroundPositionY
@@ -30,7 +31,7 @@ class Introduction extends Component {
                 <article className="intro-article">
                     <p className="intro-p">
                         When it comes to visit Tokyo Japan there is a plety of places to see.
-                        Absolutely must see are temples/shrines placed all around entire Tokyo
+                        Absolutely must see are temples placed all around entire Tokyo
                         and also entire Japan. But sometimes we ask "where should we go first?" or
                         "we don't have enought time to visit each temple, which one should we
                         choose?". Below are presented five incredibely georgous and well known

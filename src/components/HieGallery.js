@@ -78,7 +78,6 @@ class HieGallery extends Component {
             }))
         }
     }
-
     handleScroll = () => {
         const { asyncGalleryLoad } = this.props;
         //load asynchronously after first scroll
@@ -88,6 +87,7 @@ class HieGallery extends Component {
                     images: [...respond]
                 })))
         }
+        //if scroll gets to the specific point allow for executing animation responsible for showing component
         window.scrollY > this.refs.hie.getBoundingClientRect().top + window.scrollY - (this.refs.hie.clientHeight / 2) && this.setState(() => ({
             showGallery: true,
         }))
@@ -100,7 +100,6 @@ class HieGallery extends Component {
     }
     render() {
         const { images, showGallery: show, openModal, url, slideclass } = this.state;
-
         const galleryItems = images.map(image => (<div
             key={images.indexOf(image)}
             className="hie-gallery-item"
