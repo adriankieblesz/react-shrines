@@ -14,12 +14,12 @@
     bottom: 0;
     right: -100px;
     transition: .5 ease all;
-
+    
     a{  
         position: absolute;
         bottom: var(--button-bottom-value);
         right: 7px;
-        
+
         &:hover{
             -webkit-animation: arrowUpAnimation .65s ease infinite;
             animation: arrowUpAnimation .65s ease infinite;
