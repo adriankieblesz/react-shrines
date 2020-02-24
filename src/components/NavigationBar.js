@@ -59,9 +59,6 @@ class NavigationBar extends Component {
                 className: "",
             }))
         }
-        console.log(`this.state.navPosition: ${this.state.navPosition}`);
-        console.log(`scrollY + this.state.navHeight: ${scrollY + this.state.navHeight}`);
-        console.log(`-----------------------------------------------`);
         //if scrollY reaches to the top of NavigationBar component's container then execute animation responsible for showing buttons in fixed order 
         window.scrollY > this.refs.navbar.getBoundingClientRect().top + window.scrollY - (window.innerHeight * .7) && this.setState(() => ({
             animate: true
@@ -115,11 +112,6 @@ class NavigationBar extends Component {
         this.setState(() => ({
             navHeight: this.refs.navbar.clientHeight
         }))
-        // if (window.innerWidth < 1025) {
-        //     this.setState(() => ({
-        //         navHeight: (this.refs.navbar.clientHeight + 1)
-        //     }))
-        // }
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize)

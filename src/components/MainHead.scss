@@ -42,7 +42,6 @@
     background-repeat: none;
     opacity: 0;
     animation: imageAnimation 15s linear infinite 0s; 
-    transition: background-position-x 3s ease, background-position-y 3s ease;
 }
 @for $i from 1 through 5 {
     .cb-slideshow li:nth-child(#{$i}) span{
@@ -70,4 +69,9 @@
     17% { opacity: 1 }
     25% { opacity: 0 }
     100% { opacity: 0 }
+}
+@media(max-width:768px) and (orientation:portrait){
+    .cb-slideshow li span{
+        background-size: 250% 100%;
+    }
 }

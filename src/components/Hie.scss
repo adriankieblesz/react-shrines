@@ -85,6 +85,20 @@
         }
     }
 }
+@media(max-width:1600px){
+    .hie-article{
+        .hie-show-first{
+            p{
+                font-size: 1.7rem;
+            }
+        }
+        .hie-grid{
+            p{
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
 @media(max-width:1366px){
     .hie-article{
         .hie-show-first{
