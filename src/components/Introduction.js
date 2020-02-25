@@ -17,6 +17,9 @@ class Introduction extends Component {
         scrollY >= this.refs.introduction.getBoundingClientRect().top + scrollY && this.setState(() => ({
             classname: "scrollIntroShowBtn"
         }))
+        scrollY > this.refs.introduction.getBoundingClientRect().bottom + scrollY && this.setState(() => ({
+            backgroundPositionY: 0
+        }));
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);

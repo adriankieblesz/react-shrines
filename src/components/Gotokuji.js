@@ -59,7 +59,7 @@ class Gotokuji extends Component {
                                 also known as Keishōin.
                                 <img
                                     src={require('../images/Gotokuji_Temple/23c_850.webp')}
-                                    alt=""
+                                    alt="gotokuji"
                                 />
                             </P>
                         </ScrollShowElement>
@@ -69,7 +69,7 @@ class Gotokuji extends Component {
                                 Chinese and Japanese tradition. In XXI century Japan they symbolise prosperity and take away unhappiness.
                                 <img
                                     src={require('../images/Gotokuji_Temple/13c_850.webp')}
-                                    alt=""
+                                    alt="gotokuji"
 
                                 />
                             </P>
@@ -84,40 +84,40 @@ class Gotokuji extends Component {
                             <P>
                                 Except main hall that you've seen on the first photo there is a lot of spots to view. For example,
                                 Three-Story Pagoda, which looks amazing and even better in autumn.
-                                <img src={require('../images/Gotokuji_Temple/2c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/2c_850.webp')} alt="gotokuji" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 A dog statue sitting on a big black incense burner
-                                <img src={require('../images/Gotokuji_Temple/7c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/7c_850.webp')} alt="gotokuji" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 A bell tower next to the one of entrance gates.
-                                <img src={require('../images/Gotokuji_Temple/1c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/1c_850.webp')} alt="gotokuji" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Maneki-neko hall. Usually closed inside but wonderful design.
-                                <img src={require('../images/Gotokuji_Temple/15c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/15c_850.webp')} alt="gotokuji" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 Maneki-neko stalls, which is great place for taking pictures.
-                                <img src={require('../images/Gotokuji_Temple/12c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/12c_850.webp')} alt="gotokuji" />
                             </P>
                         </ScrollShowElement>
                         <ScrollShowElement classnameshow={"gotokuji-show-element"} classnamehide={"gotokuji-hide-element"} ratio={2.5}>
                             <P>
                                 You can also get to the Japanese buddish cementary.
-                                <img src={require('../images/Gotokuji_Temple/19c_850.webp')} alt="" />
-                                <img src={require('../images/Gotokuji_Temple/17c_850.webp')} alt="" />
-                                <img src={require('../images/Gotokuji_Temple/18c_850.webp')} alt="" />
-                                <img src={require('../images/Gotokuji_Temple/21c_850.webp')} alt="" />
+                                <img src={require('../images/Gotokuji_Temple/19c_850.webp')} alt="gotokuji" />
+                                <img src={require('../images/Gotokuji_Temple/17c_850.webp')} alt="gotokuji" />
+                                <img src={require('../images/Gotokuji_Temple/18c_850.webp')} alt="gotokuji" />
+                                <img src={require('../images/Gotokuji_Temple/21c_850.webp')} alt="gotokuji" />
                             </P>
                         </ScrollShowElement>
                         <P>

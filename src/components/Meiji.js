@@ -78,7 +78,7 @@ class Meiji extends Component {
                         }
                         description={
                             <P>
-                                Meiji-jingu Temple is placed in Shibuya district and it is very close to Yoyogi Station.
+                                Meiji-jingu Shrine is placed in Shibuya district and it is very close to Yoyogi Station.
                             </P>
                         }
                         tstation={

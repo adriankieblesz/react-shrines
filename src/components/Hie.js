@@ -24,7 +24,7 @@ class Hie extends Component {
         //reset scroll position variable to 0 for adjusting backgroundPoistionY of top component's part background
         this.setState(() => ({
             scroll: -((window.scrollY * .3) - (refss * .3)),
-            refss: this.refs.hie.getBoundingClientRect().top + window.scrollY
+            refss: this.refs.hie.getBoundingClientRect().top + window.scrollY - this.refs.hieHead.clientHeight
         }))
         //if background not fisible then backgroundPositionY = 0
         if (window.scrollY > this.refs.hieHead.getBoundingClientRect().bottom + window.scrollY) {
