@@ -13,7 +13,7 @@ class Sensoji extends Component {
     state = {
         sensojiInfo: [
             { number: [6, 1], classname: "shrine-grid", description: ["Starting from the most popular temple for I guess entire Japan, Senso-ji temple is iconic place in Tokyo. Placed in Asakusa and visited by milions of people every year.", "The temple was finished in 645 AD so it makes it the oldest one in Tokyo. Temple is affiliated to Buddhism"] },
-            { number: [2, 4], classname: "shrine-grid", description: ["After reaching the main gate Kaminarimon which you can see on the photo above, you will need to pass through long path of stalls where you can buy souvenirs related to temple and any other sanctuary like items.", "After that you will get to the second gate Hōzōmon which is the most popular spot around entire temple. Perfect time for another portion of pictures."] },
+            { number: [2, 3], classname: "shrine-grid", description: ["After reaching the main gate Kaminarimon which you can see on the photo above, you will need to pass through long path of stalls where you can buy souvenirs related to temple and any other sanctuary like items.", "After that you will get to the second gate Hōzōmon which is the most popular spot around entire temple. Perfect time for another portion of pictures."] },
             { number: [5, 8], classname: "shrine-grid", description: ["Be prepared to be welcome by Niō - wrathful muscular guardians of the Buddha. You can meet them in many Buddhist temples so they of course cannot be absent in Senso-ji.", "And finally you will get to the temple itself. What's inside it's your job to check out!"] }
         ],
         isActive: false,

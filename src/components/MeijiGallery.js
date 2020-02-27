@@ -14,7 +14,7 @@ class MeijiGallery extends Component {
     returnImages = () => {
         return new Promise((resolve, reject) => {
             let images = [];
-            for (let i = 0; i < 18; i++) {
+            for (let i = 0; i < 16; i++) {
                 images.push(<img key={i + 1} className={`meiji-bottom-image`} onClick={() => { this.handleImageClick(i + 1) }} alt="meiji-gallery" src={require(`../images/Meiji_Shrine/${i + 1}c_200.webp`)} />)
             }
 
@@ -23,11 +23,11 @@ class MeijiGallery extends Component {
     }
     //Load previous picture
     handleSlideLeft = () => {
-        const { current: curr } = this.state;
+        const { images, current: curr } = this.state;
         this.transparent = "trans"
         let current = curr - 1;
         if (current < 1) {
-            current = 18
+            current = images.length
             this.setState(() => ({
                 current: current,
                 currentUrl: require(`../images/Meiji_Shrine/${current}c.jpg`),
@@ -44,10 +44,10 @@ class MeijiGallery extends Component {
     }
     //Load next picture
     handleSlideRight = () => {
-        const { current: curr } = this.state;
+        const { images, current: curr } = this.state;
         this.transparent = "trans"
         let current = curr + 1;
-        if (current > 18) {
+        if (current > images.length) {
             current = 1;
             this.setState(() => ({
                 current: current,
