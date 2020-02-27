@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Project is about five temples/shrines in Tokyo describing brief history, usefull informations, locations and tips how to reach to each temple/shrine.
+Project is about five temples/shrines in Tokyo describing brief history, useful informations, galleries, locations and tips how to reach to each temple/shrine.
 
 Below are listed concepts that were used for project: <br/>
   &nbsp;&nbsp;-Asynchronous programming <br/>
