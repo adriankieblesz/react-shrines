@@ -149,10 +149,16 @@ class SensojiGallery extends Component {
         window.addEventListener('scroll', this.handleScroll);
         //fetch urls from json file
         fetch('data/img-data.json')
-            .then(respond => respond.json())
+            .then(respond => {
+                if (respond.ok)
+                    return respond.json();
+                else
+                    throw new Error("Something went wrong with json file");
+            })
             .then(result => this.setState(() => ({
                 modalImages: [...result.sensoji]
             })))
+            .catch(error => console.log(error));
     }
     render() {
         const { show, isDown, elements, openModal, url, slideclass } = this.state;
