@@ -1,8 +1,6 @@
-:root{
+.next-shrine-button{
     --transform-value: 15%;
     --swipe-value: 2%;
-}
-.next-shrine-button{
     position: fixed;
     bottom: 50px;
     right: -105%;
@@ -68,7 +66,7 @@
     }
 }
 @media(max-width:890px){
-    :root{
+    .next-shrine-button{
         --swipe-value: 0%;
     }
     .next-shrine-button{

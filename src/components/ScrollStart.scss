@@ -1,8 +1,6 @@
-:root{
-    --button-bottom-value: 5px;
-    --animation-top-peak:10px
-}
 .scrollUpBtn{
+    --button-bottom-value: 5px;
+    --animation-top-peak: 10px;
     width: 75px;
     height: 75px;
     border: none;
@@ -67,11 +65,10 @@
     }
 }
 @media(max-width:1024px){
-    :root{
+
+    .scrollUpBtn{
         --button-bottom-value: 2px;
         --animation-top-peak: 5px;
-    }
-    .scrollUpBtn{
         width: 60px;
         height: 60px;
         
