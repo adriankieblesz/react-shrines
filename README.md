@@ -9,5 +9,6 @@ Below are listed concepts that were used for project: <br/>
   &nbsp;&nbsp;-Babel <br/>
   &nbsp;&nbsp;-Webpack (automatically configured by CRA) <br/>
   &nbsp;&nbsp;-Fetching data from server <br/>
+  &nbsp;&nbsp;-Responsive Web Design <br/>
   &nbsp;&nbsp;-Google Maps Embed API 
 
